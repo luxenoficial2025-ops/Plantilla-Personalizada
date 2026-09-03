@@ -3841,3 +3841,32 @@ details-disclosure > details {
   letter-spacing: 0.1em !important;
   font-weight: 800 !important;
 }
+
+
+/* FIX: TRUE FLOATING PILL OVERLAY (HELIX STYLE) */
+#shopify-section-header, .section-header {
+  position: absolute !important;
+  width: 100% !important;
+  left: 0 !important;
+  /* top should be right under the announcement bar. By default absolute respects normal flow from top if top is not specified, but we can set top to auto or calculate. 
+     Using top: auto works well if it just follows the announcement bar, but let's be safe. */
+  z-index: 999 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.header-wrapper {
+  width: calc(100% - 32px) !important;
+  max-width: 1300px !important;
+  margin: 12px auto !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+  border: none !important;
+}
+
+/* Ensure no weird black padding from body or main container */
+.announcement-bar-section, #shopify-section-announcement-bar {
+  background: transparent !important;
+}
