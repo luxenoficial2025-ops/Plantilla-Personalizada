@@ -9,7 +9,7 @@
                                                  "custom_reviews":  {
                                                                         "type":  "custom_liquid",
                                                                         "settings":  {
-                                                                                         "custom_liquid":  "\u003cdiv style=\"display:flex; align-items:center; gap:8px; margin-top:-10px; margin-bottom:15px;\"\u003e\u003cspan style=\"color:#FACC15; font-size:1.2rem; letter-spacing:2px;\"\u003eâ˜…â˜…â˜…â˜…â˜…\u003c/span\u003e\u003cspan style=\"color:#666; font-size:0.9rem; text-decoration:underline;\"\u003e23 ReseÃ±as\u003c/span\u003e\u003c/div\u003e"
+                                                                                         "custom_liquid":  "\u003cdiv style=\"display:flex; align-items:center; gap:8px; margin-top:-10px; margin-bottom:15px;\"\u003e\u003cspan style=\"color:#FACC15; font-size:1.2rem; letter-spacing:2px;\"\u003eÃ¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦\u003c/span\u003e\u003cspan style=\"color:#666; font-size:0.9rem; text-decoration:underline;\"\u003e23 ReseÃƒÂ±as\u003c/span\u003e\u003c/div\u003e"
                                                                                      }
                                                                     },
                                                  "price":  {
@@ -41,36 +41,36 @@
                                                  "custom_cod":  {
                                                                     "type":  "custom_liquid",
                                                                     "settings":  {
-                                                                                     "custom_liquid":  "\u003cstyle\u003e.product-form__submit { display: none !important; } .product-form__error-message-wrapper, .form__message--error { display: none !important; } .cod-btn-custom { width: 100%; background: linear-gradient(135deg, #FF8C00, #FF6B00); color: #fff; border: none; border-radius: 8px; padding: 16px; cursor: pointer; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 15px rgba(255,107,0,0.3); animation: codPulse 2s infinite; margin-top: -15px; margin-bottom: 20px; transition: transform 0.2s; pointer-events: auto !important; opacity: 1 !important; } .cod-btn-custom:active { transform: scale(0.98); } .cod-title { font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; } .cod-sub { font-size: 0.9rem; font-weight: 500; margin-top: 4px; opacity: 0.9; } @keyframes codPulse { 0% { box-shadow: 0 0 0 0 rgba(255,107,0,0.5); } 70% { box-shadow: 0 0 0 10px rgba(255,107,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); } }\u003c/style\u003e\u003cbutton type=\"button\" onclick=\"document.querySelector(\u0027form[action*=\u0027\u0027/cart/add\u0027\u0027]\u0027).submit()\" class=\"cod-btn-custom\"\u003e\u003cspan class=\"cod-title\"\u003ePedir ahora y pagar al recibir\u003c/span\u003e\u003cspan class=\"cod-sub\"\u003e¡Envío Gratis!\u003c/span\u003e\u003c/button\u003e\u003cscript\u003esetInterval(()=\u003e{ let btn = document.querySelector(\u0027.cod-btn-custom\u0027); if(btn){ btn.removeAttribute(\u0027disabled\u0027); btn.classList.remove(\u0027disabled\u0027); } }, 300);\u003c/script\u003e"
+                                                                                     "custom_liquid":  "\u003cstyle\u003e.product-form__submit { display: none !important; } .product-form__error-message-wrapper, .form__message--error { display: none !important; } .cod-btn-custom { width: 100%; background: linear-gradient(135deg, #FF8C00, #FF6B00); color: #fff; border: none; border-radius: 8px; padding: 16px; cursor: pointer; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 15px rgba(255,107,0,0.3); animation: codPulse 2s infinite; margin-top: -15px; margin-bottom: 20px; transition: transform 0.2s; pointer-events: auto !important; opacity: 1 !important; } .cod-btn-custom:active { transform: scale(0.98); } .cod-title { font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; } .cod-sub { font-size: 0.9rem; font-weight: 500; margin-top: 4px; opacity: 0.9; } @keyframes codPulse { 0% { box-shadow: 0 0 0 0 rgba(255,107,0,0.5); } 70% { box-shadow: 0 0 0 10px rgba(255,107,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); } }\u003c/style\u003e\u003cbutton type=\"button\" onclick=\"document.querySelector(\u0027form[action*=\u0027\u0027/cart/add\u0027\u0027]\u0027).submit()\" class=\"cod-btn-custom\"\u003e\u003cspan class=\"cod-title\"\u003ePedir ahora y pagar al recibir\u003c/span\u003e\u003cspan class=\"cod-sub\"\u003eÂ¡EnvÃ­o Gratis!\u003c/span\u003e\u003c/button\u003e\u003cscript\u003esetInterval(()=\u003e{ let btn = document.querySelector(\u0027.cod-btn-custom\u0027); if(btn){ btn.removeAttribute(\u0027disabled\u0027); btn.classList.remove(\u0027disabled\u0027); } }, 300);\u003c/script\u003e"
                                                                                  }
                                                                 },
                                                  "custom_social_proof":  {
                                                                              "type":  "custom_liquid",
                                                                              "settings":  {
-                                                                                              "custom_liquid":  "\u003cdiv style=\"background: #F9F9F9; border-radius: 8px; padding: 15px; margin-bottom: 20px; border: 1px solid #eee;\"\u003e\u003cdiv style=\"display:flex; align-items:center; gap:10px; margin-bottom:8px;\"\u003e\u003cdiv style=\"width:32px; height:32px; border-radius:50%; background:#C5A059; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold;\"\u003eM\u003c/div\u003e\u003cdiv\u003e\u003cdiv style=\"font-weight:bold; font-size:0.9rem; line-height:1;\"\u003eMarÃ­a Q. \u003cspan style=\"color:#22C55E;\"\u003eâœ“\u003c/span\u003e\u003c/div\u003e\u003cdiv style=\"color:#FACC15; font-size:0.8rem;\"\u003eâ˜…â˜…â˜…â˜…â˜…\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cp style=\"font-size:0.85rem; margin:0; color:#444; font-style:italic;\"\u003e\"Excelente producto, me llegÃ³ sÃºper rÃ¡pido y paguÃ© al recibir. Â¡Recomendado!\"\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\"display:flex; align-items:center; gap:8px; margin-bottom:20px; padding:10px; background:#FEF2F2; border-radius:6px; color:#DC2626; font-size:0.9rem; font-weight:600;\"\u003e\u003cspan style=\"font-size:1.2rem;\"\u003eðŸ”¥\u003c/span\u003e MarÃ­a Q. y 587 personas ya lo pidieron\u003c/div\u003e"
+                                                                                              "custom_liquid":  "\u003cdiv style=\"background: #F9F9F9; border-radius: 8px; padding: 15px; margin-bottom: 20px; border: 1px solid #eee;\"\u003e\u003cdiv style=\"display:flex; align-items:center; gap:10px; margin-bottom:8px;\"\u003e\u003cdiv style=\"width:32px; height:32px; border-radius:50%; background:#C5A059; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold;\"\u003eM\u003c/div\u003e\u003cdiv\u003e\u003cdiv style=\"font-weight:bold; font-size:0.9rem; line-height:1;\"\u003eMarÃƒÂ­a Q. \u003cspan style=\"color:#22C55E;\"\u003eÃ¢Å“â€œ\u003c/span\u003e\u003c/div\u003e\u003cdiv style=\"color:#FACC15; font-size:0.8rem;\"\u003eÃ¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦Ã¢Ëœâ€¦\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e\u003cp style=\"font-size:0.85rem; margin:0; color:#444; font-style:italic;\"\u003e\"Excelente producto, me llegÃƒÂ³ sÃƒÂºper rÃƒÂ¡pido y paguÃƒÂ© al recibir. Ã‚Â¡Recomendado!\"\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\"display:flex; align-items:center; gap:8px; margin-bottom:20px; padding:10px; background:#FEF2F2; border-radius:6px; color:#DC2626; font-size:0.9rem; font-weight:600;\"\u003e\u003cspan style=\"font-size:1.2rem;\"\u003eÃ°Å¸â€Â¥\u003c/span\u003e MarÃƒÂ­a Q. y 587 personas ya lo pidieron\u003c/div\u003e"
                                                                                           }
                                                                          },
                                                  "tab_cod":  {
                                                                  "type":  "collapsible_tab",
                                                                  "settings":  {
-                                                                                  "heading":  "ðŸ“¦ Pago contra entrega",
-                                                                                  "content":  "\u003cp\u003ePagas en efectivo al recibir en la puerta de tu casa. Sin riesgos ni tarjetas de crÃ©dito.\u003c/p\u003e",
+                                                                                  "heading":  "Ã°Å¸â€œÂ¦ Pago contra entrega",
+                                                                                  "content":  "\u003cp\u003ePagas en efectivo al recibir en la puerta de tu casa. Sin riesgos ni tarjetas de crÃƒÂ©dito.\u003c/p\u003e",
                                                                                   "icon":  "none"
                                                                               }
                                                              },
                                                  "tab_shipping":  {
                                                                       "type":  "collapsible_tab",
                                                                       "settings":  {
-                                                                                       "heading":  "ðŸšš InformaciÃ³n de EnvÃ­o",
-                                                                                       "content":  "\u003cp\u003eEnvÃ­o seguro a todo Ecuador de 2 a 4 dÃ­as hÃ¡biles mediante transportadoras certificadas.\u003c/p\u003e",
+                                                                                       "heading":  "Ã°Å¸Å¡Å¡ InformaciÃƒÂ³n de EnvÃƒÂ­o",
+                                                                                       "content":  "\u003cp\u003eEnvÃƒÂ­o seguro a todo Ecuador de 2 a 4 dÃƒÂ­as hÃƒÂ¡biles mediante transportadoras certificadas.\u003c/p\u003e",
                                                                                        "icon":  "none"
                                                                                    }
                                                                   },
                                                  "tab_warranty":  {
                                                                       "type":  "collapsible_tab",
                                                                       "settings":  {
-                                                                                       "heading":  "ðŸ›¡ï¸ Â¿Tengo GarantÃ­a?",
-                                                                                       "content":  "\u003cp\u003eGarantÃ­a de 30 dÃ­as por defectos de fÃ¡brica. Tu compra estÃ¡ 100% protegida.\u003c/p\u003e",
+                                                                                       "heading":  "Ã°Å¸â€ºÂ¡Ã¯Â¸Â Ã‚Â¿Tengo GarantÃƒÂ­a?",
+                                                                                       "content":  "\u003cp\u003eGarantÃƒÂ­a de 30 dÃƒÂ­as por defectos de fÃƒÂ¡brica. Tu compra estÃƒÂ¡ 100% protegida.\u003c/p\u003e",
                                                                                        "icon":  "none"
                                                                                    }
                                                                   },
@@ -111,7 +111,7 @@
                      "related-products":  {
                                               "type":  "related-products",
                                               "settings":  {
-                                                               "heading":  "TambiÃ©n te podrÃ­a gustar",
+                                                               "heading":  "TambiÃƒÂ©n te podrÃƒÂ­a gustar",
                                                                "heading_size":  "h2",
                                                                "products_to_show":  4,
                                                                "columns_desktop":  4,
@@ -125,10 +125,42 @@
                                                                "padding_top":  36,
                                                                "padding_bottom":  28
                                                            }
-                                          }
+                                          },
+                     "luxen_reviews":  {
+                                           "blocks":  {
+                                                          "review-1":  {
+                                                                           "settings":  {
+
+                                                                                        },
+                                                                           "type":  "review"
+                                                                       },
+                                                          "review-3":  {
+                                                                           "settings":  {
+
+                                                                                        },
+                                                                           "type":  "review"
+                                                                       },
+                                                          "review-2":  {
+                                                                           "settings":  {
+
+                                                                                        },
+                                                                           "type":  "review"
+                                                                       }
+                                                      },
+                                           "block_order":  [
+                                                               "review-1",
+                                                               "review-2",
+                                                               "review-3"
+                                                           ],
+                                           "type":  "luxen-product-reviews",
+                                           "settings":  {
+
+                                                        }
+                                       }
                  },
     "order":  [
                   "main",
+                  "luxen_reviews",
                   "related-products"
               ]
 }

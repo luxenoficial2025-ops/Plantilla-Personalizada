@@ -1,0 +1,207 @@
+<style>
+  .luxen-reviews-wrapper {
+    background-color: #FFFFFF;
+    padding: 40px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: inherit;
+    color: #111111;
+  }
+  .luxen-reviews-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .luxen-reviews-summary {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+  }
+  .luxen-reviews-summary span {
+    color: #FACC15;
+    letter-spacing: 2px;
+  }
+  .luxen-reviews-write-btn {
+    background-color: transparent;
+    border: 2px solid #111111;
+    color: #111111;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .luxen-reviews-write-btn:hover {
+    background-color: #111111;
+    color: #FFFFFF;
+  }
+  .luxen-reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 600px) {
+    .luxen-reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .luxen-reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 1200px) {
+    .luxen-reviews-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .luxen-review-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  }
+  .luxen-review-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #F9F9F9;
+    position: relative;
+    overflow: hidden;
+  }
+  .luxen-review-img-wrapper img, .luxen-review-img-wrapper svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .luxen-review-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .luxen-review-stars {
+    color: #FACC15;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .luxen-review-author {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 2px 0;
+  }
+  .luxen-review-date {
+    font-size: 0.8rem;
+    color: #888888;
+    margin: 0 0 10px 0;
+  }
+  .luxen-review-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0;
+  }
+</style>
+
+<div class="luxen-reviews-wrapper">
+  <div class="luxen-reviews-header">
+    <h2 class="luxen-reviews-summary">5.0 <span>★★★★★</span> Basado en reseñas</h2>
+    <button type="button" class="luxen-reviews-write-btn">Escribir un comentario</button>
+  </div>
+  
+  <div class="luxen-reviews-grid">
+    {% for block in section.blocks %}
+      <div class="luxen-review-card" {{ block.shopify_attributes }}>
+        <div class="luxen-review-img-wrapper">
+          {% if block.settings.photo != blank %}
+            <img src="{{ block.settings.photo | img_url: '400x400', crop: 'center' }}" alt="Reseña de {{ block.settings.author | escape }}" loading="lazy">
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+        <div class="luxen-review-content">
+          <div class="luxen-review-stars">★★★★★</div>
+          <h3 class="luxen-review-author">{{ block.settings.author }}</h3>
+          <p class="luxen-review-date">{{ block.settings.date }}</p>
+          <p class="luxen-review-text">{{ block.settings.comment }}</p>
+        </div>
+      </div>
+    {% endfor %}
+    
+    {% if section.blocks.size == 0 %}
+      {% for i in (1..3) %}
+        <div class="luxen-review-card">
+          <div class="luxen-review-img-wrapper">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="luxen-review-content">
+            <div class="luxen-review-stars">★★★★★</div>
+            <h3 class="luxen-review-author">María G.</h3>
+            <p class="luxen-review-date">Hace 2 días</p>
+            <p class="luxen-review-text">Excelente producto, llegó súper rápido a mi domicilio y bien empacado.</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Luxen Testimonios",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Testimonio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Foto del cliente"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Nombre del cliente",
+          "default": "María G."
+        },
+        {
+          "type": "textarea",
+          "id": "comment",
+          "label": "Comentario",
+          "default": "Excelente producto, llegó súper rápido a mi domicilio y bien empacado."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Fecha",
+          "default": "Hace 2 días"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxen Testimonios",
+      "category": "Product",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" }
+      ]
+    }
+  ]
+}
+{% endschema %}
