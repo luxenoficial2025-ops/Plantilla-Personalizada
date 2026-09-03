@@ -9,14 +9,10 @@
  */
 {
   "order": [
-    "luxen_promociones",
-    "image_banner_Jicg4C"
+    "image_banner_Jicg4C",
+    "luxen_promociones"
   ],
   "sections": {
-    "luxen_promociones": {
-      "type": "luxen-promociones",
-      "settings": {}
-    },
     "image_banner_Jicg4C": {
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
@@ -33,6 +29,10 @@
         "mobile_content_alignment": "center",
         "show_text_below": true
       }
+    },
+    "luxen_promociones": {
+      "type": "luxen-promociones",
+      "settings": {}
     }
   }
 }
