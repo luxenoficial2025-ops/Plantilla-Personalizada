@@ -1,0 +1,81 @@
+﻿/* Luxen Custom Styles */
+
+/* Header Search - Visible on Desktop */
+@media screen and (min-width: 990px) {
+  .header__search details {
+    display: block !important;
+  }
+  .header__search summary {
+    display: none !important;
+  }
+  .header__search .search-modal {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    z-index: 1;
+    padding: 0;
+    width: 100%;
+    min-width: 300px;
+  }
+  .header__search .modal-overlay {
+    display: none;
+  }
+  .header__search .search-modal__content {
+    background: transparent;
+    padding: 0;
+    width: 100%;
+  }
+  .header__search .search-modal__form {
+    margin: 0;
+    max-width: 100%;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__search {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 2rem;
+  }
+}
+
+/* Typography and Button adjustments */
+.button, .quick-add__submit {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: 6px !important;
+}
+
+/* Banner Mobile adjustments */
+@media screen and (max-width: 749px) {
+  .banner__content {
+    padding: 4rem 2rem !important;
+    min-height: auto;
+    height: auto;
+  }
+  .banner__heading {
+    font-size: 2.5rem !important;
+  }
+  .banner__text {
+    font-size: 1.4rem !important;
+    line-height: 1.5;
+  }
+}
+
+/* Featured collection card text alignment */
+.card__content {
+  text-align: center;
+}
+.card-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
