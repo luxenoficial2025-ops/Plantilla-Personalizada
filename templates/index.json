@@ -1,88 +1,13 @@
 {
+    "order":  [
+                  "luxen_promociones"
+              ],
     "sections":  {
-                     "image_banner":  {
-                                          "type":  "image-banner",
-                                          "settings":  {
-                                                           "image":  "shopify://shop_images/BANNER.jpg",
-                                                           "image_overlay_opacity":  40,
-                                                           "image_height":  "large",
-                                                           "image_behavior":  "none",
-                                                           "desktop_content_position":  "bottom-center",
-                                                           "desktop_content_alignment":  "center",
-                                                           "show_text_box":  false,
-                                                           "color_scheme":  "scheme-3",
-                                                           "stack_images_on_mobile":  false,
-                                                           "mobile_content_alignment":  "center",
-                                                           "show_text_below":  false
-                                                       },
-                                          "blocks":  {
-                                                         "heading":  {
-                                                                         "settings":  {
-                                                                                          "heading_size":  "h1",
-                                                                                          "heading":  "Tu Bienestar Natural, Comienza AquÃ­"
-                                                                                      },
-                                                                         "type":  "heading"
-                                                                     },
-                                                         "text":  {
-                                                                      "settings":  {
-                                                                                       "text":  "Descubre nuestra exclusiva selecciÃ³n de suplementos premium, tinturas orgÃ¡nicas y rituales para tu salud integral, cultivados con cuidado y diseÃ±ados para tu vida.",
-                                                                                       "text_style":  "body"
-                                                                                   },
-                                                                      "type":  "text"
-                                                                  },
-                                                         "button":  {
-                                                                        "settings":  {
-                                                                                         "button_style_secondary_1":  false,
-                                                                                         "button_label_1":  "EXPLORAR PRODUCTOS",
-                                                                                         "button_link_1":  "shopify://collections/all"
-                                                                                     },
-                                                                        "type":  "buttons"
-                                                                    }
-                                                     },
-                                          "block_order":  [
-                                                              "heading",
-                                                              "text",
-                                                              "button"
-                                                          ]
-                                      },
-                     "featured_collection":  {
-                                                 "type":  "featured-collection",
-                                                 "settings":  {
-                                                                  "collection":  "all",
-                                                                  "products_to_show":  8,
-                                                                  "title":  "ðŸŒ¿ Productos MÃ¡s Vendidos ðŸŒ¿",
-                                                                  "heading_size":  "h2",
-                                                                  "description":  "",
-                                                                  "show_description":  false,
-                                                                  "description_style":  "body",
-                                                                  "columns_desktop":  4,
-                                                                  "enable_desktop_slider":  false,
-                                                                  "full_width":  false,
-                                                                  "show_view_all":  true,
-                                                                  "view_all_style":  "solid",
-                                                                  "color_scheme":  "scheme-1",
-                                                                  "image_ratio":  "adapt",
-                                                                  "image_shape":  "default",
-                                                                  "show_secondary_image":  true,
-                                                                  "show_vendor":  false,
-                                                                  "show_rating":  true,
-                                                                  "quick_add":  "standard",
-                                                                  "columns_mobile":  "2",
-                                                                  "swipe_on_mobile":  true,
-                                                                  "padding_top":  44,
-                                                                  "padding_bottom":  36
-                                                              }
-                                             },
                      "luxen_promociones":  {
                                                "settings":  {
-                                                                "collection":  ""
+
                                                             },
                                                "type":  "luxen-promociones"
                                            }
-                 },
-    "order":  [
-                  "luxen_promociones",
-                  "image_banner",
-                  "featured_collection"
-              ]
+                 }
 }

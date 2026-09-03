@@ -3718,3 +3718,19 @@ details-disclosure > details {
 }
 
 
+
+/* Infinite Marquee for Announcement Bar */
+.announcement-bar {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+.announcement-bar__message {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+  padding-left: 100%;
+}
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
