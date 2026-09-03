@@ -3764,3 +3764,80 @@ details-disclosure > details {
   0% { transform: translate(0, 0); }
   100% { transform: translate(-100%, 0); }
 }
+
+
+/* FLOATING PILL HEADER REDESIGN */
+/* Announcement Bar override */
+.announcement-bar {
+  background-color: #0B0B0B !important;
+  color: #FFFFFF !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  padding: 6px 0 !important;
+}
+.announcement-bar__message {
+  color: #FFFFFF !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  animation: none !important; /* Disabling previous marquee to keep it compact and centered as requested */
+  padding: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Floating Capsule Header */
+#shopify-section-header {
+  position: sticky;
+  top: 10px;
+  z-index: 999;
+}
+.header-wrapper {
+  width: 95% !important;
+  max-width: 1300px !important;
+  margin: 10px auto !important;
+  background-color: #FFFFFF !important;
+  border-radius: 40px !important;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08) !important;
+  border: none !important;
+}
+.header-wrapper--border-bottom {
+  border-bottom: none !important;
+}
+.header {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+@media (max-width: 989px) {
+  .header-wrapper {
+    width: calc(100% - 20px) !important;
+    margin: 10px 10px !important;
+    border-radius: 25px !important;
+  }
+  .header {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* Header Elements typography */
+.header__menu-item {
+  font-family: inherit !important;
+  text-decoration: none !important;
+}
+.header__menu-item span {
+  text-decoration: none !important;
+}
+.header__menu-item:hover span {
+  text-decoration: none !important;
+  opacity: 0.7;
+}
+
+.header__heading-link {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 800 !important;
+}
