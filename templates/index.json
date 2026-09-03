@@ -1,4 +1,4 @@
-{
+ï»¿{
     "sections":  {
                      "image_banner":  {
                                           "type":  "image-banner",
@@ -19,13 +19,13 @@
                                                          "heading":  {
                                                                          "settings":  {
                                                                                           "heading_size":  "h1",
-                                                                                          "heading":  "Tu Bienestar, Comienza Aquí"
+                                                                                          "heading":  "Tu Bienestar Natural, Comienza AquÃ­"
                                                                                       },
                                                                          "type":  "heading"
                                                                      },
                                                          "text":  {
                                                                       "settings":  {
-                                                                                       "text":  "Descubre nuestra exclusiva selección de suplementos premium, tinturas orgánicas y rituales para tu salud integral, cultivados con cuidado y diseñados para tu vida.",
+                                                                                       "text":  "Descubre nuestra exclusiva selecciÃ³n de suplementos premium, tinturas orgÃ¡nicas y rituales para tu salud integral, cultivados con cuidado y diseÃ±ados para tu vida.",
                                                                                        "text_style":  "body"
                                                                                    },
                                                                       "type":  "text"
@@ -50,7 +50,7 @@
                                                  "settings":  {
                                                                   "collection":  "all",
                                                                   "products_to_show":  8,
-                                                                  "title":  "?? Productos Más Vendidos ??",
+                                                                  "title":  "ðŸŒ¿ Productos MÃ¡s Vendidos ðŸŒ¿",
                                                                   "heading_size":  "h2",
                                                                   "description":  "",
                                                                   "show_description":  false,
