@@ -52,10 +52,36 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "announcement_bar_ni3hHb": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_t8eFF8": {
+          "type": "announcement",
+          "settings": {
+            "text": "Te damos la bienvenida a nuestra tienda",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_t8eFF8"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "announcement_bar_ni3hHb"
   ]
 }

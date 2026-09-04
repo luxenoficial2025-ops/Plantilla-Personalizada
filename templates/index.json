@@ -10,8 +10,7 @@
 {
   "order": [
     "image_banner_Jicg4C",
-    "luxen_promociones",
-    "multirow_3RmJnc"
+    "luxen_promociones"
   ],
   "sections": {
     "image_banner_Jicg4C": {
@@ -34,62 +33,6 @@
     "luxen_promociones": {
       "type": "luxen-promociones",
       "settings": {}
-    },
-    "multirow_3RmJnc": {
-      "type": "multirow",
-      "blocks": {
-        "row_rxCigy": {
-          "type": "row",
-          "settings": {
-            "caption": "Leyenda",
-            "heading": "Fila",
-            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
-            "button_label": "Etiqueta de botón",
-            "button_link": ""
-          }
-        },
-        "row_iqzNnX": {
-          "type": "row",
-          "settings": {
-            "caption": "Leyenda",
-            "heading": "Fila",
-            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
-            "button_label": "Etiqueta de botón",
-            "button_link": ""
-          }
-        },
-        "row_KYwhV9": {
-          "type": "row",
-          "settings": {
-            "caption": "Leyenda",
-            "heading": "Fila",
-            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
-            "button_label": "Etiqueta de botón",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_rxCigy",
-        "row_iqzNnX",
-        "row_KYwhV9"
-      ],
-      "name": "t:sections.multirow.presets.name",
-      "settings": {
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "image_layout": "alternate-left",
-        "heading_size": "h1",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   }
 }
