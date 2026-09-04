@@ -11,7 +11,7 @@
   "order": [
     "image_banner_Jicg4C",
     "luxen_promociones",
-    "collage_PpUU9n"
+    "multirow_3RmJnc"
   ],
   "sections": {
     "image_banner_Jicg4C": {
@@ -35,40 +35,58 @@
       "type": "luxen-promociones",
       "settings": {}
     },
-    "collage_PpUU9n": {
-      "type": "collage",
+    "multirow_3RmJnc": {
+      "type": "multirow",
       "blocks": {
-        "image_Ph9hMt": {
-          "type": "image",
-          "settings": {}
-        },
-        "product_RceMM3": {
-          "type": "product",
+        "row_rxCigy": {
+          "type": "row",
           "settings": {
-            "product": "",
-            "second_image": false
+            "caption": "Leyenda",
+            "heading": "Fila",
+            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
+            "button_label": "Etiqueta de botón",
+            "button_link": ""
           }
         },
-        "collection_4mPrm7": {
-          "type": "collection",
+        "row_iqzNnX": {
+          "type": "row",
           "settings": {
-            "collection": ""
+            "caption": "Leyenda",
+            "heading": "Fila",
+            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
+            "button_label": "Etiqueta de botón",
+            "button_link": ""
+          }
+        },
+        "row_KYwhV9": {
+          "type": "row",
+          "settings": {
+            "caption": "Leyenda",
+            "heading": "Fila",
+            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
+            "button_label": "Etiqueta de botón",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "image_Ph9hMt",
-        "product_RceMM3",
-        "collection_4mPrm7"
+        "row_rxCigy",
+        "row_iqzNnX",
+        "row_KYwhV9"
       ],
-      "name": "t:sections.collage.presets.name",
+      "name": "t:sections.multirow.presets.name",
       "settings": {
-        "heading": "Collage multimedia",
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
         "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
