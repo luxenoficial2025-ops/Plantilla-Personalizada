@@ -108,7 +108,7 @@
 </style>
 
 <!-- Botón Disparador -->
-<button type="button" class="cod-trigger-btn" id="trigger-cod-modal">
+<button type="button" class="cod-trigger-btn btn-cod-trigger" id="trigger-cod-modal" onclick="window.abrirLuxenModal(event)">
   <span class="cod-trigger-title">Pedir ahora y pagar al recibir</span>
   <span class="cod-trigger-sub">🚚 ¡Envío Gratis a todo Ecuador!</span>
 </button>
@@ -207,41 +207,58 @@
 </div>
 
 <script>
+// Exponer globalmente la funcion
+window.abrirLuxenModal = function(e) {
+  if (e) e.preventDefault();
+  const modal = document.getElementById('luxen-cod-modal-overlay');
+  if (modal) {
+    modal.style.setProperty('display', 'flex', 'important');
+    document.body.style.overflow = 'hidden';
+  } else {
+    console.error("Error: #luxen-cod-modal-overlay no se encuentra en el DOM.");
+  }
+};
+
+window.cerrarLuxenModal = function(e) {
+  if (e) e.preventDefault();
+  const modal = document.getElementById('luxen-cod-modal-overlay');
+  if (modal) {
+    modal.style.setProperty('display', 'none', 'important');
+    document.body.style.overflow = '';
+  }
+};
+
+// Event Delegation global
+document.addEventListener('click', function(e) {
+  const target = e.target.closest('#trigger-cod-modal, .btn-cod-trigger');
+  if (target) {
+    window.abrirLuxenModal(e);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-  const codBtn = document.getElementById('trigger-cod-modal');
   const codModal = document.getElementById('luxen-cod-modal-overlay');
   const closeBtn = document.getElementById('close-cod-modal');
-  const modalContent = document.getElementById('cod-modal-content');
   
-  if (codBtn && codModal) {
-    // Abrir modal
-    codBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      codModal.classList.add('is-active');
-      document.body.style.overflow = 'hidden'; 
-    });
-
+  if (codModal) {
     // Cerrar modal - botón X
     if(closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        codModal.classList.remove('is-active');
-        document.body.style.overflow = '';
+      closeBtn.addEventListener('click', (e) => {
+        window.cerrarLuxenModal(e);
       });
     }
 
     // Cerrar modal - clic fuera
     codModal.addEventListener('click', (e) => {
       if(e.target === codModal) {
-        codModal.classList.remove('is-active');
-        document.body.style.overflow = '';
+        window.cerrarLuxenModal(e);
       }
     });
 
     // Cerrar modal - tecla ESC
     document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && codModal.classList.contains('is-active')) {
-        codModal.classList.remove('is-active');
-        document.body.style.overflow = '';
+      if(e.key === 'Escape') {
+        window.cerrarLuxenModal(e);
       }
     });
   }
@@ -297,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if(ref) msg += 📝 *Ref:* %0A;
       msg += %0A✅ ¡Por favor confirmen mi despacho!;
       
-      window.location.href = https://wa.me/593969280600?text=;
+      window.location.href = https://wa.me/593969280600?text= + encodeURIComponent(msg);
     });
   }
 });
