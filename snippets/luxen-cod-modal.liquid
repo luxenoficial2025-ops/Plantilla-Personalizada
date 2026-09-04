@@ -1,4 +1,4 @@
-<style>/* Modal COD */
+<style>
 #luxen-cod-modal-overlay {
   display: none;
   position: fixed;
@@ -12,7 +12,6 @@
 #luxen-cod-modal-overlay.is-active {
   display: flex !important;
 }
-
 .cod-modal-content {
   background: #fff; width: 100%; max-width: 500px; margin: auto;
   border-radius: 12px; position: relative;
@@ -244,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       document.getElementById('cod-subtotal').innerText = currentTotalStr;
       document.getElementById('cod-total').innerText = currentTotalStr;
-      document.getElementById('cod-submit-btn').innerText = ✔ COMPLETA TU COMPRA -  | Paga al recibir;
+      document.getElementById('cod-submit-btn').innerText = '✔ COMPLETA TU COMPRA - ' + currentTotalStr + ' | Paga al recibir';
     });
   });
 
@@ -266,25 +265,19 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const productTitle = "{{ product.title | escape }}";
       
-      let msg = Hola LUXEN, he completado mi formulario de Contra Entrega:%0A%0A;
-      msg += 🛍️ *Producto:* %0A;
-      msg += 📦 *Cantidad:*  Unidad(es)%0A;
-      msg += 💵 *Total a pagar:*  (Envío Gratis)%0A%0A;
-      msg += 👤 *Cliente:*  %0A;
-      msg += 📱 *Celular:* %0A;
-      msg += 📍 *Provincia:* %0A;
-      msg += 🏠 *Dirección:* %0A;
-      if(ref) msg += 📝 *Ref:* %0A;
-      msg += %0A✅ ¡Por favor confirmen mi despacho!;
+      let msg = "Hola LUXEN, he completado mi formulario de Contra Entrega:\n\n";
+      msg += "🛍️ *Producto:* " + productTitle + "\n";
+      msg += "📦 *Cantidad:* " + currentQty + " Unidad(es)\n";
+      msg += "💵 *Total a pagar:* " + currentTotalStr + " (Envío Gratis)\n\n";
+      msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
+      msg += "📱 *Celular:* " + cel + "\n";
+      msg += "📍 *Provincia:* " + prov + "\n";
+      msg += "🏠 *Dirección:* " + dir + "\n";
+      if(ref) msg += "📝 *Ref:* " + ref + "\n";
+      msg += "\n✅ ¡Por favor confirmen mi despacho!";
       
-      window.location.href = https://wa.me/593969280600?text= + encodeURIComponent(msg);
+      window.location.href = "https://wa.me/593969280600?text=" + encodeURIComponent(msg);
     });
   }
 });
-
-// Forzar habilitación del botón de compra
-setInterval(()=>{
-  let btn = document.getElementById('trigger-cod-modal');
-  if(btn) { btn.removeAttribute('disabled'); btn.classList.remove('disabled'); }
-}, 300);
 </script>
