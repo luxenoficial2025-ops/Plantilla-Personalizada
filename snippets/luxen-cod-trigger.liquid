@@ -1,0 +1,33 @@
+<style>
+.product-form__submit, .shopify-payment-button { display: none !important; }
+.product-form__error-message-wrapper, .form__message--error { display: none !important; }
+
+.btn-cod-trigger {
+  width: 100%;
+  background: linear-gradient(135deg, #FF8C00, #FF6B00);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+  animation: codPulse 2s infinite;
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+.btn-cod-trigger:active { transform: scale(0.98); }
+.cod-trigger-title { font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; }
+.cod-trigger-sub { font-size: 0.9rem; font-weight: 500; margin-top: 4px; opacity: 0.9; }
+@keyframes codPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,107,0,0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255,107,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); }
+}
+</style>
+<button type="button" class="btn-cod-trigger" id="trigger-cod-modal" onclick="window.abrirLuxenModal(event)">
+  <span class="cod-trigger-title">Pedir ahora y pagar al recibir</span>
+  <span class="cod-trigger-sub">🚚 ¡Envío Gratis a todo Ecuador!</span>
+</button>

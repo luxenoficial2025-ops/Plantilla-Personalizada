@@ -38,7 +38,7 @@
                                                  "custom_cod":  {
                                                                     "type":  "custom_liquid",
                                                                     "settings":  {
-                                                                                     "custom_liquid":  "{% render \u0027luxen-cod-modal\u0027 %}"
+                                                                                     "custom_liquid":  "{% render \u0027luxen-cod-trigger\u0027 %}"
                                                                                  }
                                                                 },
                                                  "custom_social_proof":  {
