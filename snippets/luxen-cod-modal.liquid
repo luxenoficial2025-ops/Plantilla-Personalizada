@@ -30,21 +30,27 @@
 }
 
 /* Modal COD */
-.cod-modal-overlay {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.7); z-index: 999999;
-  display: flex; justify-content: center; align-items: flex-start;
-  opacity: 0; visibility: hidden; transition: all 0.3s;
-  overflow-y: auto; padding: 20px 10px;
+#luxen-cod-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
-.cod-modal-overlay.active { opacity: 1; visibility: visible; }
+#luxen-cod-modal-overlay.is-active {
+  display: flex !important;
+}
+
 .cod-modal-content {
   background: #fff; width: 100%; max-width: 500px; margin: auto;
   border-radius: 12px; position: relative;
-  transform: translateY(-20px); transition: all 0.3s;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
 }
-.cod-modal-overlay.active .cod-modal-content { transform: translateY(0); }
 .cod-modal-header {
   background: #f8f8f8; padding: 15px 20px; border-radius: 12px 12px 0 0;
   display: flex; justify-content: space-between; align-items: center;
@@ -102,23 +108,23 @@
 </style>
 
 <!-- Botón Disparador -->
-<button type="button" class="cod-trigger-btn" onclick="openCodModal()">
+<button type="button" class="cod-trigger-btn" id="trigger-cod-modal">
   <span class="cod-trigger-title">Pedir ahora y pagar al recibir</span>
   <span class="cod-trigger-sub">🚚 ¡Envío Gratis a todo Ecuador!</span>
 </button>
 
 <!-- Modal -->
-<div class="cod-modal-overlay" id="codModalOverlay" onclick="closeCodModal(event)">
-  <div class="cod-modal-content" onclick="event.stopPropagation()">
+<div id="luxen-cod-modal-overlay">
+  <div class="cod-modal-content" id="cod-modal-content">
     <div class="cod-modal-header">
       <h2>PAGO CONTRA ENTREGA</h2>
-      <div class="cod-modal-close" onclick="closeCodModal()">&times;</div>
+      <div class="cod-modal-close" id="close-cod-modal">&times;</div>
     </div>
     
     <div class="cod-modal-body">
       <!-- Ofertas / Combos -->
       <div id="cod-offers-container">
-        <label class="cod-offer-card active" onclick="updateCodTotal(1, {{ product.price }}, '{{ product.price | money }}')">
+        <label class="cod-offer-card active" data-qty="1" data-price="{{ product.price | money }}" data-raw-price="{{ product.price }}">
           <input type="radio" name="cod-combo" value="1" checked>
           <div class="cod-offer-details">
             <div class="cod-offer-title">1 UNIDAD <span class="cod-free-shipping">ENVÍO GRATIS ✓</span></div>
@@ -126,7 +132,7 @@
           </div>
         </label>
         
-        <label class="cod-offer-card" onclick="updateCodTotal(2, {{ product.price | times: 1.8 }}, '{{ product.price | times: 1.8 | money }}')">
+        <label class="cod-offer-card" data-qty="2" data-price="{{ product.price | times: 1.8 | money }}" data-raw-price="{{ product.price | times: 1.8 }}">
           <span class="cod-offer-badge">AHORRA </span>
           <input type="radio" name="cod-combo" value="2">
           <div class="cod-offer-details">
@@ -135,7 +141,7 @@
           </div>
         </label>
         
-        <label class="cod-offer-card" onclick="updateCodTotal(3, {{ product.price | times: 2.5 }}, '{{ product.price | times: 2.5 | money }}')">
+        <label class="cod-offer-card" data-qty="3" data-price="{{ product.price | times: 2.5 | money }}" data-raw-price="{{ product.price | times: 2.5 }}">
           <span class="cod-offer-badge">AHORRA </span>
           <input type="radio" name="cod-combo" value="3">
           <div class="cod-offer-details">
@@ -189,7 +195,7 @@
         <input type="text" id="cod-ref" placeholder="Referencias adicionales (Opcional)">
       </div>
 
-      <button type="button" class="cod-submit-btn" id="cod-submit-btn" onclick="submitModalOrder()">
+      <button type="button" class="cod-submit-btn" id="cod-submit-btn">
         ✔ COMPLETA TU COMPRA - {{ product.price | money }} | Paga al recibir
       </button>
 
@@ -201,73 +207,104 @@
 </div>
 
 <script>
-  let currentTotalStr = "{{ product.price | money }}";
-  let currentQty = 1;
+document.addEventListener('DOMContentLoaded', () => {
+  const codBtn = document.getElementById('trigger-cod-modal');
+  const codModal = document.getElementById('luxen-cod-modal-overlay');
+  const closeBtn = document.getElementById('close-cod-modal');
+  const modalContent = document.getElementById('cod-modal-content');
+  
+  if (codBtn && codModal) {
+    // Abrir modal
+    codBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      codModal.classList.add('is-active');
+      document.body.style.overflow = 'hidden'; 
+    });
 
-  function openCodModal() {
-    document.getElementById('codModalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
+    // Cerrar modal - botón X
+    if(closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        codModal.classList.remove('is-active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Cerrar modal - clic fuera
+    codModal.addEventListener('click', (e) => {
+      if(e.target === codModal) {
+        codModal.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Cerrar modal - tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && codModal.classList.contains('is-active')) {
+        codModal.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+    });
   }
-  
-  function closeCodModal(e) {
-    if(e && e.target !== document.getElementById('codModalOverlay')) return;
-    document.getElementById('codModalOverlay').classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-  
-  document.addEventListener('keydown', function(e) {
-    if(e.key === 'Escape') closeCodModal();
+
+  // Lógica de ofertas y actualización de totales
+  const offerCards = document.querySelectorAll('.cod-offer-card');
+  let currentQty = 1;
+  let currentTotalStr = '{{ product.price | money }}';
+
+  offerCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      offerCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      
+      const radio = card.querySelector('input[type="radio"]');
+      if(radio) radio.checked = true;
+
+      currentQty = card.getAttribute('data-qty');
+      currentTotalStr = card.getAttribute('data-price');
+      
+      document.getElementById('cod-subtotal').innerText = currentTotalStr;
+      document.getElementById('cod-total').innerText = currentTotalStr;
+      document.getElementById('cod-submit-btn').innerText = ✔ COMPLETA TU COMPRA -  | Paga al recibir;
+    });
   });
 
-  function updateCodTotal(qty, rawPrice, formattedPrice) {
-    currentQty = qty;
-    currentTotalStr = formattedPrice;
-    
-    // Update styling
-    document.querySelectorAll('.cod-offer-card').forEach(card => card.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    
-    // Update values
-    document.getElementById('cod-subtotal').innerText = formattedPrice;
-    document.getElementById('cod-total').innerText = formattedPrice;
-    
-    // Update button text
-    document.getElementById('cod-submit-btn').innerText = ✔ COMPLETA TU COMPRA -  | Paga al recibir;
+  // Envío del pedido a WhatsApp
+  const submitBtn = document.getElementById('cod-submit-btn');
+  if(submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      const fname = document.getElementById('cod-fname').value.trim();
+      const lname = document.getElementById('cod-lname').value.trim();
+      const cel = document.getElementById('cod-cel').value.trim();
+      const prov = document.getElementById('cod-prov').value;
+      const dir = document.getElementById('cod-dir').value.trim();
+      const ref = document.getElementById('cod-ref').value.trim();
+      
+      if(!fname || !lname || !cel || !prov || !dir) {
+        alert("Por favor completa todos los campos requeridos para coordinar tu envío.");
+        return;
+      }
+      
+      const productTitle = "{{ product.title | escape }}";
+      
+      let msg = Hola LUXEN, he completado mi formulario de Contra Entrega:%0A%0A;
+      msg += 🛍️ *Producto:* %0A;
+      msg += 📦 *Cantidad:*  Unidad(es)%0A;
+      msg += 💵 *Total a pagar:*  (Envío Gratis)%0A%0A;
+      msg += 👤 *Cliente:*  %0A;
+      msg += 📱 *Celular:* %0A;
+      msg += 📍 *Provincia:* %0A;
+      msg += 🏠 *Dirección:* %0A;
+      if(ref) msg += 📝 *Ref:* %0A;
+      msg += %0A✅ ¡Por favor confirmen mi despacho!;
+      
+      window.location.href = https://wa.me/593969280600?text=;
+    });
   }
+});
 
-  function submitModalOrder() {
-    const fname = document.getElementById('cod-fname').value.trim();
-    const lname = document.getElementById('cod-lname').value.trim();
-    const cel = document.getElementById('cod-cel').value.trim();
-    const prov = document.getElementById('cod-prov').value;
-    const dir = document.getElementById('cod-dir').value.trim();
-    const ref = document.getElementById('cod-ref').value.trim();
-    
-    if(!fname || !lname || !cel || !prov || !dir) {
-      alert("Por favor completa todos los campos requeridos para coordinar tu envío.");
-      return;
-    }
-    
-    const productTitle = "{{ product.title | escape }}";
-    
-    let msg = Hola LUXEN, he completado mi formulario de Contra Entrega:%0A%0A;
-    msg += 🛍️ *Producto:* %0A;
-    msg += 📦 *Cantidad:*  Unidad(es)%0A;
-    msg += 💵 *Total a pagar:*  (Envío Gratis)%0A%0A;
-    msg += 👤 *Cliente:*  %0A;
-    msg += 📱 *Celular:* %0A;
-    msg += 📍 *Provincia:* %0A;
-    msg += 🏠 *Dirección:* %0A;
-    if(ref) msg += 📝 *Ref:* %0A;
-    msg += %0A✅ ¡Por favor confirmen mi despacho!;
-    
-    const whatsappUrl = https://wa.me/593969280600?text=;
-    window.location.href = whatsappUrl;
-  }
-  
-  // Continuously ensure native buttons are disabled/hidden and trigger stays enabled
-  setInterval(()=>{
-    let btn = document.querySelector('.cod-trigger-btn');
-    if(btn) { btn.removeAttribute('disabled'); btn.classList.remove('disabled'); }
-  }, 300);
+// Forzar habilitación del botón de compra
+setInterval(()=>{
+  let btn = document.getElementById('trigger-cod-modal');
+  if(btn) { btn.removeAttribute('disabled'); btn.classList.remove('disabled'); }
+}, 300);
 </script>
