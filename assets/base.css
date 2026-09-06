@@ -3883,3 +3883,40 @@ shop-user-account-modal {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+/* Ocultar sección de login en carrito vacío */
+.cart__login-title,
+.cart__login-paragraph,
+.cart__warnings .cart__login-title,
+.cart__warnings .cart__login-paragraph {
+  display: none !important;
+}
+
+/* Centrar y estilizar estado de carrito vacío */
+.cart__warnings {
+  padding: 60px 20px !important;
+  text-align: center !important;
+}
+
+.cart__empty-text {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin-bottom: 25px !important;
+}
+
+.cart__warnings .button {
+  background-color: #C5A059 !important;
+  color: #FFFFFF !important;
+  border-radius: 6px !important;
+  padding: 12px 30px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.cart__warnings .button:hover {
+  opacity: 0.9 !important;
+}
