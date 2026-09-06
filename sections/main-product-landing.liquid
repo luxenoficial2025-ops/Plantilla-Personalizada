@@ -1,0 +1,334 @@
+<style>
+.landing-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #111111;
+  color: #FFFFFF;
+  font-family: inherit;
+  padding-bottom: 90px;
+}
+.landing-urgency {
+  background: #0B0B0B;
+  color: #D4AF37;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 8px 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.landing-hero { padding: 15px; }
+.landing-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  color: #D4AF37;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.landing-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 15px 0;
+  color: #FFF;
+}
+.landing-gallery-main img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.landing-gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+.landing-gallery-thumbs img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.landing-gallery-thumbs img.active {
+  border-color: #D4AF37;
+}
+.landing-price-block {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.landing-price-compare {
+  text-decoration: line-through;
+  color: #A0A0A0;
+  font-size: 1rem;
+}
+.landing-price-actual {
+  color: #D4AF37;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+.landing-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FF8C00, #FF6B00);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+  animation: codPulse 2s infinite;
+  transition: transform 0.2s;
+}
+.landing-btn:active { transform: scale(0.98); }
+.landing-btn-title { font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; }
+.landing-btn-sub { font-size: 0.85rem; font-weight: 500; margin-top: 4px; opacity: 0.9; }
+
+.landing-section { padding: 0 15px 25px 15px; }
+.landing-pain-solution {
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  background: #1A1A1A;
+}
+.lps-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+.lps-row.pain { color: #A0A0A0; }
+.lps-row.solution { color: #FFF; font-weight: 600; }
+.lps-icon { font-size: 1.2rem; line-height: 1; }
+
+.landing-infographic {
+  background: #0B0B0B;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #262626;
+  margin-bottom: 25px;
+}
+.landing-infographic h3 { color: #D4AF37; margin: 0 0 10px 0; font-size: 1.2rem; }
+.landing-info-img { width: 100%; border-radius: 8px; background: #262626; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color:#666; font-size:0.9rem;}
+
+.landing-before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.lba-col {
+  background: #1A1A1A;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.lba-before { border-top: 3px solid #E74C3C; }
+.lba-after { border-top: 3px solid #27AE60; }
+.lba-img { width: 100%; aspect-ratio: 1/1; background: #262626; border-radius: 6px; margin-bottom: 10px; display:flex; align-items:center; justify-content:center; font-size:2rem; }
+.lba-text { font-size: 0.85rem; color: #E5E5E5; font-weight: 600; }
+
+.landing-steps { margin-bottom: 25px; }
+.landing-steps h3 { text-align: center; color: #D4AF37; font-size: 1.2rem; margin-bottom: 15px; }
+.l-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.l-step { text-align: center; }
+.l-step-img {
+  width: 100%; aspect-ratio: 1/1; background: #1A1A1A; border-radius: 8px; margin-bottom: 8px; display:flex; align-items:center; justify-content:center; color:#A0A0A0; font-weight:bold; font-size:1.5rem;
+}
+.l-step-text { font-size: 0.75rem; color: #E5E5E5; line-height: 1.3; }
+
+.landing-social-proof { margin-bottom: 25px; }
+.landing-social-proof h3 { text-align: center; color: #D4AF37; font-size: 1.2rem; margin-bottom: 15px; }
+.lsp-ugc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+.lsp-ugc-img { width: 100%; aspect-ratio: 3/4; background: #1A1A1A; border-radius: 8px; object-fit: cover; }
+.lsp-whatsapp {
+  background: #075E54;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lsp-wa-header { display: flex; align-items: center; gap: 10px; color: #FFF; font-weight: 600; font-size: 0.9rem; }
+.lsp-wa-avatar { width: 35px; height: 35px; background: #CCC; border-radius: 50%; display:flex; align-items:center; justify-content:center; color:#111; }
+.lsp-wa-msg {
+  background: #DCF8C6;
+  color: #111;
+  padding: 10px 14px;
+  border-radius: 0 12px 12px 12px;
+  font-size: 0.9rem;
+  max-width: 90%;
+  align-self: flex-start;
+  position: relative;
+}
+
+.landing-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(11, 11, 11, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-top: 1px solid #262626;
+  display: flex;
+  justify-content: center;
+}
+.landing-sticky-cta .landing-wrapper-inner { width: 100%; max-width: 520px; }
+</style>
+
+<div class="landing-wrapper">
+  <!-- A. Barra de Urgencia -->
+  <div class="landing-urgency">
+    ⚡ PAGO AL RECIBIR • ENVÍO GRATIS A TODO ECUADOR • ÚLTIMAS UNIDADES
+  </div>
+
+  <!-- B. Hero Section -->
+  <div class="landing-hero">
+    <div class="landing-badge">★★★★★ +1,420 Clientes en Ecuador</div>
+    <h1 class="landing-title">{{ product.title }}</h1>
+    
+    <div class="landing-gallery">
+      <div class="landing-gallery-main">
+        <img id="l-main-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}">
+      </div>
+      <div class="landing-gallery-thumbs">
+        {% for image in product.images limit:4 %}
+          <img src="{{ image | image_url: width: 150 }}" 
+               onclick="document.getElementById('l-main-img').src='{{ image | image_url: width: 600 }}'"
+               alt="thumb">
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="landing-price-block">
+      {% if product.compare_at_price > product.price %}
+        <div class="landing-price-compare">{{ product.compare_at_price | money }}</div>
+      {% endif %}
+      <div class="landing-price-actual">{{ product.price | money }}</div>
+    </div>
+
+    <button type="button" class="landing-btn btn-cod-trigger" id="trigger-cod-modal" onclick="window.abrirLuxenModal(event)">
+      <span class="landing-btn-title">Pedir ahora y pagar al recibir</span>
+      <span class="landing-btn-sub">🚚 Paga en efectivo al repartidor</span>
+    </button>
+  </div>
+
+  <div class="landing-section">
+    <!-- C. Pain vs Solution -->
+    <div class="landing-pain-solution">
+      <div class="lps-row pain">
+        <div class="lps-icon">❌</div>
+        <div>Cansancio, molestias diarias y falta de energía.</div>
+      </div>
+      <div class="lps-row pain">
+        <div class="lps-icon">❌</div>
+        <div>Productos costosos que no dan resultados reales.</div>
+      </div>
+      <div class="lps-row solution" style="margin-top: 15px;">
+        <div class="lps-icon">✔️</div>
+        <div>Fórmula avanzada para alivio y bienestar profundo.</div>
+      </div>
+      <div class="lps-row solution">
+        <div class="lps-icon">✔️</div>
+        <div>Siente el cambio desde la primera semana.</div>
+      </div>
+    </div>
+
+    <!-- D. Infografía -->
+    <div class="landing-infographic">
+      <h3>Acción y Beneficios Clave</h3>
+      <div class="landing-info-img">
+        [ Imagen Descriptiva del Producto ]
+      </div>
+    </div>
+
+    <!-- E. Before vs After -->
+    <div class="landing-before-after">
+      <div class="lba-col lba-before">
+        <div class="lba-img">😫</div>
+        <div class="lba-text">Dificultad y molestias cotidianas</div>
+      </div>
+      <div class="lba-col lba-after">
+        <div class="lba-img">🤩</div>
+        <div class="lba-text">Libertad, bienestar y energía</div>
+      </div>
+    </div>
+
+    <!-- F. Modo de Uso -->
+    <div class="landing-steps">
+      <h3>¿Cómo se utiliza?</h3>
+      <div class="l-steps-grid">
+        <div class="l-step">
+          <div class="l-step-img">1</div>
+          <div class="l-step-text">Prepara un vaso de agua o tu bebida favorita.</div>
+        </div>
+        <div class="l-step">
+          <div class="l-step-img">2</div>
+          <div class="l-step-text">Toma la dosis recomendada a diario.</div>
+        </div>
+        <div class="l-step">
+          <div class="l-step-img">3</div>
+          <div class="l-step-text">Disfruta de los resultados progresivos.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- G. Social Proof & WhatsApp -->
+    <div class="landing-social-proof">
+      <h3>Entregas 100% Seguras</h3>
+      <div class="lsp-ugc">
+        <div style="background:#1A1A1A; border-radius:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:3/4; color:#666;">[Foto Cliente 1]</div>
+        <div style="background:#1A1A1A; border-radius:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:3/4; color:#666;">[Foto Cliente 2]</div>
+      </div>
+      <div class="lsp-whatsapp">
+        <div class="lsp-wa-header">
+          <div class="lsp-wa-avatar">👤</div>
+          <div>Cliente Satisfecho (Quito)</div>
+        </div>
+        <div class="lsp-wa-msg">
+          ¡Hola! Acabo de recibir mi pedido en casa y pagué en efectivo al repartidor. Todo excelente, muchas gracias por la rapidez. 🙏
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- H. Sticky CTA -->
+<div class="landing-sticky-cta">
+  <div class="landing-wrapper-inner">
+    <button type="button" class="landing-btn btn-cod-trigger" id="trigger-cod-modal-sticky" onclick="window.abrirLuxenModal(event)">
+      <span class="landing-btn-title">Pedir ahora y pagar al recibir</span>
+      <span class="landing-btn-sub">🚚 Paga en efectivo al repartidor</span>
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing COD",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Landing COD"
+    }
+  ]
+}
+{% endschema %}
