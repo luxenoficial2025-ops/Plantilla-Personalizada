@@ -4,32 +4,30 @@
   .footer {
     background: #0B0B0B !important;
     border-top: 1px solid #1a1a1a !important;
-    padding: 20px 0 15px !important;
+    padding-top: 35px !important;
+    padding-bottom: 20px !important;
     margin: 0 !important;
   }
 
   .footer__content-top {
     max-width: 1200px !important;
     margin: 0 auto !important;
-    padding: 0 16px !important;
+    padding: 0 24px 25px !important;
   }
 
-  /* Forzar visualización horizontal en tablet y PC (desde 600px en adelante) */
-  @media screen and (min-width: 600px) {
+  /* 4 Columnas simétricas en pantallas medianas y PC */
+  @media screen and (min-width: 750px) {
     .footer__blocks-wrapper {
       display: flex !important;
       flex-direction: row !important;
       justify-content: space-between !important;
       align-items: flex-start !important;
-      flex-wrap: nowrap !important;
-      gap: 16px !important;
+      gap: 30px !important;
     }
 
     .footer-block,
     .footer-block.grid__item {
       flex: 1 1 0 !important;
-      width: auto !important;
-      max-width: none !important;
       margin: 0 !important;
       padding: 0 !important;
     }
@@ -39,38 +37,32 @@
     }
   }
 
-  /* Vista en pantallas móviles muy angostas */
-  @media screen and (max-width: 599px) {
+  /* En móviles */
+  @media screen and (max-width: 749px) {
     .footer__blocks-wrapper {
       display: flex !important;
       flex-direction: column !important;
-      gap: 14px !important;
-    }
-
-    .footer-block,
-    .footer-block.grid__item {
-      margin: 0 !important;
-      padding: 0 !important;
-      width: 100% !important;
+      gap: 20px !important;
     }
   }
 
-  /* Compactar textos y títulos */
+  /* Títulos dorados */
   .footer-block__heading {
     color: #D4AF37 !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    margin: 0 0 6px 0 !important;
+    letter-spacing: 0.08em !important;
+    margin: 0 0 12px 0 !important;
   }
 
+  /* Textos y listas */
   .footer-block .footer-block__details-content,
   .footer-block p {
-    color: #CCCCCC !important;
-    font-size: 11.5px !important;
-    line-height: 1.4 !important;
-    margin: 0 0 4px 0 !important;
+    color: #B8B8B8 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 6px 0 !important;
     white-space: normal !important;
   }
 
@@ -81,25 +73,26 @@
   }
 
   .footer-block__details-content li {
-    padding: 1px 0 !important;
+    padding: 2px 0 !important;
     margin: 0 !important;
   }
 
   .footer-block__details-content a {
-    color: #CCCCCC !important;
+    color: #B8B8B8 !important;
     text-decoration: none !important;
-    font-size: 11.5px !important;
+    font-size: 12px !important;
+    transition: color 0.2s ease;
   }
 
   .footer-block__details-content a:hover {
     color: #D4AF37 !important;
   }
 
-  /* Redes sociales */
+  /* Redes Sociales doradas con hover */
   .footer__list-social {
     display: flex !important;
-    gap: 10px !important;
-    margin: 6px 0 0 0 !important;
+    gap: 12px !important;
+    margin: 12px 0 0 0 !important;
     padding: 0 !important;
     list-style: none !important;
   }
@@ -107,21 +100,52 @@
   .footer__list-social .link {
     color: #D4AF37 !important;
     padding: 2px !important;
+    transition: transform 0.2s ease;
+  }
+  .footer__list-social .link:hover {
+    transform: translateY(-2px);
   }
 
-  /* Barra inferior */
+  /* BARRA INFERIOR DISTRIBUIDA (COPYRIGHT Y POLÍTICAS) */
   .footer__content-bottom {
-    border-top: 1px solid #1a1a1a !important;
-    padding: 10px 16px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 16px 24px !important;
     max-width: 1200px !important;
-    margin: 12px auto 0 !important;
-    font-size: 10.5px !important;
-    color: #666666 !important;
+    margin: 0 auto !important;
   }
 
-  .footer__content-bottom a {
+  .footer__content-bottom-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .footer__copyright {
+    font-size: 11px !important;
+    color: #666666 !important;
+    margin: 0 !important;
+  }
+
+  /* Enlaces de políticas horizontales y limpios */
+  .footer__content-bottom a,
+  .policies a {
     color: #777777 !important;
+    font-size: 11px !important;
     text-decoration: none !important;
+    margin: 0 8px !important;
+    transition: color 0.2s ease;
+  }
+
+  .footer__content-bottom a:hover,
+  .policies a:hover {
+    color: #D4AF37 !important;
+  }
+
+  /* Insignia o texto de métodos de pago */
+  .footer__payment {
+    margin-top: 0 !important;
   }
 </style>
 
@@ -210,17 +234,15 @@
 
   <!-- Línea Inferior -->
   <div class="footer__content-bottom">
-    <div class="luxen-footer-bottom-inner">
-      <div>
-        © 2026 LUXEN. Todos los derechos reservados.
-      </div>
+    <div class="footer__content-bottom-wrapper">
+      <div class="footer__copyright">© 2026 LUXEN. Todos los derechos reservados.</div>
       <div class="luxen-footer-policies">
         <a href="/policies/terms-of-service">Términos del servicio</a>
         <a href="/policies/privacy-policy">Política de privacidad</a>
         <a href="/policies/refund-policy">Políticas de reembolso</a>
         <a href="/policies/shipping-policy">Envíos</a>
       </div>
-      <div class="luxen-footer-payment">
+      <div class="footer__payment luxen-footer-payment">
         <span>Pago Contra Entrega</span>
         <span>Efectivo</span>
         <span>Transferencia</span>
