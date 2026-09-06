@@ -1,105 +1,124 @@
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 <style id="luxen-footer-fix">
-  /* Anular márgenes gigantes nativos de Dawn */
+  /* Contenedor general del footer */
   footer.footer, 
   .footer {
     background: #0B0B0B !important;
     border-top: 1px solid #1a1a1a !important;
     padding-top: 24px !important;
     padding-bottom: 20px !important;
-    margin-top: 0 !important;
-  }
-
-  .footer__content-top {
-    max-width: 1150px !important;
-    margin: 0 auto !important;
-    padding: 0 16px !important;
-  }
-
-  /* Eliminar separaciones kilométricas entre bloques */
-  .footer__blocks-wrapper {
-    display: grid !important;
-    gap: 16px !important;
     margin: 0 !important;
   }
 
-  /* 4 Columnas en computadoras y pantallas medianas */
+  .footer__content-top {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 16px 15px !important;
+  }
+
+  /* Grid en PC / Pantallas medianas (4 columnas alineadas arriba) */
   @media screen and (min-width: 750px) {
     .footer__blocks-wrapper {
-      grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
+      display: grid !important;
+      grid-template-columns: 1.3fr 1.1fr 0.9fr 1.1fr !important;
       gap: 24px !important;
       align-items: start !important;
     }
   }
 
-  /* 2 Columnas ordenadas en celulares para que no sea un scroll infinito hacia abajo */
+  /* Grid en Celular: compacto y ordenado */
   @media screen and (max-width: 749px) {
     .footer__blocks-wrapper {
-      grid-template-columns: 1fr !important;
-      gap: 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
     }
   }
 
+  /* Anular márgenes nativos gigantes de Dawn en cada bloque */
+  .footer-block,
   .footer-block.grid__item {
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
+    width: auto !important;
     max-width: 100% !important;
+  }
+
+  /* SOLUCIÓN AL TEXTO LARGO: forzar salto de línea y ancho controlado */
+  .footer-block .footer-block__details-content,
+  .footer-block p {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 320px !important;
+    color: #CCCCCC !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    margin: 0 0 6px 0 !important;
   }
 
   /* Títulos dorados compactos */
   .footer-block__heading {
     color: #D4AF37 !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 800 !important;
-    letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
-    margin-bottom: 6px !important;
-    margin-top: 0 !important;
+    letter-spacing: 0.05em !important;
+    margin: 0 0 8px 0 !important;
   }
 
-  /* Textos y listas sin espacios vacíos */
-  .footer-block__details-content {
-    margin-bottom: 0 !important;
-  }
-
-  .footer-block__details-content,
-  .footer-block__details-content a,
-  .footer-block__details-content li,
-  .footer-block__details-content p {
-    color: #CCCCCC !important;
-    font-size: 11.5px !important;
-    line-height: 1.4 !important;
-    margin: 3px 0 !important;
+  /* Enlaces de listas (Información / Soporte) */
+  .footer-block__details-content ul {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
   }
 
   .footer-block__details-content li {
     padding: 2px 0 !important;
+    margin: 0 !important;
   }
 
-  /* Redes sociales juntas y ordenadas */
+  .footer-block__details-content a {
+    color: #CCCCCC !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+  }
+
+  .footer-block__details-content a:hover {
+    color: #D4AF37 !important;
+  }
+
+  /* Redes sociales juntas y doradas */
   .footer__list-social {
     display: flex !important;
-    gap: 10px !important;
-    margin-top: 8px !important;
-    margin-bottom: 0 !important;
+    gap: 12px !important;
+    margin-top: 10px !important;
     padding: 0 !important;
     list-style: none !important;
   }
 
   .footer__list-social .link {
     color: #D4AF37 !important;
-    padding: 4px !important;
+    padding: 2px !important;
   }
 
-  /* Barra inferior bien pegada y discreta */
+  /* Barra inferior: eliminar enlaces azules y ordenar */
   .footer__content-bottom {
     border-top: 1px solid #1a1a1a !important;
     padding: 12px 16px !important;
-    max-width: 1150px !important;
-    margin: 12px auto 0 !important;
-    font-size: 10.5px !important;
-    color: #555555 !important;
+    max-width: 1200px !important;
+    margin: 10px auto 0 !important;
+    font-size: 11px !important;
+    color: #666666 !important;
+  }
+
+  .footer__content-bottom a {
+    color: #777777 !important;
+    text-decoration: none !important;
+  }
+
+  .footer__content-bottom a:hover {
+    color: #D4AF37 !important;
   }
 </style>
 
