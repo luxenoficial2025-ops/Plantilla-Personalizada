@@ -3871,3 +3871,15 @@ details-disclosure > details {
   background: transparent !important;
 }
 
+
+/* Ocultar icono de login/cuenta de usuario y modal de inicio de sesion en el header */
+.header__icon--account,
+a[href*="/account/login"],
+a[href*="/account"],
+.customer-account-modal,
+#customer-account-modal,
+shop-user-account-modal {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
