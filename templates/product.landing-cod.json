@@ -12,8 +12,10 @@
     "main": {
       "type": "main-product-landing",
       "settings": {
+        "infographic_image": "shopify://shop_images/Gemini_Generated_Image_2meo122meo122meo.jpg",
         "before_image": "shopify://shop_images/Gemini_Generated_Image_9d4udf9d4udf9d4u.jpg",
-        "after_image": "shopify://shop_images/Gemini_Generated_Image_vt0pv3vt0pv3vt0p.jpg"
+        "after_image": "shopify://shop_images/Gemini_Generated_Image_vt0pv3vt0pv3vt0p.jpg",
+        "ugc1_image": "shopify://shop_images/Gemini_Generated_Image_i0i5si0i5si0i5si.jpg"
       }
     }
   },
