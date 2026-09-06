@@ -1,127 +1,129 @@
 <style>
+  /* ========================================================
+     REDISEÑO DEL FOOTER GLOBAL DE LA TIENDA (HOME Y COLECCIONES)
+     ======================================================== */
   .luxen-footer {
-    background-color: #0B0B0B;
-    color: #A0A0A0;
+    background: #0B0B0B !important;
+    color: #FFFFFF !important;
     font-family: inherit;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    padding: 60px 20px 20px 20px;
+    border-top: 1px solid #1a1a1a !important;
+    padding-top: 35px !important;
+    padding-bottom: 25px !important;
     line-height: 1.6;
   }
+  
+  /* Limitar ancho y centrar en monitores grandes */
   .luxen-footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px 25px !important;
   }
-  .luxen-footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 50px;
-  }
-  @media (min-width: 768px) {
+
+  /* Distribución en 4 columnas alineadas para PC */
+  @media screen and (min-width: 750px) {
     .luxen-footer-grid {
-      grid-template-columns: repeat(2, 1fr);
+      display: grid !important;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
+      gap: 25px !important;
+      align-items: start !important;
     }
   }
-  @media (min-width: 1024px) {
+
+  /* Distribución ordenada y compacta en móvil (sin vacíos gigantes) */
+  @media screen and (max-width: 749px) {
     .luxen-footer-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+      text-align: left !important;
+    }
+    .luxen-footer-col {
+      margin: 0 !important;
     }
   }
+
+  /* Títulos dorados y tipografía estilizada */
   .luxen-footer-col h3, .luxen-footer-logo {
-    color: #D4AF37;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: #D4AF37 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important;
   }
   .luxen-footer-logo {
-    font-size: 1.8rem;
-    letter-spacing: 0.1em;
-    font-weight: 900;
+    font-size: 20px !important;
   }
-  .luxen-footer-col p {
-    margin: 0 0 10px 0;
-    color: #A0A0A0;
-    font-size: 0.95rem;
+
+  .luxen-footer-col p,
+  .luxen-footer-col ul li,
+  .luxen-footer-col ul a,
+  .luxen-footer-bullet span,
+  .luxen-footer-bullet a {
+    color: #B3B3B3 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    text-decoration: none !important;
   }
+  
   .luxen-footer-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
+  
   .luxen-footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 8px !important;
   }
-  .luxen-footer-col ul li a {
-    color: #E5E5E5;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.95rem;
+
+  .luxen-footer-col a:hover {
+    color: #D4AF37 !important;
   }
-  .luxen-footer-col ul li a:hover {
-    color: #D4AF37;
-  }
-  .luxen-footer-bullets {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+
   .luxen-footer-bullet {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    color: #E5E5E5;
-    font-size: 0.95rem;
+    margin-bottom: 12px;
   }
-  .luxen-footer-bullet-icon {
-    font-size: 1.2rem;
-  }
+
+  /* Iconos de redes sociales ordenados */
   .luxen-social-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 14px;
-    align-items: center;
+    display: flex !important;
+    gap: 12px !important;
+    margin-top: 12px !important;
+    padding: 0 !important;
   }
+  
   .luxen-social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    background-color: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    border-radius: 50%;
-    color: #D4AF37;
-    transition: all 0.3s ease;
+    color: #D4AF37 !important;
+    padding: 6px !important;
+    transition: transform 0.3s, color 0.3s;
   }
+  
   .luxen-social-btn svg {
     width: 20px;
     height: 20px;
   }
-  .luxen-social-btn:hover {
-    background-color: #D4AF37;
-    color: #0B0B0B;
-    transform: translateY(-3px);
-  }
-  .luxen-footer-contact-link {
-    color: #E5E5E5;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .luxen-footer-contact-link:hover {
-    color: #D4AF37;
-  }
+
+  /* Barra inferior de derechos y políticas */
   .luxen-footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 25px;
+    border-top: 1px solid #1a1a1a !important;
+    padding: 15px 0 !important;
+    margin-top: 20px !important;
+    font-size: 11px !important;
+    color: #666666 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     text-align: center;
   }
+  
   @media (min-width: 768px) {
     .luxen-footer-bottom {
       flex-direction: row;
@@ -129,37 +131,29 @@
       text-align: left;
     }
   }
-  .luxen-footer-copyright {
-    color: #A0A0A0;
-    font-size: 0.85rem;
+
+  .luxen-footer-bottom a, .luxen-footer-copyright {
+    color: #777777 !important;
+    text-decoration: none !important;
   }
-  .luxen-footer-policies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
+
   .luxen-footer-policies a {
-    color: #A0A0A0;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
+    margin: 0 8px !important;
   }
-  .luxen-footer-policies a:hover {
-    color: #E5E5E5;
+
+  .luxen-footer-bottom a:hover {
+    color: #D4AF37 !important;
   }
+  
   .luxen-footer-payment {
     display: flex;
     gap: 10px;
-    color: #A0A0A0;
-    font-size: 0.85rem;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
   }
   .luxen-footer-payment span {
     background: rgba(255,255,255,0.05);
-    padding: 4px 10px;
+    padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid rgba(255,255,255,0.1);
   }
@@ -171,7 +165,7 @@
       <!-- Columna 1 -->
       <div class="luxen-footer-col">
         <div class="luxen-footer-logo">LUXEN</div>
-        <p style="color: #E5E5E5;">Productos seleccionados para tu bienestar, cuidado y estilo de vida. Compra segura con pago al recibir en todo Ecuador.</p>
+        <p>Productos seleccionados para tu bienestar, cuidado y estilo de vida. Compra segura con pago al recibir en todo Ecuador.</p>
       </div>
 
       <!-- Columna 2 -->
@@ -222,7 +216,7 @@
         <h3>Compra 100% Segura</h3>
         <div class="luxen-footer-bullets">
           <div class="luxen-footer-bullet">
-            <span class="luxen-footer-bullet-icon">📦</span>
+            <span class="luxen-footer-bullet-icon">💵</span>
             <span>Paga en efectivo al recibir en tu puerta</span>
           </div>
           <div class="luxen-footer-bullet">
