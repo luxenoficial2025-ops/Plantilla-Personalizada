@@ -1,6 +1,23 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
 <style>
+  /* 1. OCULTAR HEADER Y FOOTER GLOBAL DE SHOPIFY DAWN EN ESTA PLANTILLA */
+  .section-header,
+  header-drawer,
+  #shopify-section-header,
+  .announcement-bar-section,
+  #shopify-section-announcement-bar,
+  footer,
+  .footer,
+  #shopify-section-footer,
+  .footer__content-top,
+  .footer__content-bottom,
+  .footer__payment,
+  .footer-block {
+    display: none !important;
+  }
+
+  /* 2. ESTILOS BASE DE LA LANDING */
   .luxen-landing-body {
     max-width: 500px;
     margin: 0 auto;
@@ -10,6 +27,7 @@
     padding-bottom: 90px;
     border-left: 1px solid #1a1a1a;
     border-right: 1px solid #1a1a1a;
+    min-height: 100vh;
   }
   .luxen-top-bar {
     background: #000000;
@@ -76,7 +94,8 @@
   }
   .luxen-thumb-item img {
     width: 100%;
-    height: cover;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
   .luxen-pricing {
@@ -220,6 +239,19 @@
     backdrop-filter: blur(8px);
     padding: 10px 16px;
     border-top: 1px solid #262626;
+  }
+
+  /* 3. MICRO FOOTER MINIMALISTA */
+  .luxen-landing-footer-minimal {
+    text-align: center;
+    padding: 24px 16px 40px;
+    font-size: 11px;
+    color: #777777;
+    border-top: 1px solid #1f1f1f;
+    margin-top: 24px;
+  }
+  .luxen-landing-footer-minimal p {
+    margin: 4px 0;
   }
 </style>
 
@@ -374,6 +406,12 @@
         <div style="font-size: 10px; color: #666; text-align: right; margin-top: 4px;">Ayer 15:30 • Carlos M.</div>
       </div>
     </div>
+  </div>
+
+  <!-- MICRO-FOOTER ELEGANTE -->
+  <div class="luxen-landing-footer-minimal">
+    <p>© 2026 LUXEN. Todos los derechos reservados.</p>
+    <p style="color: #444444;">Envíos seguros a nivel nacional vía Servientrega & Laar Courier.</p>
   </div>
 
   <div class="luxen-sticky">
