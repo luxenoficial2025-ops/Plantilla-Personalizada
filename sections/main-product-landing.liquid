@@ -1,333 +1,464 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
 <style>
-.landing-wrapper {
-  max-width: 520px;
-  margin: 0 auto;
-  background: #111111;
-  color: #FFFFFF;
-  font-family: inherit;
-  padding-bottom: 90px;
-}
-.landing-urgency {
-  background: #0B0B0B;
-  color: #D4AF37;
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-  padding: 8px 10px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.landing-hero { padding: 15px; }
-.landing-badge {
-  display: inline-block;
-  background: rgba(212, 175, 55, 0.15);
-  color: #D4AF37;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.landing-title {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0 0 15px 0;
-  color: #FFF;
-}
-.landing-gallery-main img {
-  width: 100%;
-  border-radius: 12px;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-.landing-gallery-thumbs {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  overflow-x: auto;
-}
-.landing-gallery-thumbs img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-.landing-gallery-thumbs img.active {
-  border-color: #D4AF37;
-}
-.landing-price-block {
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.landing-price-compare {
-  text-decoration: line-through;
-  color: #A0A0A0;
-  font-size: 1rem;
-}
-.landing-price-actual {
-  color: #D4AF37;
-  font-size: 1.6rem;
-  font-weight: 900;
-}
-.landing-btn {
-  width: 100%;
-  background: linear-gradient(135deg, #FF8C00, #FF6B00);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 16px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 15px rgba(255,107,0,0.3);
-  animation: codPulse 2s infinite;
-  transition: transform 0.2s;
-}
-.landing-btn:active { transform: scale(0.98); }
-.landing-btn-title { font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; }
-.landing-btn-sub { font-size: 0.85rem; font-weight: 500; margin-top: 4px; opacity: 0.9; }
-
-.landing-section { padding: 0 15px 25px 15px; }
-.landing-pain-solution {
-  border: 1px solid #262626;
-  border-radius: 12px;
-  padding: 16px;
-  margin: 16px 0;
-  background: #1A1A1A;
-}
-.lps-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-}
-.lps-row.pain { color: #A0A0A0; }
-.lps-row.solution { color: #FFF; font-weight: 600; }
-.lps-icon { font-size: 1.2rem; line-height: 1; }
-
-.landing-infographic {
-  background: #0B0B0B;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #262626;
-  margin-bottom: 25px;
-}
-.landing-infographic h3 { color: #D4AF37; margin: 0 0 10px 0; font-size: 1.2rem; }
-.landing-info-img { width: 100%; border-radius: 8px; background: #262626; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color:#666; font-size:0.9rem;}
-
-.landing-before-after {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-.lba-col {
-  background: #1A1A1A;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
-}
-.lba-before { border-top: 3px solid #E74C3C; }
-.lba-after { border-top: 3px solid #27AE60; }
-.lba-img { width: 100%; aspect-ratio: 1/1; background: #262626; border-radius: 6px; margin-bottom: 10px; display:flex; align-items:center; justify-content:center; font-size:2rem; }
-.lba-text { font-size: 0.85rem; color: #E5E5E5; font-weight: 600; }
-
-.landing-steps { margin-bottom: 25px; }
-.landing-steps h3 { text-align: center; color: #D4AF37; font-size: 1.2rem; margin-bottom: 15px; }
-.l-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.l-step { text-align: center; }
-.l-step-img {
-  width: 100%; aspect-ratio: 1/1; background: #1A1A1A; border-radius: 8px; margin-bottom: 8px; display:flex; align-items:center; justify-content:center; color:#A0A0A0; font-weight:bold; font-size:1.5rem;
-}
-.l-step-text { font-size: 0.75rem; color: #E5E5E5; line-height: 1.3; }
-
-.landing-social-proof { margin-bottom: 25px; }
-.landing-social-proof h3 { text-align: center; color: #D4AF37; font-size: 1.2rem; margin-bottom: 15px; }
-.lsp-ugc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
-.lsp-ugc-img { width: 100%; aspect-ratio: 3/4; background: #1A1A1A; border-radius: 8px; object-fit: cover; }
-.lsp-whatsapp {
-  background: #075E54;
-  border-radius: 12px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.lsp-wa-header { display: flex; align-items: center; gap: 10px; color: #FFF; font-weight: 600; font-size: 0.9rem; }
-.lsp-wa-avatar { width: 35px; height: 35px; background: #CCC; border-radius: 50%; display:flex; align-items:center; justify-content:center; color:#111; }
-.lsp-wa-msg {
-  background: #DCF8C6;
-  color: #111;
-  padding: 10px 14px;
-  border-radius: 0 12px 12px 12px;
-  font-size: 0.9rem;
-  max-width: 90%;
-  align-self: flex-start;
-  position: relative;
-}
-
-.landing-sticky-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: rgba(11, 11, 11, 0.95);
-  backdrop-filter: blur(8px);
-  padding: 10px 16px;
-  border-top: 1px solid #262626;
-  display: flex;
-  justify-content: center;
-}
-.landing-sticky-cta .landing-wrapper-inner { width: 100%; max-width: 520px; }
+  .luxen-landing-body {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #0B0B0B;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding-bottom: 90px;
+    border-left: 1px solid #1a1a1a;
+    border-right: 1px solid #1a1a1a;
+  }
+  .luxen-top-bar {
+    background: #000000;
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    letter-spacing: 0.05em;
+  }
+  .luxen-hero {
+    padding: 16px;
+    text-align: center;
+  }
+  .luxen-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .luxen-title {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+  }
+  .luxen-main-img {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #262626;
+    background: #141414;
+    margin-bottom: 10px;
+  }
+  .luxen-main-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .luxen-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .luxen-thumb-item {
+    border-radius: 8px;
+    border: 1px solid #333333;
+    overflow: hidden;
+    cursor: pointer;
+    background: #181818;
+    aspect-ratio: 1/1;
+  }
+  .luxen-thumb-item.active {
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
+  }
+  .luxen-thumb-item img {
+    width: 100%;
+    height: cover;
+    display: block;
+  }
+  .luxen-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .luxen-pricing .compare-price {
+    color: #777777;
+    text-decoration: line-through;
+    font-size: 16px;
+  }
+  .luxen-pricing .sale-price {
+    color: #D4AF37;
+    font-size: 26px;
+    font-weight: 900;
+  }
+  .luxen-btn-cod {
+    display: block;
+    width: 100%;
+    background: #FF6B00;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 12px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, 0.4);
+    transition: transform 0.15s ease;
+  }
+  .luxen-btn-cod:active {
+    transform: scale(0.98);
+  }
+  .luxen-btn-subtext {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-top: 3px;
+    text-transform: none;
+  }
+  .luxen-box {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #141414;
+    border: 1px solid #222222;
+  }
+  .luxen-section-title {
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .luxen-row {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #CCCCCC;
+    align-items: flex-start;
+  }
+  .luxen-row.solution {
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+  .luxen-media-slot {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1C1C1C;
+    border: 1px dashed #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    color: #777777;
+    font-size: 12px;
+  }
+  .luxen-media-slot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .luxen-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .luxen-card-ba {
+    background: #181818;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .luxen-card-ba.bad { border-top: 3px solid #E74C3C; }
+  .luxen-card-ba.good { border-top: 3px solid #27AE60; }
+  .luxen-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .luxen-chat {
+    background: #075E54;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+  .luxen-bubble {
+    background: #DCF8C6;
+    color: #111111;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .luxen-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(11, 11, 11, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 10px 16px;
+    border-top: 1px solid #262626;
+  }
 </style>
 
-<div class="landing-wrapper">
-  <!-- A. Barra de Urgencia -->
-  <div class="landing-urgency">
-    ⚡ PAGO AL RECIBIR • ENVÍO GRATIS A TODO ECUADOR • ÚLTIMAS UNIDADES
+<div class="luxen-landing-body">
+  <div class="luxen-top-bar">
+    ⚡ PAGO AL RECIBIR • ENVÍO GRATIS A TODO ECUADOR • STOCK LIMITADO
   </div>
 
-  <!-- B. Hero Section -->
-  <div class="landing-hero">
-    <div class="landing-badge">★★★★★ +1,420 Clientes en Ecuador</div>
-    <h1 class="landing-title">{{ product.title }}</h1>
-    
-    <div class="landing-gallery">
-      <div class="landing-gallery-main">
-        <img id="l-main-img" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}">
-      </div>
-      <div class="landing-gallery-thumbs">
-        {% for image in product.images limit:4 %}
-          <img src="{{ image | image_url: width: 150 }}" 
-               onclick="document.getElementById('l-main-img').src='{{ image | image_url: width: 600 }}'"
-               alt="thumb">
+  <div class="luxen-hero">
+    <div class="luxen-badge">★★★★★ +1,420 Clientes en Ecuador</div>
+    <h1 class="luxen-title">{{ product.title }}</h1>
+
+    <div class="luxen-main-img">
+      {% if product.featured_image %}
+        <img id="luxen-hero-view" src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <div class="luxen-media-slot">Foto principal del producto</div>
+      {% endif %}
+    </div>
+
+    {% if product.images.size > 1 %}
+      <div class="luxen-thumbs">
+        {% for img in product.images limit: 4 %}
+          <div class="luxen-thumb-item {% if forloop.first %}active{% endif %}" onclick="luxenSwapImg('{{ img | image_url: width: 800 }}', this)">
+            <img src="{{ img | image_url: width: 200 }}" alt="Thumb">
+          </div>
         {% endfor %}
       </div>
-    </div>
+    {% endif %}
 
-    <div class="landing-price-block">
+    <div class="luxen-pricing">
       {% if product.compare_at_price > product.price %}
-        <div class="landing-price-compare">{{ product.compare_at_price | money }}</div>
+        <span class="compare-price">{{ product.compare_at_price | money }}</span>
       {% endif %}
-      <div class="landing-price-actual">{{ product.price | money }}</div>
+      <span class="sale-price">{{ product.price | money }} USD</span>
     </div>
 
-    <button type="button" class="landing-btn btn-cod-trigger" id="trigger-cod-modal" onclick="window.abrirLuxenModal(event)">
-      <span class="landing-btn-title">Pedir ahora y pagar al recibir</span>
-      <span class="landing-btn-sub">🚚 Paga en efectivo al repartidor</span>
+    <button type="button" class="luxen-btn-cod" onclick="window.abrirLuxenModal(event)">
+      PEDIR AHORA Y PAGAR AL RECIBIR
+      <span class="luxen-btn-subtext">🚚 ¡Pagas en efectivo al repartidor en tu puerta!</span>
     </button>
   </div>
 
-  <div class="landing-section">
-    <!-- C. Pain vs Solution -->
-    <div class="landing-pain-solution">
-      <div class="lps-row pain">
-        <div class="lps-icon">❌</div>
-        <div>Cansancio, molestias diarias y falta de energía.</div>
-      </div>
-      <div class="lps-row pain">
-        <div class="lps-icon">❌</div>
-        <div>Productos costosos que no dan resultados reales.</div>
-      </div>
-      <div class="lps-row solution" style="margin-top: 15px;">
-        <div class="lps-icon">✔️</div>
-        <div>Fórmula avanzada para alivio y bienestar profundo.</div>
-      </div>
-      <div class="lps-row solution">
-        <div class="lps-icon">✔️</div>
-        <div>Siente el cambio desde la primera semana.</div>
-      </div>
-    </div>
+  <div class="luxen-box">
+    <div class="luxen-section-title" style="color: #FF5A5F;">¿Te identificas con esto?</div>
+    <div class="luxen-row">❌ Crujidos y dolor agudo al subir escaleras o caminar.</div>
+    <div class="luxen-row">❌ Rigidez constante en rodillas y articulaciones al despertar.</div>
+    <div class="luxen-row">❌ Los calmantes solo duran horas y no solucionan el desgaste.</div>
+    <hr style="border: 0; border-top: 1px solid #262626; margin: 12px 0;">
+    <div class="luxen-section-title" style="color: #D4AF37;">La solución con {{ product.title }}</div>
+    <div class="luxen-row solution">✔️ Nutre y regenera el cartílago articular desgastado.</div>
+    <div class="luxen-row solution">✔️ Aumenta la lubricación eliminando el roce hueso con hueso.</div>
+    <div class="luxen-row solution">✔️ Ingredientes comprobados para un alivio duradero y seguro.</div>
+  </div>
 
-    <!-- D. Infografía -->
-    <div class="landing-infographic">
-      <h3>Acción y Beneficios Clave</h3>
-      <div class="landing-info-img">
-        [ Imagen Descriptiva del Producto ]
-      </div>
+  <div class="luxen-box">
+    <div class="luxen-section-title">¿Cómo actúa en tus articulaciones?</div>
+    <div class="luxen-media-slot">
+      {% if section.settings.infographic_image != blank %}
+        <img src="{{ section.settings.infographic_image | image_url: width: 800 }}" alt="Infografía">
+      {% else %}
+        <span>[ Sube aquí tu Infografía / Explicación Anatómica ]</span>
+      {% endif %}
     </div>
+  </div>
 
-    <!-- E. Before vs After -->
-    <div class="landing-before-after">
-      <div class="lba-col lba-before">
-        <div class="lba-img">😫</div>
-        <div class="lba-text">Dificultad y molestias cotidianas</div>
+  <div class="luxen-box">
+    <div class="luxen-section-title">Resultados Clínicos Visibles</div>
+    <div class="luxen-grid-2">
+      <div class="luxen-card-ba bad">
+        <div class="luxen-media-slot" style="min-height: 110px;">
+          {% if section.settings.before_image != blank %}
+            <img src="{{ section.settings.before_image | image_url: width: 400 }}" alt="Antes">
+          {% else %}
+            <span>[ Foto Antes / Inflamación ]</span>
+          {% endif %}
+        </div>
+        <strong style="color: #E74C3C; font-size: 11px; display: block; margin-top: 6px;">Día 1: Dolor y Rigidez</strong>
       </div>
-      <div class="lba-col lba-after">
-        <div class="lba-img">🤩</div>
-        <div class="lba-text">Libertad, bienestar y energía</div>
-      </div>
-    </div>
-
-    <!-- F. Modo de Uso -->
-    <div class="landing-steps">
-      <h3>¿Cómo se utiliza?</h3>
-      <div class="l-steps-grid">
-        <div class="l-step">
-          <div class="l-step-img">1</div>
-          <div class="l-step-text">Prepara un vaso de agua o tu bebida favorita.</div>
+      <div class="luxen-card-ba good">
+        <div class="luxen-media-slot" style="min-height: 110px;">
+          {% if section.settings.after_image != blank %}
+            <img src="{{ section.settings.after_image | image_url: width: 400 }}" alt="Después">
+          {% else %}
+            <span>[ Foto Después / Alivio ]</span>
+          {% endif %}
         </div>
-        <div class="l-step">
-          <div class="l-step-img">2</div>
-          <div class="l-step-text">Toma la dosis recomendada a diario.</div>
-        </div>
-        <div class="l-step">
-          <div class="l-step-img">3</div>
-          <div class="l-step-text">Disfruta de los resultados progresivos.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- G. Social Proof & WhatsApp -->
-    <div class="landing-social-proof">
-      <h3>Entregas 100% Seguras</h3>
-      <div class="lsp-ugc">
-        <div style="background:#1A1A1A; border-radius:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:3/4; color:#666;">[Foto Cliente 1]</div>
-        <div style="background:#1A1A1A; border-radius:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:3/4; color:#666;">[Foto Cliente 2]</div>
-      </div>
-      <div class="lsp-whatsapp">
-        <div class="lsp-wa-header">
-          <div class="lsp-wa-avatar">👤</div>
-          <div>Cliente Satisfecho (Quito)</div>
-        </div>
-        <div class="lsp-wa-msg">
-          ¡Hola! Acabo de recibir mi pedido en casa y pagué en efectivo al repartidor. Todo excelente, muchas gracias por la rapidez. 🙏
-        </div>
+        <strong style="color: #27AE60; font-size: 11px; display: block; margin-top: 6px;">Día 21: Alivio Total</strong>
       </div>
     </div>
   </div>
-</div>
 
-<!-- H. Sticky CTA -->
-<div class="landing-sticky-cta">
-  <div class="landing-wrapper-inner">
-    <button type="button" class="landing-btn btn-cod-trigger" id="trigger-cod-modal-sticky" onclick="window.abrirLuxenModal(event)">
-      <span class="landing-btn-title">Pedir ahora y pagar al recibir</span>
-      <span class="landing-btn-sub">🚚 Paga en efectivo al repartidor</span>
+  <div class="luxen-box">
+    <div class="luxen-section-title">Modo de Consumo en 3 Pasos</div>
+    <div class="luxen-grid-3">
+      <div>
+        <div class="luxen-media-slot" style="min-height: 90px;">
+          {% if section.settings.step1_image != blank %}
+            <img src="{{ section.settings.step1_image | image_url: width: 300 }}" alt="Paso 1">
+          {% else %}
+            <span>💧 Paso 1</span>
+          {% endif %}
+        </div>
+        <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">1 Vaso de agua</span>
+      </div>
+      <div>
+        <div class="luxen-media-slot" style="min-height: 90px;">
+          {% if section.settings.step2_image != blank %}
+            <img src="{{ section.settings.step2_image | image_url: width: 300 }}" alt="Paso 2">
+          {% else %}
+            <span>💊 Paso 2</span>
+          {% endif %}
+        </div>
+        <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">Dosis diaria</span>
+      </div>
+      <div>
+        <div class="luxen-media-slot" style="min-height: 90px;">
+          {% if section.settings.step3_image != blank %}
+            <img src="{{ section.settings.step3_image | image_url: width: 300 }}" alt="Paso 3">
+          {% else %}
+            <span>🏃 Paso 3</span>
+          {% endif %}
+        </div>
+        <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">Movilidad activa</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="luxen-box">
+    <div class="luxen-section-title">Clientes Reales en Ecuador</div>
+    <div class="luxen-grid-2">
+      <div class="luxen-media-slot" style="min-height: 120px;">
+        {% if section.settings.ugc1_image != blank %}
+          <img src="{{ section.settings.ugc1_image | image_url: width: 400 }}" alt="Entrega 1">
+        {% else %}
+          <span>📦 Entrega en Guayaquil</span>
+        {% endif %}
+      </div>
+      <div class="luxen-media-slot" style="min-height: 120px;">
+        {% if section.settings.ugc2_image != blank %}
+          <img src="{{ section.settings.ugc2_image | image_url: width: 400 }}" alt="Entrega 2">
+        {% else %}
+          <span>🚚 Entrega en Quito</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="luxen-chat">
+      <strong>💬 Confirmación de entrega vía Servientrega:</strong>
+      <div class="luxen-bubble">
+        "Buenas tardes amigos de Luxen, ya recibí el frasco aquí en Machala. Pagué los .99 en efectivo al repartidor. Todo sellado y en orden, gracias."
+        <div style="font-size: 10px; color: #666; text-align: right; margin-top: 4px;">Ayer 15:30 • Carlos M.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="luxen-sticky">
+    <button type="button" class="luxen-btn-cod" style="padding: 12px;" onclick="window.abrirLuxenModal(event)">
+      PEDIR CONTRA ENTREGA - {{ product.price | money }}
+      <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
     </button>
   </div>
 </div>
+
+<script>
+  function luxenSwapImg(src, el) {
+    const mainImg = document.getElementById('luxen-hero-view');
+    if (mainImg) mainImg.src = src;
+    document.querySelectorAll('.luxen-thumb-item').forEach(item => item.classList.remove('active'));
+    if (el) el.classList.add('active');
+  }
+</script>
 
 {% schema %}
 {
-  "name": "Landing COD",
-  "settings": [],
+  "name": "Landing COD Producto",
+  "tag": "section",
+  "class": "section-landing-cod",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Infografía y Mecanismo"
+    },
+    {
+      "type": "image_picker",
+      "id": "infographic_image",
+      "label": "Imagen de Infografía"
+    },
+    {
+      "type": "header",
+      "content": "Resultados Clínicos (Antes vs Después)"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Foto Antes (Día 1)"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "Foto Después (Día 21)"
+    },
+    {
+      "type": "header",
+      "content": "Modo de Consumo en 3 Pasos"
+    },
+    {
+      "type": "image_picker",
+      "id": "step1_image",
+      "label": "Foto Paso 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "step2_image",
+      "label": "Foto Paso 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "step3_image",
+      "label": "Foto Paso 3"
+    },
+    {
+      "type": "header",
+      "content": "Prueba Social Real (Ecuador)"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc1_image",
+      "label": "Foto Entrega 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ugc2_image",
+      "label": "Foto Entrega 2"
+    }
+  ],
   "presets": [
     {
-      "name": "Landing COD"
+      "name": "Landing COD Producto"
     }
   ]
 }
