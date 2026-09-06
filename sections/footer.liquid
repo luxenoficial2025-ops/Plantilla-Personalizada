@@ -1,97 +1,106 @@
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 <style id="luxen-footer-fix">
-  footer.footer, .footer {
+  /* Anular márgenes gigantes nativos de Dawn */
+  footer.footer, 
+  .footer {
     background: #0B0B0B !important;
     border-top: 1px solid #1a1a1a !important;
-    padding: 35px 0 20px !important;
+    padding-top: 24px !important;
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
   }
+
   .footer__content-top {
-    max-width: 1200px !important;
+    max-width: 1150px !important;
     margin: 0 auto !important;
-    padding: 0 20px 20px !important;
+    padding: 0 16px !important;
   }
+
+  /* Eliminar separaciones kilométricas entre bloques */
+  .footer__blocks-wrapper {
+    display: grid !important;
+    gap: 16px !important;
+    margin: 0 !important;
+  }
+
+  /* 4 Columnas en computadoras y pantallas medianas */
   @media screen and (min-width: 750px) {
     .footer__blocks-wrapper {
-      display: grid !important;
       grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
-      gap: 30px !important;
+      gap: 24px !important;
       align-items: start !important;
     }
   }
+
+  /* 2 Columnas ordenadas en celulares para que no sea un scroll infinito hacia abajo */
   @media screen and (max-width: 749px) {
     .footer__blocks-wrapper {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 18px !important;
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
     }
   }
+
+  .footer-block.grid__item {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Títulos dorados compactos */
   .footer-block__heading {
     color: #D4AF37 !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
     text-transform: uppercase !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 6px !important;
+    margin-top: 0 !important;
   }
+
+  /* Textos y listas sin espacios vacíos */
+  .footer-block__details-content {
+    margin-bottom: 0 !important;
+  }
+
   .footer-block__details-content,
   .footer-block__details-content a,
   .footer-block__details-content li,
   .footer-block__details-content p {
-    color: #B3B3B3 !important;
-    font-size: 12px !important;
-    line-height: 1.6 !important;
+    color: #CCCCCC !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    margin: 3px 0 !important;
   }
+
+  .footer-block__details-content li {
+    padding: 2px 0 !important;
+  }
+
+  /* Redes sociales juntas y ordenadas */
   .footer__list-social {
     display: flex !important;
-    gap: 12px !important;
-    margin-top: 10px !important;
-    list-style: none !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
+    list-style: none !important;
   }
+
   .footer__list-social .link {
     color: #D4AF37 !important;
+    padding: 4px !important;
   }
+
+  /* Barra inferior bien pegada y discreta */
   .footer__content-bottom {
     border-top: 1px solid #1a1a1a !important;
-    padding: 15px 20px !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    font-size: 11px !important;
-    color: #666666 !important;
+    padding: 12px 16px !important;
+    max-width: 1150px !important;
+    margin: 12px auto 0 !important;
+    font-size: 10.5px !important;
+    color: #555555 !important;
   }
-  .luxen-footer-bullet {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .luxen-footer-payment {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .luxen-footer-payment span {
-    background: rgba(255,255,255,0.05);
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .luxen-footer-bottom-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-  }
-  @media (min-width: 768px) {
-    .luxen-footer-bottom-inner {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-    }
-  }
-  .luxen-footer-policies a { margin: 0 8px; text-decoration: none; color: #777777; }
-  .luxen-footer-policies a:hover { color: #D4AF37; }
 </style>
 
 <footer class="footer">
