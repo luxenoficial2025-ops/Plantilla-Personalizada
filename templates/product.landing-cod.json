@@ -1,8 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product-landing",
-      "settings": {}
+      "settings": {
+        "before_image": "shopify://shop_images/Gemini_Generated_Image_9d4udf9d4udf9d4u.jpg",
+        "after_image": "shopify://shop_images/Gemini_Generated_Image_vt0pv3vt0pv3vt0p.jpg"
+      }
     }
   },
   "order": [
