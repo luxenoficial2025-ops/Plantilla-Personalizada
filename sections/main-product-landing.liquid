@@ -304,11 +304,16 @@
       <div class="luxen-row">😟 Rigidez constante en rodillas y articulaciones al despertar.</div>
       <div class="luxen-row">😟 Los calmantes solo duran horas y no solucionan el desgaste.</div>
     {% endif %}
-    <hr style="border: 0; border-top: 1px solid #262626; margin: 12px 0;">
+    </div>
+  <div class="luxen-box">
     <div class="luxen-section-title" style="color: #D4AF37;">La solución con {{ product.title }}</div>
-    <div class="luxen-row solution">✔️ Nutre y regenera el cartílago articular desgastado.</div>
-    <div class="luxen-row solution">✔️ Aumenta la lubricación eliminando el roce hueso con hueso.</div>
-    <div class="luxen-row solution">✔️ Ingredientes comprobados para un alivio duradero y seguro.</div>
+    {% if product.metafields.custom.landing_beneficios != blank %}
+      {{ product.metafields.custom.landing_beneficios | metafield_tag }}
+    {% else %}
+      <div class="luxen-row solution">✔️ Nutre y regenera el cartílago articular desgastado.</div>
+      <div class="luxen-row solution">✔️ Aumenta la lubricación eliminando el roce hueso con hueso.</div>
+      <div class="luxen-row solution">✔️ Ingredientes comprobados para un alivio duradero y seguro.</div>
+    {% endif %}
   </div>
 
   <div class="luxen-box">
