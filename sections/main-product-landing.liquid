@@ -297,9 +297,13 @@
 
   <div class="luxen-box">
     <div class="luxen-section-title" style="color: #FF5A5F;">¿Te identificas con esto?</div>
-    <div class="luxen-row">❌ Crujidos y dolor agudo al subir escaleras o caminar.</div>
-    <div class="luxen-row">❌ Rigidez constante en rodillas y articulaciones al despertar.</div>
-    <div class="luxen-row">❌ Los calmantes solo duran horas y no solucionan el desgaste.</div>
+    {% if product.metafields.custom.landing_problemas != blank %}
+      {{ product.metafields.custom.landing_problemas | metafield_tag }}
+    {% else %}
+      <div class="luxen-row">😟 Crujidos y dolor agudo al subir escaleras o caminar.</div>
+      <div class="luxen-row">😟 Rigidez constante en rodillas y articulaciones al despertar.</div>
+      <div class="luxen-row">😟 Los calmantes solo duran horas y no solucionan el desgaste.</div>
+    {% endif %}
     <hr style="border: 0; border-top: 1px solid #262626; margin: 12px 0;">
     <div class="luxen-section-title" style="color: #D4AF37;">La solución con {{ product.title }}</div>
     <div class="luxen-row solution">✔️ Nutre y regenera el cartílago articular desgastado.</div>
@@ -349,31 +353,37 @@
     <div class="luxen-grid-3">
       <div>
         <div class="luxen-media-slot" style="min-height: 90px;">
-          {% if section.settings.step1_image != blank %}
-            <img src="{{ section.settings.step1_image | image_url: width: 300 }}" alt="Paso 1">
-          {% else %}
-            <span>💧 Paso 1</span>
-          {% endif %}
+          {% if product.metafields.custom.landing_paso1 != blank %}
+        <img src="{{ product.metafields.custom.landing_paso1 | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% elsif section.settings.step1_image != blank %}
+        <img src="{{ section.settings.step1_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <span>💧 Paso 1</span>
+      {% endif %}
         </div>
         <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">1 Vaso de agua</span>
       </div>
       <div>
         <div class="luxen-media-slot" style="min-height: 90px;">
-          {% if section.settings.step2_image != blank %}
-            <img src="{{ section.settings.step2_image | image_url: width: 300 }}" alt="Paso 2">
-          {% else %}
-            <span>💊 Paso 2</span>
-          {% endif %}
+          {% if product.metafields.custom.landing_paso2 != blank %}
+        <img src="{{ product.metafields.custom.landing_paso2 | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% elsif section.settings.step2_image != blank %}
+        <img src="{{ section.settings.step2_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <span>💊 Paso 2</span>
+      {% endif %}
         </div>
         <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">Dosis diaria</span>
       </div>
       <div>
         <div class="luxen-media-slot" style="min-height: 90px;">
-          {% if section.settings.step3_image != blank %}
-            <img src="{{ section.settings.step3_image | image_url: width: 300 }}" alt="Paso 3">
-          {% else %}
-            <span>🏃 Paso 3</span>
-          {% endif %}
+          {% if product.metafields.custom.landing_paso3 != blank %}
+        <img src="{{ product.metafields.custom.landing_paso3 | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% elsif section.settings.step3_image != blank %}
+        <img src="{{ section.settings.step3_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <span>🏃 Paso 3</span>
+      {% endif %}
         </div>
         <span style="font-size: 11px; color: #BBB; margin-top: 4px; display: block;">Movilidad activa</span>
       </div>
@@ -384,28 +394,43 @@
     <div class="luxen-section-title">Clientes Reales en Ecuador</div>
     <div class="luxen-grid-2">
       <div class="luxen-media-slot" style="min-height: 120px;">
-        {% if section.settings.ugc1_image != blank %}
-          <img src="{{ section.settings.ugc1_image | image_url: width: 400 }}" alt="Entrega 1">
-        {% else %}
-          <span>📦 Entrega en Guayaquil</span>
-        {% endif %}
+        {% if product.metafields.custom.landing_ugc1 != blank %}
+        <img src="{{ product.metafields.custom.landing_ugc1 | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% elsif section.settings.ugc1_image != blank %}
+        <img src="{{ section.settings.ugc1_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <span>📦 Entrega en Guayaquil</span>
+      {% endif %}
       </div>
       <div class="luxen-media-slot" style="min-height: 120px;">
-        {% if section.settings.ugc2_image != blank %}
-          <img src="{{ section.settings.ugc2_image | image_url: width: 400 }}" alt="Entrega 2">
-        {% else %}
-          <span>🚚 Entrega en Quito</span>
-        {% endif %}
+        {% if product.metafields.custom.landing_ugc2 != blank %}
+        <img src="{{ product.metafields.custom.landing_ugc2 | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% elsif section.settings.ugc2_image != blank %}
+        <img src="{{ section.settings.ugc2_image | image_url: width: 800 }}" alt="{{ product.title | escape }}">
+      {% else %}
+        <span>🚚 Entrega en Quito</span>
+      {% endif %}
       </div>
     </div>
 
     <div class="luxen-chat">
       <strong>💬 Confirmación de entrega vía Servientrega:</strong>
       <div class="luxen-bubble">
-        "Buenas tardes amigos de Luxen, ya recibí el frasco aquí en Machala. Pagué los .99 en efectivo al repartidor. Todo sellado y en orden, gracias."
-        <div style="font-size: 10px; color: #666; text-align: right; margin-top: 4px;">Ayer 15:30 • Carlos M.</div>
+        {% if product.metafields.custom.landing_chat_texto != blank %}
+          "{{ product.metafields.custom.landing_chat_texto }}"
+        {% else %}
+          "Buenas tardes amigos de Luxen, ya recibí el frasco aquí en Machala. Pagué los $39.99 en efectivo al repartidor. Todo sellado y en orden, gracias."
+        {% endif %}
+        <div style="font-size: 10px; color: #666; text-align: right; margin-top: 4px;">
+          {% if product.metafields.custom.landing_chat_autor != blank %}
+            {{ product.metafields.custom.landing_chat_autor }}
+          {% else %}
+            Ayer 15:30 • Carlos M.
+          {% endif %}
+        </div>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- MICRO-FOOTER ELEGANTE -->
