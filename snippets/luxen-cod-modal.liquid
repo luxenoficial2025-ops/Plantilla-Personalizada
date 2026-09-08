@@ -168,6 +168,9 @@
   </div>
 </div>
 
+<div class="easysell-embedded-wrapper" style="display:none;">
+  <button type="button" id="easysell-hidden-trigger" class="easysell-trigger btn product-form__submit"></button>
+</div>
 <script>
 // Exponer globalmente la funcion
 window.abrirLuxenModal = function(e) {
@@ -247,10 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Actualizar carrito y abrir EasySell
-  const submitBtn = document.getElementById('cod-submit-btn');
+  // Actualizar carrito y abrir EasySell mediante trigger simulado
+  const submitBtn = document.getElementById("cod-submit-btn");
   if(submitBtn) {
-    submitBtn.addEventListener('click', () => {
+    submitBtn.addEventListener("click", () => {
       const originalBtnText = submitBtn.innerText;
       submitBtn.innerText = "Cargando formulario...";
       submitBtn.disabled = true;
@@ -261,26 +264,31 @@ document.addEventListener('DOMContentLoaded', () => {
           id: variantId,
           quantity: parseInt(currentQty, 10),
           properties: {
-            '_source': "COD Landing"
+            "_source": "COD Landing"
           }
         }]
       };
 
-      fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/clear.js', { method: 'POST' })
+      fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + "cart/clear.js", { method: "POST" })
         .then(() => {
-          return fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/add.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+          return fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + "cart/add.js", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(cartData)
           });
         })
         .then(() => {
-           if (window.EasySell && typeof window.EasySell.openForm === 'function') {
-               window.cerrarLuxenModal();
-               window.EasySell.openForm();
+           window.cerrarLuxenModal();
+           
+           const easyBtn = document.querySelector(".easysell-trigger") || document.querySelector("#easysell-hidden-trigger");
+           if (easyBtn) {
+             easyBtn.click();
            } else {
-               window.location.href = '/checkout';
+             document.dispatchEvent(new CustomEvent("easysell:open"));
            }
+        })
+        .catch(err => {
+           console.error("Error al carrito:", err);
         })
         .finally(() => {
           submitBtn.innerText = originalBtnText;
