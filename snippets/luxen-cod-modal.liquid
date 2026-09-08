@@ -129,34 +129,7 @@
         </div>
       </div>
 
-      <!-- Formulario de Envío -->
-      <div class="cod-form-title">Ingrese su dirección de envío</div>
-      <div class="cod-row">
-        <div class="cod-field"><input type="text" id="cod-fname" placeholder="Nombre" required></div>
-        <div class="cod-field"><input type="text" id="cod-lname" placeholder="Apellido" required></div>
-      </div>
-      <div class="cod-field">
-        <input type="tel" id="cod-cel" placeholder="Celular / WhatsApp (Ej: 0991234567)" required>
-      </div>
-      <div class="cod-field">
-        <select id="cod-prov" required>
-          <option value="" disabled selected>Provincia...</option>
-          <option value="Guayas">Guayas</option>
-          <option value="Pichincha">Pichincha</option>
-          <option value="Azuay">Azuay</option>
-          <option value="Manabí">Manabí</option>
-          <option value="El Oro">El Oro</option>
-          <option value="Los Ríos">Los Ríos</option>
-          <option value="Otra">Otra</option>
-        </select>
-      </div>
-      <div class="cod-field">
-        <input type="text" id="cod-dir" placeholder="Dirección Exacta (Calle, Nro casa)" required>
-      </div>
-      <div class="cod-field">
-        <input type="text" id="cod-ref" placeholder="Referencias adicionales (Opcional)">
-      </div>
-
+      
       <button type="button" class="cod-submit-btn" id="cod-submit-btn">
         ✔ COMPLETA TU COMPRA - {{ product.price | money }} | Paga al recibir
       </button>
