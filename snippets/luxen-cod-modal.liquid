@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Envío del pedido a WhatsApp
+  // Envío del pedido a Shopify (Cart) y WhatsApp
   const submitBtn = document.getElementById('cod-submit-btn');
   if(submitBtn) {
     submitBtn.addEventListener('click', () => {
@@ -263,20 +263,79 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       
-      const productTitle = "{{ product.title | escape }}";
+      // 1. Cambiar estado del botón
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Procesando pedido...";
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.7";
+
+      // 2. Construir datos para el carrito de Shopify
+      const variantId = {{ product.selected_or_first_available_variant.id | default: 0 }};
       
-      let msg = "Hola LUXEN, he completado mi formulario de Contra Entrega:\n\n";
-      msg += "🛍️ *Producto:* " + productTitle + "\n";
-      msg += "📦 *Cantidad:* " + currentQty + " Unidad(es)\n";
-      msg += "💵 *Total a pagar:* " + currentTotalStr + " (Envío Gratis)\n\n";
-      msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
-      msg += "📱 *Celular:* " + cel + "\n";
-      msg += "📍 *Provincia:* " + prov + "\n";
-      msg += "🏠 *Dirección:* " + dir + "\n";
-      if(ref) msg += "📝 *Ref:* " + ref + "\n";
-      msg += "\n✅ ¡Por favor confirmen mi despacho!";
-      
-      window.location.href = "https://wa.me/593969280600?text=" + encodeURIComponent(msg);
+      const cartData = {
+        items: [{
+          id: variantId,
+          quantity: parseInt(currentQty, 10),
+          properties: {
+            'Nombre': fname + " " + lname,
+            'Teléfono': cel,
+            'Ciudad_Provincia': prov,
+            'Dirección': dir,
+            'Referencia': ref,
+            'Método_Pago': "Pago Contra Entrega (COD)"
+          }
+        }],
+        attributes: {
+          'Nombre': fname + " " + lname,
+          'Teléfono': cel,
+          'Ciudad_Provincia': prov,
+          'Dirección': dir,
+          'Referencia': ref,
+          'Método_Pago': "Pago Contra Entrega (COD)"
+        }
+      };
+
+      // 3. Petición AJAX para limpiar y añadir
+      fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/clear.js', { method: 'POST' })
+        .then(() => {
+          return fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(cartData)
+          });
+        })
+        .then(response => response.json())
+        .then(data => {
+          // 4. Redirigir a WhatsApp
+          const productTitle = "{{ product.title | escape }}";
+          
+          let msg = "Hola LUXEN, he completado mi formulario de Contra Entrega:\n\n";
+          msg += "📦 *Producto:* " + productTitle + "\n";
+          msg += "🛒 *Cantidad:* " + currentQty + " Unidad(es)\n";
+          msg += "💰 *Total a pagar:* " + currentTotalStr + " (Envío Gratis)\n\n";
+          msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
+          msg += "📱 *Celular:* " + cel + "\n";
+          msg += "📍 *Provincia:* " + prov + "\n";
+          msg += "🏠 *Dirección:* " + dir + "\n";
+          if(ref) msg += "📝 *Ref:* " + ref + "\n";
+          msg += "\n✅ ¡Por favor confirmen mi despacho!";
+          
+          window.location.href = "https://wa.me/593969280600?text=" + encodeURIComponent(msg);
+        })
+        .catch(err => {
+          console.error('Error:', err);
+          // Redirigir de todos modos como fallback
+          const productTitle = "{{ product.title | escape }}";
+          let msg = "Hola LUXEN, quiero hacer un pedido Contra Entrega de:\n";
+          msg += "📦 *Producto:* " + productTitle + "\n";
+          msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
+          window.location.href = "https://wa.me/593969280600?text=" + encodeURIComponent(msg);
+        })
+        .finally(() => {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
+        });
     });
   }
 });
