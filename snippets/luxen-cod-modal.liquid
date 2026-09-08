@@ -168,9 +168,11 @@
   </div>
 </div>
 
-<div class="easysell-embedded-wrapper" style="display:none;">
-  <button type="button" id="easysell-hidden-trigger" class="easysell-trigger btn product-form__submit"></button>
-</div>
+<form method="post" action="/cart/add" id="easysell-hidden-form" style="display:none;">
+  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
+  <input type="hidden" name="quantity" id="easysell-quantity" value="1">
+  <button type="submit" id="easysell-hidden-trigger" name="add" class="easysell-trigger"></button>
+</form>
 <script>
 // Exponer globalmente la funcion
 window.abrirLuxenModal = function(e) {
@@ -250,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Actualizar carrito y abrir EasySell mediante trigger simulado
+  // Integración nativa con EasySell via Formulario
   const submitBtn = document.getElementById("cod-submit-btn");
   if(submitBtn) {
     submitBtn.addEventListener("click", () => {
@@ -258,37 +260,23 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerText = "Cargando formulario...";
       submitBtn.disabled = true;
 
-      const variantId = {{ product.selected_or_first_available_variant.id | default: 0 }};
-      const cartData = {
-        items: [{
-          id: variantId,
-          quantity: parseInt(currentQty, 10),
-          properties: {
-            "_source": "COD Landing"
-          }
-        }]
-      };
+      // 1. Actualizar cantidad en el formulario oculto
+      const qtyInput = document.getElementById("easysell-quantity");
+      if (qtyInput) {
+         qtyInput.value = currentQty;
+      }
 
+      // 2. Limpiar carrito y disparar botón
       fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + "cart/clear.js", { method: "POST" })
-        .then(() => {
-          return fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + "cart/add.js", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(cartData)
-          });
-        })
         .then(() => {
            window.cerrarLuxenModal();
            
-           const easyBtn = document.querySelector(".easysell-trigger") || document.querySelector("#easysell-hidden-trigger");
+           const easyBtn = document.getElementById("easysell-hidden-trigger");
            if (easyBtn) {
              easyBtn.click();
            } else {
-             document.dispatchEvent(new CustomEvent("easysell:open"));
+             alert("Error de integración: Botón de compra no encontrado.");
            }
-        })
-        .catch(err => {
-           console.error("Error al carrito:", err);
         })
         .finally(() => {
           submitBtn.innerText = originalBtnText;
