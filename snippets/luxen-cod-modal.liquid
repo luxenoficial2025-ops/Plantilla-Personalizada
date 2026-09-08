@@ -247,55 +247,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Envío del pedido a Shopify (Cart) y WhatsApp
+  // Actualizar carrito y abrir EasySell
   const submitBtn = document.getElementById('cod-submit-btn');
   if(submitBtn) {
     submitBtn.addEventListener('click', () => {
-      const fname = document.getElementById('cod-fname').value.trim();
-      const lname = document.getElementById('cod-lname').value.trim();
-      const cel = document.getElementById('cod-cel').value.trim();
-      const prov = document.getElementById('cod-prov').value;
-      const dir = document.getElementById('cod-dir').value.trim();
-      const ref = document.getElementById('cod-ref').value.trim();
-      
-      if(!fname || !lname || !cel || !prov || !dir) {
-        alert("Por favor completa todos los campos requeridos para coordinar tu envío.");
-        return;
-      }
-      
-      // 1. Cambiar estado del botón
       const originalBtnText = submitBtn.innerText;
-      submitBtn.innerText = "Procesando pedido...";
+      submitBtn.innerText = "Cargando formulario...";
       submitBtn.disabled = true;
-      submitBtn.style.opacity = "0.7";
 
-      // 2. Construir datos para el carrito de Shopify
       const variantId = {{ product.selected_or_first_available_variant.id | default: 0 }};
-      
       const cartData = {
         items: [{
           id: variantId,
           quantity: parseInt(currentQty, 10),
           properties: {
-            'Nombre': fname + " " + lname,
-            'Teléfono': cel,
-            'Ciudad_Provincia': prov,
-            'Dirección': dir,
-            'Referencia': ref,
-            'Método_Pago': "Pago Contra Entrega (COD)"
+            '_source': "COD Landing"
           }
-        }],
-        attributes: {
-          'Nombre': fname + " " + lname,
-          'Teléfono': cel,
-          'Ciudad_Provincia': prov,
-          'Dirección': dir,
-          'Referencia': ref,
-          'Método_Pago': "Pago Contra Entrega (COD)"
-        }
+        }]
       };
 
-      // 3. Petición AJAX para limpiar y añadir
       fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/clear.js', { method: 'POST' })
         .then(() => {
           return fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + 'cart/add.js', {
@@ -304,65 +274,17 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(cartData)
           });
         })
-        .then(response => response.json())
-        .then(data => {
-          // 4. Redirigir a WhatsApp
-          const productTitle = "{{ product.title | escape }}";
-          
-          let msg = "Hola LUXEN, he completado mi formulario de Contra Entrega:\n\n";
-          msg += "📦 *Producto:* " + productTitle + "\n";
-          msg += "🛒 *Cantidad:* " + currentQty + " Unidad(es)\n";
-          msg += "💰 *Total a pagar:* " + currentTotalStr + " (Envío Gratis)\n\n";
-          msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
-          msg += "📱 *Celular:* " + cel + "\n";
-          msg += "📍 *Provincia:* " + prov + "\n";
-          msg += "🏠 *Dirección:* " + dir + "\n";
-          if(ref) msg += "📝 *Ref:* " + ref + "\n";
-          msg += "\n✅ ¡Por favor confirmen mi despacho!";
-          
-          // Disparar Dropify (si está disponible)
-          if (typeof window.Dropify !== "undefined" && window.Dropify.createOrder) {
-            window.Dropify.createOrder();
-          } else {
-            document.dispatchEvent(new CustomEvent("dropify:createOrder", { detail: cartData }));
-          }
-          
-          // Abrir WhatsApp en paralelo
-          window.open("https://wa.me/593969280600?text=" + encodeURIComponent(msg), "_blank");
-          
-          // Mostrar mensaje de éxito local
-          const modalBody = document.querySelector(".cod-modal-body");
-          if(modalBody) {
-            modalBody.innerHTML = "<div style=\"text-align:center; padding: 40px 20px;\"><h3 style=\"color:#16A34A; margin-bottom: 10px;\">¡Pedido Generado!</h3><p>Tu orden ha sido registrada. Redirigiendo a WhatsApp...</p></div>";
-          }
-        })
-        .catch(err => {
-          console.error('Error:', err);
-          // Redirigir de todos modos como fallback
-          const productTitle = "{{ product.title | escape }}";
-          let msg = "Hola LUXEN, quiero hacer un pedido Contra Entrega de:\n";
-          msg += "📦 *Producto:* " + productTitle + "\n";
-          msg += "👤 *Cliente:* " + fname + " " + lname + "\n";
-          // Disparar Dropify (si está disponible)
-          if (typeof window.Dropify !== "undefined" && window.Dropify.createOrder) {
-            window.Dropify.createOrder();
-          } else {
-            document.dispatchEvent(new CustomEvent("dropify:createOrder", { detail: cartData }));
-          }
-          
-          // Abrir WhatsApp en paralelo
-          window.open("https://wa.me/593969280600?text=" + encodeURIComponent(msg), "_blank");
-          
-          // Mostrar mensaje de éxito local
-          const modalBody = document.querySelector(".cod-modal-body");
-          if(modalBody) {
-            modalBody.innerHTML = "<div style=\"text-align:center; padding: 40px 20px;\"><h3 style=\"color:#16A34A; margin-bottom: 10px;\">¡Pedido Generado!</h3><p>Tu orden ha sido registrada. Redirigiendo a WhatsApp...</p></div>";
-          }
+        .then(() => {
+           if (window.EasySell && typeof window.EasySell.openForm === 'function') {
+               window.cerrarLuxenModal();
+               window.EasySell.openForm();
+           } else {
+               window.location.href = '/checkout';
+           }
         })
         .finally(() => {
           submitBtn.innerText = originalBtnText;
           submitBtn.disabled = false;
-          submitBtn.style.opacity = "1";
         });
     });
   }
