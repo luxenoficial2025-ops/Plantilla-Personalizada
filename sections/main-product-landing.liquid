@@ -289,7 +289,7 @@
       <span class="sale-price">{{ product.price | money }} USD</span>
     </div>
 
-    <button type="button" class="luxen-btn-cod" onclick="window.abrirLuxenModal(event)">
+    <button type="button" class="luxen-btn-cod releasit-cod-button" onclick="if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm(); }">
       PEDIR AHORA Y PAGAR AL RECIBIR
       <span class="luxen-btn-subtext">🚚 ¡Pagas en efectivo al repartidor en tu puerta!</span>
     </button>
@@ -445,7 +445,7 @@
   </div>
 
   <div class="luxen-sticky">
-    <button type="button" class="luxen-btn-cod" style="padding: 12px;" onclick="window.abrirLuxenModal(event)">
+    <button type="button" class="luxen-btn-cod releasit-cod-button" style="padding: 12px;" onclick="if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm(); }">
       PEDIR CONTRA ENTREGA - {{ product.price | money }}
       <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
     </button>
