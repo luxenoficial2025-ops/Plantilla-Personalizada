@@ -141,10 +141,10 @@
   </div>
 </div>
 
-<form method="post" action="/cart/add" id="easysell-hidden-form" style="display:none;">
+<form method="post" action="/cart/add" id="releasit-hidden-form" style="display:none;">
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
-  <input type="hidden" name="quantity" id="easysell-quantity" value="1">
-  <button type="submit" id="easysell-hidden-trigger" name="add" class="easysell-trigger"></button>
+  <input type="hidden" name="quantity" id="releasit-quantity" value="1">
+  <button type="submit" id="releasit-hidden-trigger" name="add" class="releasit-cod-button"></button>
 </form>
 <script>
 // Exponer globalmente la funcion
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Integración nativa con EasySell via Formulario
+  // Integración nativa con Releasit
   const submitBtn = document.getElementById("cod-submit-btn");
   if(submitBtn) {
     submitBtn.addEventListener("click", () => {
@@ -233,28 +233,30 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerText = "Cargando formulario...";
       submitBtn.disabled = true;
 
-      // 1. Actualizar cantidad en el formulario oculto
-      const qtyInput = document.getElementById("easysell-quantity");
+      // 1. Actualizar cantidad
+      const qtyInput = document.getElementById("releasit-quantity");
       if (qtyInput) {
          qtyInput.value = currentQty;
       }
 
-      // 2. Limpiar carrito y disparar botón
-      fetch((window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : "/") + "cart/clear.js", { method: "POST" })
-        .then(() => {
-           window.cerrarLuxenModal();
-           
-           const easyBtn = document.getElementById("easysell-hidden-trigger");
-           if (easyBtn) {
-             easyBtn.click();
-           } else {
-             alert("Error de integración: Botón de compra no encontrado.");
-           }
-        })
-        .finally(() => {
-          submitBtn.innerText = originalBtnText;
-          submitBtn.disabled = false;
-        });
+      // 2. Cerrar el modal
+      window.cerrarLuxenModal();
+      
+      // 3. Disparar Releasit
+      const releasitBtn = document.getElementById("releasit-hidden-trigger");
+      if (releasitBtn) {
+        releasitBtn.click();
+      } else if (window.Releasit && typeof window.Releasit.openForm === "function") {
+        window.Releasit.openForm();
+      } else {
+        // Fallback global custom event si Releasit no detecta el clic a tiempo
+        document.dispatchEvent(new CustomEvent("releasit:open"));
+      }
+
+      setTimeout(() => {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      }, 1500);
     });
   }
 });
