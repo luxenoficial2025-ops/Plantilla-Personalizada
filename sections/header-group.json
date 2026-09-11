@@ -53,10 +53,28 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    },
+    "1789108295e6e890b0": {
+      "type": "apps",
+      "blocks": {
+        "releasit_cod_form_form_app_block_cchn6i": {
+          "type": "shopify://apps/releasit-cod-form/blocks/form-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "releasit_cod_form_form_app_block_cchn6i"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "header",
-    "announcement_bar_ni3hHb"
+    "announcement_bar_ni3hHb",
+    "1789108295e6e890b0"
   ]
 }
