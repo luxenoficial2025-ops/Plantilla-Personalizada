@@ -292,7 +292,12 @@
     {% form 'product', product, id: 'product-form-landing-main', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit">
+  
+    <!-- Bloques de Apps (Ej: Releasit) -->
+    {%- for block in section.blocks -%}
+      {% render block %}
+    {%- endfor -%}
+<button type="button" class="luxen-btn-cod" onclick="event.preventDefault(); event.stopPropagation(); const rBtn = document.querySelector('.releasit-cod-btn, .releasit-button, [data-releasit-btn], .releasit-widget button'); if(rBtn) { rBtn.click(); } else { document.dispatchEvent(new CustomEvent('releasit:open', {detail: {variantId: '{{ product.selected_or_first_available_variant.id }}', quantity: 1}})); document.dispatchEvent(new CustomEvent('releasit:openForm')); setTimeout(() => { document.getElementById('product-form-landing-main').submit(); }, 500); }">
     PEDIR AHORA Y PAGAR AL RECIBIR
     <span class="luxen-btn-subtext">🤑 ¡Pagas en efectivo al repartidor en tu puerta!</span>
   </button>
@@ -453,7 +458,7 @@
     {% form 'product', product, id: 'product-form-landing-sticky', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit" style="padding: 12px;">
+  <button type="button" class="luxen-btn-cod" style="padding: 12px;" onclick="event.preventDefault(); event.stopPropagation(); const rBtn = document.querySelector('.releasit-cod-btn, .releasit-button, [data-releasit-btn], .releasit-widget button'); if(rBtn) { rBtn.click(); } else { document.dispatchEvent(new CustomEvent('releasit:open', {detail: {variantId: '{{ product.selected_or_first_available_variant.id }}', quantity: 1}})); document.dispatchEvent(new CustomEvent('releasit:openForm')); setTimeout(() => { document.getElementById('product-form-landing-main').submit(); }, 500); }">
     PEDIR CONTRA ENTREGA - {{ product.price | money }}
     <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
   </button>
@@ -475,6 +480,11 @@
   "name": "Landing COD Producto",
   "tag": "section",
   "class": "section-landing-cod",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
   "settings": [
     {
       "type": "header",
