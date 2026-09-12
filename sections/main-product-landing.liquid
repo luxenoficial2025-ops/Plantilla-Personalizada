@@ -292,7 +292,7 @@
     {% form 'product', product, id: 'product-form-landing-main', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit" onclick="event.preventDefault(); event.stopPropagation(); if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm({ variantId: '{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}', quantity: 1 }); } else { console.log('Releasit no encontrado'); }">
+  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit">
     PEDIR AHORA Y PAGAR AL RECIBIR
     <span class="luxen-btn-subtext">🤑 ¡Pagas en efectivo al repartidor en tu puerta!</span>
   </button>
@@ -453,7 +453,7 @@
     {% form 'product', product, id: 'product-form-landing-sticky', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit" style="padding: 12px;" onclick="event.preventDefault(); event.stopPropagation(); if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm({ variantId: '{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}', quantity: 1 }); } else { console.log('Releasit no encontrado'); }">
+  <button type="button" class="luxen-btn-cod releasit-cod-button product-form__submit" style="padding: 12px;">
     PEDIR CONTRA ENTREGA - {{ product.price | money }}
     <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
   </button>
