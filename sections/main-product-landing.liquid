@@ -1,4 +1,4 @@
-{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+﻿{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
 <style>
   /* 1. OCULTAR HEADER Y FOOTER GLOBAL DE SHOPIFY DAWN EN ESTA PLANTILLA */
@@ -289,13 +289,13 @@
       <span class="sale-price">{{ product.price | money }} USD</span>
     </div>
 
-    {% form 'product', product, id: 'product-form-landing-main' %}
+    {% form 'product', product, id: 'product-form-landing-main', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button" onclick="event.preventDefault(); event.stopPropagation(); if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm({ variantId: '{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}', quantity: 1 }); } else { const b = document.querySelector('.releasit-cod-button'); if(b) b.click(); }">
-      PEDIR AHORA Y PAGAR AL RECIBIR
-      <span class="luxen-btn-subtext">🚚 ¡Pagas en efectivo al repartidor en tu puerta!</span>
-    </button>
+  <button type="submit" name="add" class="luxen-btn-cod releasit-cod-button product-form__submit">
+    PEDIR AHORA Y PAGAR AL RECIBIR
+    <span class="luxen-btn-subtext">🤑 ¡Pagas en efectivo al repartidor en tu puerta!</span>
+  </button>
 {% endform %}
   </div>
 
@@ -450,13 +450,13 @@
 
   <div class="releasit-cod-form-container" data-product-id="{{ product.id }}"></div>
   <div class="luxen-sticky">
-    {% form 'product', product, id: 'product-form-landing-sticky' %}
+    {% form 'product', product, id: 'product-form-landing-sticky', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
-  <button type="button" class="luxen-btn-cod releasit-cod-button" style="padding: 12px;" onclick="event.preventDefault(); event.stopPropagation(); if(window.Releasit && typeof window.Releasit.openForm === 'function'){ window.Releasit.openForm({ variantId: '{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}', quantity: 1 }); } else { const b = document.querySelector('.releasit-cod-button'); if(b) b.click(); }">
-      PEDIR CONTRA ENTREGA - {{ product.price | money }}
-      <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
-    </button>
+  <button type="submit" name="add" class="luxen-btn-cod releasit-cod-button product-form__submit" style="padding: 12px;">
+    PEDIR CONTRA ENTREGA - {{ product.price | money }}
+    <span class="luxen-btn-subtext">Paga en efectivo al recibir tu paquete</span>
+  </button>
 {% endform %}
   </div>
 </div>
