@@ -1,4 +1,4 @@
-/*
+﻿/*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
  *
@@ -11,6 +11,15 @@
   "sections": {
     "main": {
       "type": "main-product-landing",
+      "blocks": {
+        "releasit_cod_form": {
+          "type": "shopify://apps/releasit-cod-form/blocks/form-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "releasit_cod_form"
+      ],
       "settings": {
         "infographic_image": "shopify://shop_images/Gemini_Generated_Image_v7ug5v7ug5v7ug5v.jpg",
         "before_image": "shopify://shop_images/Gemini_Generated_Image_9d4udf9d4udf9d4u.jpg",
