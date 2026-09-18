@@ -66,6 +66,25 @@
     display: flex; align-items: center; justify-content: center;
     overflow: hidden; border: 1px solid var(--line);
   }
+  .luxen-modular-wrapper .product-gallery-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .luxen-modular-wrapper .product-gallery-slider::-webkit-scrollbar {
+    display: none;
+  }
+  .luxen-modular-wrapper .product-gallery-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: center;
+    position: relative;
+  }
   .luxen-modular-wrapper .gallery-thumbs { 
     display: flex; gap: 10px; margin-top: 12px; 
     overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory;
@@ -200,17 +219,23 @@
 
       <!-- GALERÍA MULTIMEDIA -->
       <div class="gallery-col">
-        <div class="gallery-main">
+        <div class="gallery-main product-gallery-slider" id="product-gallery-slider">
           {% if product.images.size > 0 %}
-            <img id="MainModularImage" src="{{ product.images.first | img_url: '800x800' }}" alt="{{ product.title | escape }}" style="width: 100%; height: 100%; object-fit: cover;">
+            {% for image in product.images %}
+              <div class="product-gallery-slide">
+                <img src="{{ image | img_url: '800x800' }}" alt="{{ image.alt | escape | default: product.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            {% endfor %}
           {% else %}
-            <div style="padding:40px; color:#6B6357;">Sin imagen</div>
+            <div class="product-gallery-slide" style="justify-content: center; align-items: center; display: flex;">
+              <div style="padding:40px; color:#6B6357;">Sin imagen</div>
+            </div>
           {% endif %}
         </div>
         {% if product.images.size > 1 %}
         <div class="gallery-thumbs">
           {% for image in product.images %}
-            <div class="{% if forloop.first %}active{% endif %}" onclick="luxenModularSwapImg('{{ image | img_url: '800x800' }}', this)">
+            <div class="{% if forloop.first %}active{% endif %}" onclick="luxenModularSwapImg({{ forloop.index0 }}, this)">
               <img src="{{ image | img_url: '150x150' }}" alt="thumb" style="width:100%; height:100%; object-fit:cover;">
             </div>
           {% endfor %}
@@ -347,13 +372,41 @@
 </div>
 
 <script>
-  function luxenModularSwapImg(src, el) {
-    document.getElementById('MainModularImage').src = src;
+  function luxenModularSwapImg(index, el) {
+    const slider = document.getElementById('product-gallery-slider');
+    if (slider) {
+      const slideWidth = slider.clientWidth;
+      slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+    }
     var thumbs = document.querySelectorAll('.gallery-thumbs div');
     thumbs.forEach(function(thumb) {
       thumb.classList.remove('active');
     });
-    el.classList.add('active');
+    if (el) el.classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('product-gallery-slider');
+    const thumbs = document.querySelectorAll('.gallery-thumbs div');
+    
+    if (slider && thumbs.length > 0) {
+      let isClickScrolling = false;
+      slider.addEventListener('scroll', function() {
+        if (isClickScrolling) return;
+        const slideWidth = slider.clientWidth;
+        const scrollPosition = slider.scrollLeft;
+        const currentIndex = Math.round(scrollPosition / slideWidth);
+        
+        thumbs.forEach((thumb, index) => {
+          if (index === currentIndex) {
+            thumb.classList.add('active');
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          } else {
+            thumb.classList.remove('active');
+          }
+        });
+      }, { passive: true });
+    }
   }
 
   function triggerReleasitApp() {
