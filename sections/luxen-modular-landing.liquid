@@ -86,17 +86,13 @@
     position: relative;
   }
   .luxen-modular-wrapper .gallery-thumbs { 
-    display: flex; gap: 10px; margin-top: 12px; 
-    overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory;
-    scrollbar-width: thin; 
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; 
   }
-  .luxen-modular-wrapper .gallery-thumbs::-webkit-scrollbar { height: 4px; }
-  .luxen-modular-wrapper .gallery-thumbs::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
   .luxen-modular-wrapper .gallery-thumbs div {
-    flex: 0 0 calc(25% - 8px); aspect-ratio: 1/1; height: auto; border-radius: var(--radius-sm);
+    aspect-ratio: 1/1; width: 100%; height: auto; border-radius: var(--radius-sm);
     background: var(--bg-panel); border: 1px solid var(--line);
     display: flex; align-items: center; justify-content: center; cursor: pointer;
-    overflow: hidden; scroll-snap-align: start;
+    overflow: hidden;
   }
   .luxen-modular-wrapper .gallery-thumbs div.active { border-color: var(--accent); border-width: 2px; }
 
