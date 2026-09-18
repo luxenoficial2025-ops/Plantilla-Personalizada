@@ -88,12 +88,6 @@
   .luxen-modular-wrapper .price-row .now { font-size: 1.85rem; font-weight: 700; font-family: 'Newsreader', serif; color: var(--accent); }
   .luxen-modular-wrapper .price-row .was { text-decoration: line-through; color: var(--text-muted); font-size: 1.05rem; }
   .luxen-modular-wrapper .price-row .save { background: #D85A38; color: #FFFDF8; font-size: 0.74rem; font-weight: 700; padding: 3px 9px; border-radius: 4px; }
-
-  /* Contenedor Oficial Releasit */
-  .luxen-modular-wrapper .releasit-placeholder-block {
-    margin: 0 0 22px;
-    min-height: 56px;
-  }
   
 
   /* Social proof badge */
@@ -252,16 +246,11 @@
         {% form 'product', product, id: 'product-form-installation', class: 'form', data-type: 'add-to-cart-form' %}
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
           <input type="hidden" name="quantity" value="1">
-          <!-- RELEASIT: Contenedor nativo donde la app inyecta el botón COD -->
-          <div class="releasit-placeholder-block">
-            {%- for block in section.blocks -%}
+          {%- for block in section.blocks -%}
               {%- if block.type == '@app' -%}
                 {% render block %}
               {%- endif -%}
             {%- endfor -%}
-            
-            
-          </div>
         {% endform %}
 
         <!-- Fragmento de Reseñas Destacadas -->
