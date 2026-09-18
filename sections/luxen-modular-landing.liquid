@@ -82,8 +82,10 @@
   .luxen-modular-wrapper .product-gallery-slide {
     flex: 0 0 100%;
     min-width: 100%;
-    scroll-snap-align: center;
-    position: relative;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .luxen-modular-wrapper .gallery-thumbs { 
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; 
@@ -184,12 +186,12 @@
   .luxen-modular-wrapper .mobile-slider-indicator {
     display: none;
     align-items: center; justify-content: center;
-    gap: 16px; margin-top: 14px; font-weight: 600;
-    color: var(--text-dark);
+    gap: 12px; margin-top: 10px; font-size: 15px; font-weight: 500;
+    color: #333;
   }
-  .luxen-modular-wrapper .mobile-slider-indicator button {
-    background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted);
-    padding: 4px 12px;
+  .luxen-modular-wrapper .mobile-slider-indicator span.slide-prev,
+  .luxen-modular-wrapper .mobile-slider-indicator span.slide-next {
+    font-size: 20px; cursor: pointer; user-select: none; color: #555; padding: 0 10px;
   }
   @media (max-width: 860px) {
     .luxen-modular-wrapper .product .grid { grid-template-columns: 1fr; gap: 28px; }
@@ -200,9 +202,10 @@
     .luxen-modular-wrapper .info-col h1 {
       font-size: 26px !important;
       font-weight: 800 !important;
-      line-height: 1.2 !important;
+      line-height: 1.25 !important;
+      color: #1a1a1a !important;
       letter-spacing: -0.5px;
-      margin-bottom: 10px !important;
+      margin-bottom: 8px !important;
     }
   }
 </style>
@@ -238,7 +241,7 @@
           {% if product.images.size > 0 %}
             {% for image in product.images %}
               <div class="product-gallery-slide">
-                <img src="{{ image | img_url: '800x800' }}" alt="{{ image.alt | escape | default: product.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="{{ image | img_url: '800x800' }}" alt="{{ image.alt | escape | default: product.title }}" style="max-width: 100%; height: auto; border-radius: 12px; object-fit: contain;">
               </div>
             {% endfor %}
           {% else %}
@@ -249,9 +252,9 @@
         </div>
         {% if product.images.size > 1 %}
         <div class="mobile-slider-indicator">
-          <button type="button" onclick="luxenModularScroll(-1)">&#10094;</button>
-          <span id="slider-counter">1 / {{ product.images.size }}</span>
-          <button type="button" onclick="luxenModularScroll(1)">&#10095;</button>
+          <span class="slide-prev" onclick="luxenModularScroll(-1)">‹</span>
+          <span class="slide-count" id="slider-counter">1/{{ product.images.size }}</span>
+          <span class="slide-next" onclick="luxenModularScroll(1)">›</span>
         </div>
         <div class="gallery-thumbs">
           {% for image in product.images %}
@@ -271,12 +274,11 @@
         
         <h1>{{ product.title }}</h1>
 
-        {% if section.settings.rating_text != blank %}
-        <div class="tt-rating-row">
-          <span class="stars">★★★★★</span>
-          <span>{{ section.settings.rating_text }}</span>
-        </div>
-        {% endif %}
+        <div class="tt-rating-row" style="font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; margin-bottom: 12px;">
+            <strong style="color: #111;">5.0</strong>
+            <span class="stars" style="color: #FACC15;">★★★★★</span>
+            <span>(13) 49 vendido(s) recientemente</span>
+          </div>
 
         <div class="price-row">
           <span class="now">{{ product.price | money }}</span>
@@ -439,7 +441,7 @@
         });
         const counter = document.getElementById('slider-counter');
         if (counter) {
-          counter.innerText = (currentIndex + 1) + " / " + thumbs.length;
+          counter.innerText = (currentIndex + 1) + "/" + thumbs.length;
         }
       }, { passive: true });
     }
