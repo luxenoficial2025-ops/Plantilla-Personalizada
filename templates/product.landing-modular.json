@@ -45,6 +45,15 @@
             "svg_code": ""
           }
         },
+        "feature_hzhxyx": {
+          "type": "feature",
+          "settings": {
+            "title": "🌾 Enriquecido con Arroz y Cúrcuma",
+            "text": "<h1>✔️ Extracto de arroz para una piel más suave<br/>✔️ Cúrcuma que ayuda a mejorar el aspecto de la piel<br/>✔️ Nutre e ilumina con cada aplicación</h1>",
+            "image": "shopify://shop_images/Gemini_Generated_Image_vo9bsuvo9bsuvo9b_3.jpg",
+            "svg_code": ""
+          }
+        },
         "faq_1": {
           "type": "faq",
           "settings": {
@@ -99,6 +108,7 @@
         "feature_1",
         "feature_2",
         "feature_3",
+        "feature_hzhxyx",
         "faq_1",
         "faq_2",
         "faq_3",
