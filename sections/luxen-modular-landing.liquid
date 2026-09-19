@@ -259,7 +259,61 @@
       margin-bottom: 8px !important;
     }
   }
-</style>
+
+  /* POKI SHOP STYLES */
+  .product-title-custom {
+    font-family: system-ui, -apple-system, sans-serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+  }
+  .poki-reviews {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+  }
+  .poki-reviews .stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 2px; }
+  .poki-reviews .text { color: #333; font-weight: 600; font-size: 0.95rem; }
+  
+  .poki-price-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .poki-price-row .was { text-decoration: line-through; color: #666; font-size: 1.1rem; }
+  .poki-price-row .now { font-size: 1.4rem; font-weight: 700; color: #111; }
+  .poki-price-row .badge {
+    background: #d4a373; color: #fff; border-radius: 12px; padding: 3px 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+  }
+  
+  .poki-cod-btn {
+    width: 100%;
+    background: #ff7a00;
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin-top: 10px; margin-bottom: 20px;
+  }
+  .poki-cod-btn .truck-icon { stroke: #fff; flex-shrink: 0; }
+  .poki-cod-btn .btn-text { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+  .poki-cod-btn .line1 { font-size: 1.1rem; font-weight: 700; color: #fff; display: block; }
+  .poki-cod-btn .line2 { font-size: 0.9rem; font-weight: 400; color: #fff; opacity: 0.95; }
+  
+  .poki-snippet-card { margin-top: 16px; margin-bottom: 24px; }
+  .poki-snippet-header { font-size: 0.85rem; font-weight: 700; color: #111; margin-bottom: 8px; }
+  .poki-snippet-box {
+    background: #fff; border-radius: 16px; border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04); padding: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .poki-snippet-box .nav-arrow { color: #ccc; font-size: 1.5rem; font-weight: 300; cursor: pointer; user-select: none; }
+  .snippet-content { flex-grow: 1; padding: 0 12px; text-align: center; }
+  .snippet-user { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px; }
+  .snippet-user strong { font-size: 0.9rem; color: #111; }
+  .snippet-user .stars { color: #ffb703; font-size: 0.8rem; letter-spacing: 1px; }
+  .snippet-text { font-size: 0.85rem; color: #666; line-height: 1.4; margin: 0; }
+
+  </style>
 
 <div class="luxen-modular-wrapper">
   <!-- MARQUEE SUPERIOR -->
@@ -323,24 +377,21 @@
         <div class="eyebrow">{{ section.settings.eyebrow_text }}</div>
         {% endif %}
         
-        <h1>{{ product.title }}</h1>
+        <h1 class="product-title-custom">✨ {{ product.title }}</h1>
 
-        <div class="tt-rating-row" style="font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; margin-bottom: 12px;">
-            <strong style="color: #111;">5.0</strong>
-            <span class="stars" style="color: #FACC15;">★★★★★</span>
-            <span>(13) 49 vendido(s) recientemente</span>
-          </div>
+        <div class="poki-reviews">
+  <span class="stars">★★★★★</span>
+  <span class="text">23 Reseñas</span>
+</div>
 
-        <div class="price-row">
-          <span class="now">{{ product.price | money }}</span>
-          {% if product.compare_at_price > product.price %}
-            <span class="was">{{ product.compare_at_price | money }}</span>
-            {% assign saving = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round %}
-            <span class="save">-{{ saving }}%</span>
-          {% endif %}
-        </div>
-
-        <!-- Social Proof -->
+        <div class="poki-price-row">
+  {% if product.compare_at_price > product.price %}
+    <span class="was">{{ product.compare_at_price | money }}</span>
+  {% endif %}
+  <span class="now">{{ product.price | money }}</span>
+  <span class="badge">Oferta</span>
+</div>
+<!-- Social Proof -->
         {% if section.settings.social_proof_text != blank %}
         <div class="happy-customersV2">
           <span>{{ section.settings.social_proof_text }}</span>
@@ -348,23 +399,41 @@
         {% endif %}
 
         {% form 'product', product, id: 'product-form-installation', class: 'form', data-type: 'add-to-cart-form' %}
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
-          <input type="hidden" name="quantity" value="1">
-          {%- for block in section.blocks -%}
-              {%- if block.type == '@app' -%}
-                {% render block %}
-              {%- endif -%}
-            {%- endfor -%}
-        {% endform %}
+  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
+  <input type="hidden" name="quantity" value="1">
+  
+  <button type="submit" class="poki-cod-btn releasit-buy-now-button">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="truck-icon"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+    <div class="btn-text">
+      <span class="line1">Pedir ahora y pagar al recibir</span>
+      <span class="line2">¡Envío Gratis!</span>
+    </div>
+  </button>
+
+  {%- for block in section.blocks -%}
+    {%- if block.type == '@app' -%}
+      {% render block %}
+    {%- endif -%}
+  {%- endfor -%}
+{% endform %}
 
         <!-- Fragmento de Reseñas Destacadas -->
         {% if section.settings.review_highlight_text != blank %}
-        <div class="tt-bs-area">
-          <div class="tt-bs-title">Fragmento de reseña destacada</div>
-          <div class="tt-bs-author">{{ section.settings.review_highlight_author }} <span style="color:var(--star)">★★★★★</span></div>
-          <div class="tt-bs-text">"{{ section.settings.review_highlight_text }}"</div>
-        </div>
-        {% endif %}
+<div class="poki-snippet-card">
+  <div class="poki-snippet-header">Fragmentos de reseñas</div>
+  <div class="poki-snippet-box">
+    <div class="nav-arrow left">‹</div>
+    <div class="snippet-content">
+      <div class="snippet-user">
+        <strong>{{ section.settings.review_highlight_author }}</strong>
+        <span class="stars">★★★★★</span>
+      </div>
+      <p class="snippet-text">"{{ section.settings.review_highlight_text }}"</p>
+    </div>
+    <div class="nav-arrow right">›</div>
+  </div>
+</div>
+{% endif %}
 
         <!-- DESCRIPCIÓN PERSUASIVA -->
         <div class="product__description">
