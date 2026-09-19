@@ -21,8 +21,8 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "title": "¡Renueva tu piel con cada aplicación! 💖",
-            "text": "<h1>✔️ Exfoliación suave y efectiva<br/>✔️ Ayuda a unificar el tono de la piel</h1>",
+            "title": "1. ⚡ Energía que te acompaña todo el día",
+            "text": "<h3><strong>✔ Di adiós a los días largos que te dejan sin fuerzas<br/><br/>✔ Con shilajit y ácido fúlvico, un clásico de la vitalidad<br/><br/>✔ Apoya tu energía desde la mañana</strong></h3>",
             "image": "shopify://shop_images/18050349-d7b2-4df6-a62f-3f6a3b6f4449.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
