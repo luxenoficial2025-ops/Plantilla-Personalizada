@@ -490,3 +490,23 @@
     color: currentColor;
   }
 }
+
+
+/* FIX: Ocultar banner__content vacio para eliminar espacio sobrante */
+.banner__content:empty,
+.banner__content.banner__content--empty {
+  display: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* Ensure the banner wrapper itself doesn't force a minimum height when empty */
+.banner--medium:not(.banner--mobile-bottom),
+.banner:not(.banner--mobile-bottom) {
+  min-height: 0 !important;
+}
+/* If the content box has no text blocks inside */
+.banner__content:has(> .banner__box:empty) {
+  display: none !important;
+}
+
