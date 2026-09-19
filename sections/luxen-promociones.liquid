@@ -1,7 +1,11 @@
 <style>
+  .shopify-section:has(+ #shopify-section-{{ section.id }}) {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+  }
   .luxen-promo-wrapper {
     background-color: #FFFFFF;
-    padding: 30px 15px;
+    padding: 15px 15px 30px 15px;
     color: #111111;
     font-family: inherit;
   }
@@ -9,6 +13,7 @@
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
+    margin-top: 0;
     margin-bottom: 25px;
     color: #111111;
     line-height: 1.2;
