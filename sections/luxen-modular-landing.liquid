@@ -263,11 +263,12 @@
   /* POKI SHOP STYLES */
   .product-title-custom {
     font-family: system-ui, -apple-system, sans-serif !important;
-    font-size: 2.2rem !important;
+    font-size: 2.3rem !important;
     font-weight: 800 !important;
-    color: #111 !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
+    color: #111111 !important;
     margin-bottom: 12px !important;
+    text-transform: none !important;
   }
   .poki-reviews {
     display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
@@ -384,29 +385,22 @@
   <span class="text">23 Reseñas</span>
 </div>
 
-        <div class="poki-price-row">
-  {% if product.compare_at_price > product.price %}
-    <span class="was">{{ product.compare_at_price | money }}</span>
-  {% endif %}
-  <span class="now">{{ product.price | money }}</span>
-  <span class="badge">Oferta</span>
-</div>
-<!-- Social Proof -->
-        {% if section.settings.social_proof_text != blank %}
-        <div class="happy-customersV2">
-          <span>{{ section.settings.social_proof_text }}</span>
-        </div>
-        {% endif %}
+        <div style="display: flex; align-items: center; gap: 12px; margin: 15px 0;">
+    <span style="text-decoration: line-through; color: #777; font-size: 1.2rem;">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}$35.00{% endif %}</span>
+    <span style="font-size: 1.6rem; font-weight: 800; color: #111;">{{ product.price | money }}</span>
+    <span style="background: #d4a373; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">Oferta</span>
+  </div>
+
 
         {% form 'product', product, id: 'product-form-installation', class: 'form', data-type: 'add-to-cart-form' %}
   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: product.variants.first.id }}">
   <input type="hidden" name="quantity" value="1">
   
-  <button type="submit" class="poki-cod-btn releasit-buy-now-button">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="truck-icon"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-    <div class="btn-text">
-      <span class="line1">Pedir ahora y pagar al recibir</span>
-      <span class="line2">¡Envío Gratis!</span>
+  <button type="submit" class="luxen-btn-cod releasit-cod-button" style="background: #ff6f00 !important; border: none !important; border-radius: 14px !important; width: 100% !important; padding: 16px 20px !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 12px !important; box-shadow: 0 4px 14px rgba(255, 111, 0, 0.35) !important; cursor: pointer !important;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+    <div style="display: flex; flex-direction: column; align-items: center; line-height: 1.2;">
+      <span style="font-size: 1.2rem; font-weight: 800; color: #ffffff;">Pedir ahora y pagar al recibir</span>
+      <span style="font-size: 0.9rem; font-weight: 500; color: #ffffff; opacity: 0.95;">¡Envío Gratis!</span>
     </div>
   </button>
 
