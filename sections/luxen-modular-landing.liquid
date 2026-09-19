@@ -499,10 +499,18 @@
         <a href="/">Inicio</a>
         <a href="/collections/all">Catálogo</a>
         <a href="/pages/contact">Contacto</a>
+        <a href="https://wa.me/593969280600">WhatsApp</a>
       </div>
       <div>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
+        <a href="https://www.tiktok.com/@_luxen_2025_">TikTok</a>
+        <a href="https://instagram.com/luxen_2004">Instagram</a>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top: 20px;">
+      <div>
+        {% for policy in shop.policies %}
+          <a href="{{ policy.url }}">{{ policy.title }}</a>
+        {% endfor %}
       </div>
     </div>
     <div class="wrap bottom">© {{ 'now' | date: '%Y' }}, {{ shop.name }} — Tienda online</div>
