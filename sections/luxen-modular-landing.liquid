@@ -67,26 +67,21 @@
     overflow: hidden; border: 1px solid var(--line);
   }
   .luxen-modular-wrapper .product-gallery-slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 0;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .luxen-modular-wrapper .product-gallery-slider::-webkit-scrollbar {
-    display: none;
-  }
-  .luxen-modular-wrapper .product-gallery-slide {
-    flex: 0 0 100%;
-    min-width: 100%;
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+      display: block;
+      overflow: hidden;
+    }
+    .luxen-modular-wrapper .product-gallery-slider::-webkit-scrollbar {
+      display: none;
+    }
+    .luxen-modular-wrapper .product-gallery-slide {
+      display: none;
+      width: 100%;
+    }
+    .luxen-modular-wrapper .product-gallery-slide:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   .luxen-modular-wrapper .gallery-thumbs { 
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; 
   }
@@ -245,6 +240,20 @@
     font-size: 20px; cursor: pointer; user-select: none; color: #555; padding: 0 10px;
   }
   @media (max-width: 860px) {
+      .luxen-modular-wrapper .product-gallery-slider {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 10px !important;
+        scroll-behavior: smooth;
+      }
+      .luxen-modular-wrapper .product-gallery-slide {
+        display: flex !important;
+        flex: 0 0 100% !important;
+        scroll-snap-align: start !important;
+        min-width: 100% !important;
+      }
     .luxen-modular-wrapper .product .grid { grid-template-columns: 1fr; gap: 28px; }
     .luxen-modular-wrapper .gallery-col { position: static; }
     .luxen-modular-wrapper .reviews-grid { grid-template-columns: 1fr; }
@@ -343,36 +352,36 @@
 
       <!-- GALERÍA MULTIMEDIA -->
       <div class="gallery-col">
-        <div class="gallery-main product-gallery-slider" id="product-gallery-slider">
-          {% if product.images.size > 0 %}
-            {% for image in product.images %}
-              <div class="product-gallery-slide">
-                <img src="{{ image | img_url: '800x800' }}" alt="{{ image.alt | escape | default: product.title }}" style="max-width: 100%; height: auto; border-radius: 12px; object-fit: contain;">
+          <div class="gallery-main product-gallery-slider luxen-main-image" id="product-gallery-slider">
+            {% if product.media.size > 0 %}
+              {% for media in product.media %}
+                <div class="product-gallery-slide">
+                  <img data-main-product-image src="{{ media.preview_image | img_url: '1000x' }}" alt="{{ media.alt | escape | default: product.title }}" style="max-width: 100%; height: auto; border-radius: 12px; object-fit: contain;">
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="product-gallery-slide" style="justify-content: center; align-items: center; display: flex;">
+                <div style="padding:40px; color:#6B6357;">Sin imagen</div>
+              </div>
+            {% endif %}
+          </div>
+          {% if product.media.size > 1 %}
+          <div class="mobile-slider-indicator">
+            <span class="slide-prev" onclick="luxenModularScroll(-1)">‹</span>
+            <span class="slide-count" id="slider-counter">1/{{ product.media.size }}</span>
+            <span class="slide-next" onclick="luxenModularScroll(1)">›</span>
+          </div>
+          <div class="gallery-thumbs">
+            {% for media in product.media %}
+              <div class="luxen-thumbnail {% if forloop.first %}active{% endif %}" data-target-src="{{ media.preview_image | img_url: '1000x' }}">
+                <img src="{{ media.preview_image | img_url: '150x150', crop: 'center' }}" alt="thumb" style="width:100%; height:100%; object-fit:cover;">
               </div>
             {% endfor %}
-          {% else %}
-            <div class="product-gallery-slide" style="justify-content: center; align-items: center; display: flex;">
-              <div style="padding:40px; color:#6B6357;">Sin imagen</div>
-            </div>
+          </div>
           {% endif %}
         </div>
-        {% if product.images.size > 1 %}
-        <div class="mobile-slider-indicator">
-          <span class="slide-prev" onclick="luxenModularScroll(-1)">‹</span>
-          <span class="slide-count" id="slider-counter">1/{{ product.images.size }}</span>
-          <span class="slide-next" onclick="luxenModularScroll(1)">›</span>
-        </div>
-        <div class="gallery-thumbs">
-          {% for image in product.images %}
-            <div class="{% if forloop.first %}active{% endif %}" onclick="luxenModularSwapImg({{ forloop.index0 }}, this)">
-              <img src="{{ image | img_url: '150x150' }}" alt="thumb" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
 
-      <!-- COLUMNA DE COMPRA & CONTENIDO -->
+        <!-- COLUMNA DE COMPRA & CONTENIDO -->
       <div class="info-col">
         {% if section.settings.eyebrow_text != blank %}
         <div class="eyebrow">{{ section.settings.eyebrow_text }}</div>
@@ -502,75 +511,68 @@
 </div>
 
 <script>
-  function luxenModularScroll(direction) {
-    const slider = document.getElementById('product-gallery-slider');
-    if (!slider) return;
-    const slideWidth = slider.clientWidth;
-    const currentIndex = Math.round(slider.scrollLeft / slideWidth);
-    const newIndex = currentIndex + direction;
-    const maxIndex = slider.children.length - 1;
-    if (newIndex >= 0 && newIndex <= maxIndex) {
-      slider.scrollTo({ left: newIndex * slideWidth, behavior: 'smooth' });
-    }
-  }
-
-  function luxenModularSwapImg(index, el) {
-    const slider = document.getElementById('product-gallery-slider');
-    if (slider) {
+    function luxenModularScroll(direction) {
+      const slider = document.getElementById('product-gallery-slider');
+      if (!slider) return;
       const slideWidth = slider.clientWidth;
-      slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+      const currentIndex = Math.round(slider.scrollLeft / slideWidth);
+      const newIndex = currentIndex + direction;
+      const maxIndex = slider.children.length - 1;
+      if (newIndex >= 0 && newIndex <= maxIndex) {
+        slider.scrollTo({ left: newIndex * slideWidth, behavior: 'smooth' });
+      }
     }
-    var thumbs = document.querySelectorAll('.gallery-thumbs div');
-    thumbs.forEach(function(thumb) {
-      thumb.classList.remove('active');
-    });
-    if (el) el.classList.add('active');
-  }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('product-gallery-slider');
-    const thumbs = document.querySelectorAll('.gallery-thumbs div');
-    
-    if (slider && thumbs.length > 0) {
-      let isClickScrolling = false;
-      slider.addEventListener('scroll', function() {
-        if (isClickScrolling) return;
-        const slideWidth = slider.clientWidth;
-        const scrollPosition = slider.scrollLeft;
-        const currentIndex = Math.round(scrollPosition / slideWidth);
-        
-        thumbs.forEach((thumb, index) => {
-          if (index === currentIndex) {
-            thumb.classList.add('active');
-            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          } else {
-            thumb.classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Thumbnail Click Logic
+      document.querySelectorAll('.luxen-thumbnail, [data-media-thumbnail]').forEach(thumb => {
+        thumb.addEventListener('click', function() {
+          const newSrc = this.getAttribute('data-target-src') || this.querySelector('img').src;
+          const mainImg = document.querySelector('.luxen-main-image img, [data-main-product-image]');
+          if (mainImg && newSrc) {
+            mainImg.src = newSrc;
           }
+          document.querySelectorAll('.luxen-thumbnail').forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
         });
-        const counter = document.getElementById('slider-counter');
-        if (counter) {
-          counter.innerText = (currentIndex + 1) + "/" + thumbs.length;
-        }
-      }, { passive: true });
-    }
-  }
+      });
 
-  function triggerReleasitApp() {
-    if (window.Releasit && typeof window.Releasit.openModal === 'function') {
-      window.Releasit.openModal();
-      return;
+      // Mobile Slider Logic
+      const slider = document.getElementById('product-gallery-slider');
+      const thumbs = document.querySelectorAll('.gallery-thumbs div');
+      
+      if (slider && thumbs.length > 0) {
+        let isClickScrolling = false;
+        slider.addEventListener('scroll', function() {
+          if (isClickScrolling) return;
+          const slideWidth = slider.clientWidth;
+          const scrollPosition = slider.scrollLeft;
+          const currentIndex = Math.round(scrollPosition / slideWidth);
+          
+          const counter = document.getElementById('slider-counter');
+          if (counter) {
+            counter.innerText = (currentIndex + 1) + "/" + thumbs.length;
+          }
+        }, { passive: true });
+      }
+    });
+  
+    function triggerReleasitApp() {
+      if (window.Releasit && typeof window.Releasit.openModal === 'function') {
+        window.Releasit.openModal();
+        return;
+      }
+      if (window.Releasit && typeof window.Releasit.openForm === 'function') {
+        window.Releasit.openForm();
+        return;
+      }
+      const rsiNative = document.querySelector('[data-releasit-button], .releasit-cod-button, .releasit-widget button');
+      if (rsiNative) {
+        rsiNative.click();
+        return;
+      }
+      document.dispatchEvent(new CustomEvent('releasit:open'));
     }
-    if (window.Releasit && typeof window.Releasit.openForm === 'function') {
-      window.Releasit.openForm();
-      return;
-    }
-    const rsiNative = document.querySelector('[data-releasit-button], .releasit-cod-button, .releasit-widget button');
-    if (rsiNative) {
-      rsiNative.click();
-      return;
-    }
-    document.dispatchEvent(new CustomEvent('releasit:open'));
-  }
 </script>
 
 {% schema %}
