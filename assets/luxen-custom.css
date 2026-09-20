@@ -1,4 +1,4 @@
-﻿/* Luxen Custom Styles */
+/* Luxen Custom Styles */
 
 /* Header Search - Visible on Desktop */
 @media screen and (min-width: 990px) {
@@ -79,3 +79,55 @@
   align-items: center;
 }
 
+
+/* Página de contacto */
+main[data-template="page"] {
+  --inputs-radius: 10px;
+  --inputs-radius-outset: 11px;
+  --inputs-border-opacity: 0.25;
+}
+main[data-template="page"] .main-page-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(3.2rem, 5vw, 4.4rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem;
+}
+main[data-template="page"] .luxen-contact-card {
+  background: #f6f2ea;
+  border-radius: 14px;
+  padding: 2.4rem 2.4rem 1.8rem;
+  margin: 0 0 4rem;
+}
+main[data-template="page"] .luxen-contact-card h2,
+main[data-template="page"] .contact .title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+main[data-template="page"] .luxen-contact-card h2 {
+  font-size: 2.4rem;
+  margin: 0 0 1.6rem;
+}
+main[data-template="page"] .luxen-contact-card p {
+  margin: 0 0 0.8rem;
+  font-size: 1.5rem;
+}
+main[data-template="page"] .luxen-contact-card p:first-of-type {
+  margin-bottom: 1.6rem;
+}
+main[data-template="page"] .contact .title {
+  font-size: 2.6rem;
+  margin: 0 0 2rem;
+}
+main[data-template="page"] .contact__fields {
+  gap: 1.6rem;
+}
+main[data-template="page"] .contact__button {
+  margin-top: 2.4rem;
+}
+@media (max-width: 749px) {
+  main[data-template="page"] .luxen-contact-card {
+    padding: 1.8rem 1.6rem 1.4rem;
+  }
+}
