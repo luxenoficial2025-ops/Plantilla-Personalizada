@@ -20,13 +20,17 @@
     "info": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"page-width page-width--narrow\" style=\"padding-bottom: 2rem;\">\n  <h2>Estamos para ayudarte con tu pedido</h2>\n  <p><a class=\"button\" href=\"https://wa.me/593969280600?text=Hola%2C%20necesito%20ayuda%20con%20mi%20pedido\">Escríbenos por WhatsApp</a></p>\n  <p>Horario: lunes a sábado, de 9:00 a 19:00.</p>\n  <p>Cobertura: las 24 provincias del Ecuador.</p>\n</div>"
+        "custom_liquid": "<div class=\"page-width page-width--narrow\" style=\"padding-bottom: 2rem;\">\n  <h2>Estamos para ayudarte con tu pedido</h2>\n  <p><a class=\"button\" href=\"https://wa.me/593969280600?text=Hola%2C%20necesito%20ayuda%20con%20mi%20pedido\">Escríbenos por WhatsApp</a></p>\n  <p>Horario: lunes a sábado, de 9:00 a 19:00.</p>\n  <p>Cobertura: las 24 provincias del Ecuador.</p>\n</div>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "sync": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<script>\n(function () {\n  var URL_HOJA = 'URL_DEL_SCRIPT';\n  var TOKEN = 'EL_MISMO_TOKEN';\n  var form = document.getElementById('ContactForm');\n  if (!form) return;\n  form.addEventListener('submit', function () {\n    try {\n      var v = function (id) {\n        var el = document.getElementById(id);\n        return el ? el.value : '';\n      };\n      var datos = new URLSearchParams({\n        token: TOKEN,\n        nombre: v('ContactForm-name'),\n        correo: v('ContactForm-email'),\n        telefono: v('ContactForm-phone'),\n        mensaje: v('ContactForm-body')\n      });\n      navigator.sendBeacon(URL_HOJA, datos);\n    } catch (e) {}\n  });\n})();\n</script>"
+        "custom_liquid": "<script>\n(function () {\n  var URL_HOJA = 'URL_DEL_SCRIPT';\n  var TOKEN = 'EL_MISMO_TOKEN';\n  var form = document.getElementById('ContactForm');\n  if (!form) return;\n  form.addEventListener('submit', function () {\n    try {\n      var v = function (id) {\n        var el = document.getElementById(id);\n        return el ? el.value : '';\n      };\n      var datos = new URLSearchParams({\n        token: TOKEN,\n        nombre: v('ContactForm-name'),\n        correo: v('ContactForm-email'),\n        telefono: v('ContactForm-phone'),\n        mensaje: v('ContactForm-body')\n      });\n      navigator.sendBeacon(URL_HOJA, datos);\n    } catch (e) {}\n  });\n})();\n</script>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
