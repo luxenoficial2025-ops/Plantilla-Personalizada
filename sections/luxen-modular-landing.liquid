@@ -434,18 +434,21 @@
 
         <!-- DESCRIPCIÓN PERSUASIVA -->
         <div class="product__description">
-          <div class="desc-section">
-            <div class="art-box">
-              <img src="{{ product.media[1] | default: product.featured_image | image_url: width: 800 }}" style="width:100%; height:auto; object-fit:contain; border-radius: var(--radius-md);" alt="{{ product.title | escape }}">
-            </div>
-            {% if product.metafields.custom.beneficios_landing.value != blank %}
-              {{ product.metafields.custom.beneficios_landing.value }}
-            {% else %}
-              <div style="font-size: 0.94rem; color: var(--text-muted); line-height: 1.6;">
-                {{ product.description }}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="desc-section" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <div class="art-box">
+                    <img src="{{ block.settings.image | img_url: '800x' }}" style="width:100%; height:auto; object-fit:contain; border-radius: var(--radius-md);" alt="{{ block.settings.title | escape }}">
+                  </div>
+                {% elsif block.settings.svg_code != blank %}
+                  <div class="art-box">{{ block.settings.svg_code }}</div>
+                {% endif %}
+                <h2>{{ block.settings.title }}</h2>
+                <div style="font-size: 0.94rem; color: var(--text-muted); line-height: 1.6;">{{ block.settings.text }}</div>
               </div>
             {% endif %}
-          </div>
+          {% endfor %}
         </div>
 
         <!-- ACORDEONES NATIVOS -->
