@@ -21,8 +21,8 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "title": "1. ⚡ Un solo gotero. Un paso simple.",
-            "text": "<h3>✔ Textura ligera que se extiende fácil<strong><br/><br/></strong>✔ Se combina con tu crema de siempre</h3><h3><br/>✔ Ideal para tu rutina de mañana y noche</h3>",
+            "title": "Demasiados pasos. Poca constancia.",
+            "text": "<h3>Cuando la rutina de cuidado facial se llena de frascos, cuesta mantenerla y sin constancia, no hay rutina que funcione.</h3>",
             "image": "shopify://shop_images/Gemini_Generated_Image_98515w98515w9851_26718c34-4d64-4662-8918-9586078b330d.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
