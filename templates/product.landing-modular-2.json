@@ -22,7 +22,7 @@
           "type": "feature",
           "settings": {
             "title": "Demasiados pasos. Poca constancia.",
-            "text": "<h3>Cuando la rutina de cuidado facial se llena de frascos, cuesta mantenerla y sin constancia, no hay rutina que funcione.</h3>",
+            "text": "<h3>Cuando la rutina de cuidado facial se llena de frascos, cuesta mantenerla y sin constancia, no hay rutina que funcione.</h3><h3></h3><h3>Un limpiador, un tónico, un sérum para esto, otro para aquello, cada paso suma tiempo, y el tiempo es justo lo que falta entre salir de casa y empezar el día.</h3><h3></h3><h3>Al final, la rutina se reduce a lo que alcanza a hacerse y lo que se hace a medias, a medias se sostiene.</h3>",
             "image": "shopify://shop_images/Gemini_Generated_Image_98515w98515w9851_26718c34-4d64-4662-8918-9586078b330d.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
