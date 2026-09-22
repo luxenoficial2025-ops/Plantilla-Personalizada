@@ -289,7 +289,7 @@
         "image_border_color": "#ece0c3",
         "background_style": "gradient",
         "background_color": "#ffffff",
-        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #B39B66 100%)",
+        "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(179, 155, 102, 1) 100%)",
         "border_color": "#ece0c3",
         "margin_top": 0,
         "margin_bottom": 0,
