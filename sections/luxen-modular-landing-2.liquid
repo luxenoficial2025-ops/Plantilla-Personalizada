@@ -130,7 +130,7 @@
   .luxen-modular-wrapper .tt-bs-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; font-style: italic; }
 
   /* Bloques de Descripción */
-  .luxen-modular-wrapper .product__description { /* no border */
+  .luxen-modular-wrapper .product__description {
     border-top: 1px solid var(--line); padding-top: 24px; margin-top: 10px;
   }
   .luxen-modular-wrapper .desc-section { text-align: center; margin-bottom: 30px; }
@@ -409,7 +409,7 @@
 
   <!-- PRICES ROW -->
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
-    <span style="text-decoration: line-through; color: #999; font-size: 1.3rem;">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}$35.00{% endif %}</span>
+    <span style="text-decoration: line-through; color: #999; font-size: 1.3rem;">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}.00{% endif %}</span>
     <span style="font-size: 30px; font-weight: 800; color: #E03A62; letter-spacing: -0.5px;">{{ product.price | money }}</span>
     <div style="display: flex; gap: 6px;">
       <span style="background: #E95973; color: white; border-radius: 999px; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Oferta</span>
@@ -465,10 +465,7 @@
     </div>
   </div>
 
-</div> <!-- end info-col -->
-    </div> <!-- end wrap grid -->
-    <div class="wrap" style="width: 100%; clear: both; position: relative; z-index: 10; margin-top: 40px;">
-      <!-- DESCRIPCIÓN PERSUASIVA -->
+</div></div> <!-- end info-col --><div style="grid-column: 2;"><!-- DESCRIPCIÓN PERSUASIVA -->
         <div class="product__description">
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
@@ -500,6 +497,7 @@
         </div>
 
       </div>
+    </div>
   </section>
 
   <!-- MURO DE RESEÑAS TRUSTOO -->
@@ -518,7 +516,7 @@
               <div style="color: #f59e0b; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 6px;">
                 {% for i in (1..block.settings.rating) %}★{% endfor %}
               </div>
-              <div class="user" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">{{ block.settings.author }} {% if block.settings.verified %}<span class="verified" style="background: #FFF0F3; color: #D9536F; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 999px; text-transform: uppercase;">Compra Verificada</span>{% endif %}</div>
+              <div class="user" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">{{ block.settings.author }} {% if block.settings.verified %}<span class="verified">✓ Verificada</span>{% endif %}</div>
               <p style="font-size: 0.88rem; color: #555; line-height: 1.4; margin: 0; font-style: italic;">"{{ block.settings.text }}"</p>
             </div>
           {% endif %}
