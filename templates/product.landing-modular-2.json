@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "luxen-modular-landing",
+      "type": "luxen-modular-landing-2",
       "blocks": {
         "releasit_cod_form": {
           "type": "shopify://apps/releasit-cod-form/blocks/form-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
