@@ -130,7 +130,7 @@
   .luxen-modular-wrapper .tt-bs-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; font-style: italic; }
 
   /* Bloques de Descripción */
-  .luxen-modular-wrapper .product__description {
+  .luxen-modular-wrapper .product__description { /* no border */
     border-top: 1px solid var(--line); padding-top: 24px; margin-top: 10px;
   }
   .luxen-modular-wrapper .desc-section { text-align: center; margin-bottom: 30px; }
@@ -211,7 +211,7 @@
   }
   .luxen-modular-wrapper .reviews-head { text-align: center; margin-bottom: 36px; }
   .luxen-modular-wrapper .reviews-head .big-num { font-family: 'Newsreader', Georgia, serif; font-size: 3rem; font-weight: 700; line-height: 1; }
-  .luxen-modular-wrapper .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .luxen-modular-wrapper .reviews-grid { display: flex; flex-direction: column; gap: 0; max-width: 600px; margin: 0 auto; }
   .luxen-modular-wrapper .review-card {
     background: #FFF; border: 1px solid var(--line); border-radius: var(--radius-sm);
     padding: 18px;
@@ -465,9 +465,10 @@
     </div>
   </div>
 
-</div>
-
-          <!-- DESCRIPCIÓN PERSUASIVA -->
+</div> <!-- end info-col -->
+    </div> <!-- end wrap grid -->
+    <div class="wrap" style="width: 100%; clear: both; position: relative; z-index: 10; margin-top: 40px;">
+      <!-- DESCRIPCIÓN PERSUASIVA -->
         <div class="product__description">
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
@@ -499,11 +500,10 @@
         </div>
 
       </div>
-    </div>
   </section>
 
   <!-- MURO DE RESEÑAS TRUSTOO -->
-  <section class="reviews-section">
+  <section class="reviews-section" style="padding-bottom: 40px;">
     <div class="wrap">
       <div class="reviews-head">
         <div class="big-num">{{ section.settings.global_rating_score | default: '5.0' }}</div>
@@ -514,12 +514,12 @@
       <div class="reviews-grid">
         {% for block in section.blocks %}
           {% if block.type == 'review' %}
-            <div class="review-card" {{ block.shopify_attributes }}>
-              <div style="color:var(--star); font-size:0.85rem;">
+            <div class="review-card" {{ block.shopify_attributes }} style="background: #ffffff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 16px; margin-bottom: 12px;">
+              <div style="color: #f59e0b; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 6px;">
                 {% for i in (1..block.settings.rating) %}★{% endfor %}
               </div>
-              <div class="user">{{ block.settings.author }} {% if block.settings.verified %}<span class="verified">✓ Verificada</span>{% endif %}</div>
-              <p>"{{ block.settings.text }}"</p>
+              <div class="user" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">{{ block.settings.author }} {% if block.settings.verified %}<span class="verified" style="background: #FFF0F3; color: #D9536F; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 999px; text-transform: uppercase;">Compra Verificada</span>{% endif %}</div>
+              <p style="font-size: 0.88rem; color: #555; line-height: 1.4; margin: 0; font-style: italic;">"{{ block.settings.text }}"</p>
             </div>
           {% endif %}
         {% endfor %}
