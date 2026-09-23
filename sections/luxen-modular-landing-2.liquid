@@ -409,7 +409,7 @@
 
   <!-- PRICES ROW -->
   <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
-    <span style="text-decoration: line-through; color: #999; font-size: 1.3rem;">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}.00{% endif %}</span>
+    <span style="text-decoration: line-through; color: #999; font-size: 1.3rem;">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}$35.00{% endif %}</span>
     <span style="font-size: 30px; font-weight: 800; color: #E03A62; letter-spacing: -0.5px;">{{ product.price | money }}</span>
     <div style="display: flex; gap: 6px;">
       <span style="background: #E95973; color: white; border-radius: 999px; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Oferta</span>
