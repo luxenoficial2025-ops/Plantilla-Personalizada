@@ -48,8 +48,8 @@
         "feature_hzhxyx": {
           "type": "feature",
           "settings": {
-            "title": "🌾 Enriquecido con Arroz y Cúrcuma",
-            "text": "<h1>✔️ Extracto de arroz para una piel más suave<br/>✔️ Cúrcuma que ayuda a mejorar el aspecto de la piel<br/>✔️ Nutre e ilumina con cada aplicación</h1>",
+            "title": "🌾 Compra con tranquilidad",
+            "text": "<h1>✔️ Pagas solo cuando recibes tu pedido, no hay pagos por adelantado ni<br/>riesgos: primero lo revisas, luego pagas en efectivo.<br/><br/>✔️ Si tu pedido llega dañado o no corresponde a lo que pediste,<br/>escríbenos por WhatsApp dentro de las primeras 48 horas junto con<br/>una foto, y lo gestionamos contigo.<br/><br/></h1>",
             "image": "shopify://shop_images/Gemini_Generated_Image_7szqnz7szqnz7szq.jpg",
             "svg_code": ""
           }
@@ -57,22 +57,43 @@
         "faq_1": {
           "type": "faq",
           "settings": {
-            "title": "Pago contra entrega",
-            "content": "<p>Realiza tu pedido con total tranquilidad. Recibe el producto en la puerta de tu casa y paga únicamente al momento de la entrega. Sin riesgos ni pagos anticipados.</p>"
+            "title": "¿Cómo confirmo mi pedido?",
+            "content": "<h5>Te escribiremos por WhatsApp para confirmar tu dirección y los<br/>datos de tu pedido antes de despacharlo.</h5>"
           }
         },
         "faq_2": {
           "type": "faq",
           "settings": {
-            "title": "Información de Envío",
-            "content": "<p>Envíos a todo Ecuador. Realizamos entregas a cualquier parte del país. Una vez realizado tu pedido, la entrega estándar tarda de 2 a 3 días hábiles.</p>"
+            "title": "¿Cómo pago?",
+            "content": "<h5>Pagas en efectivo cuando el pedido llega a tu dirección. No pagas<br/>nada por adelantado, la entrega estándar tarda de 2 a 3 días hábiles, según tu ciudad.<br/><br/></h5>"
           }
         },
         "faq_3": {
           "type": "faq",
           "settings": {
-            "title": "¿Tengo Garantía?",
-            "content": "<p>Todos nuestros productos están cubiertos por una garantía de 10 días por defecto de fabricación.</p>"
+            "title": "¿Cómo se usa el sérum?",
+            "content": "<h5>Aplica de 2 a 3 gotas con las yemas de los dedos sobre el rostro limpio y tonificado, por la mañana y por la noche.<br/><br/></h5>"
+          }
+        },
+        "faq_9WmPp8": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Puedo usarlo si tengo la piel sensible?",
+            "content": "<p>Haz primero una prueba en una zona pequeña. Si sientes molestia,<br/>suspéndelo y consulta a un profesional de la salud.</p>"
+          }
+        },
+        "faq_krEBpk": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Qué pasa si mi pedido llega dañado?",
+            "content": "<h5>Escríbenos por WhatsApp con una foto dentro de las primeras 48<br/>horas y lo gestionamos contigo.</h5>"
+          }
+        },
+        "faq_DzUt8f": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Tengo garantía?",
+            "content": "<p>Sí. Puedes hacer tu reclamo dentro de los primeros 10 días<br/>después de recibir tu pedido.</p>"
           }
         },
         "review_1": {
@@ -112,6 +133,9 @@
         "faq_1",
         "faq_2",
         "faq_3",
+        "faq_9WmPp8",
+        "faq_krEBpk",
+        "faq_DzUt8f",
         "review_1",
         "review_2",
         "review_3"
