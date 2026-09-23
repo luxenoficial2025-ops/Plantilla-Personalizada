@@ -387,7 +387,7 @@
         <div class="eyebrow">{{ section.settings.eyebrow_text }}</div>
         {% endif %}
         
-        <h1 class="product-title-custom">✨ {{ product.title }}</h1>
+        <h1 class="product-title-custom">✨ {{ section.settings.custom_title | default: product.title }}</h1>
 
         <div class="poki-reviews">
   <span class="stars">★★★★★</span>
@@ -608,6 +608,12 @@
       "id": "eyebrow_text",
       "label": "Texto sobre el título (Eyebrow)",
       "default": "Cuidado de la piel"
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "T\u00edtulo personalizado",
+      "info": "Si se deja vac\u00edo, usar\u00e1 el t\u00edtulo original."
     },
     {
       "type": "text",
