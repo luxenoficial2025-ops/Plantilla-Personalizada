@@ -525,12 +525,13 @@
     function luxenModularScroll(direction) {
       const slider = document.getElementById('product-gallery-slider');
       if (!slider) return;
-      const slideWidth = slider.clientWidth;
-      const currentIndex = Math.round(slider.scrollLeft / slideWidth);
+      const gap = parseInt(window.getComputedStyle(slider).gap) || 0;
+      const stepWidth = slider.clientWidth + gap;
+      const currentIndex = Math.round(slider.scrollLeft / stepWidth);
       const newIndex = currentIndex + direction;
       const maxIndex = slider.children.length - 1;
       if (newIndex >= 0 && newIndex <= maxIndex) {
-        slider.scrollTo({ left: newIndex * slideWidth, behavior: 'smooth' });
+        slider.scrollTo({ left: newIndex * stepWidth, behavior: 'smooth' });
       }
     }
 
@@ -544,32 +545,40 @@
           const index = thumbs.indexOf(this);
           const slider = document.getElementById('product-gallery-slider');
           if (slider && index >= 0) {
-            const slideWidth = slider.clientWidth;
-            slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+            const gap = parseInt(window.getComputedStyle(slider).gap) || 0;
+            const stepWidth = slider.clientWidth + gap;
+            slider.scrollTo({ left: index * stepWidth, behavior: 'smooth' });
           }
         });
       });
 
-      // Mobile Slider Logic
+      // Mobile & Desktop Slider Sync Logic
       const slider = document.getElementById('product-gallery-slider');
       const thumbs = document.querySelectorAll('.gallery-thumbs div');
       
       if (slider && thumbs.length > 0) {
-        let isClickScrolling = false;
+        let scrollTimeout;
         slider.addEventListener('scroll', function() {
-          if (isClickScrolling) return;
-          const slideWidth = slider.clientWidth;
-          const scrollPosition = slider.scrollLeft;
-          const currentIndex = Math.round(scrollPosition / slideWidth);
-          
-          const counter = document.getElementById('slider-counter');
-          if (counter) {
-            counter.innerText = (currentIndex + 1) + "/" + thumbs.length;
-          }
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            const gap = parseInt(window.getComputedStyle(slider).gap) || 0;
+            const stepWidth = slider.clientWidth + gap;
+            const scrollPosition = slider.scrollLeft;
+            const currentIndex = Math.round(scrollPosition / stepWidth);
+            
+            const counter = document.getElementById('slider-counter');
+            if (counter) {
+              counter.innerText = (currentIndex + 1) + "/" + thumbs.length;
+            }
+            document.querySelectorAll('.luxen-thumbnail').forEach((t, i) => {
+              if (i === currentIndex) t.classList.add('active');
+              else t.classList.remove('active');
+            });
+          }, 100);
         }, { passive: true });
       }
     });
-  
+
     function triggerReleasitApp() {
       if (window.Releasit && typeof window.Releasit.openModal === 'function') {
         window.Releasit.openModal();
