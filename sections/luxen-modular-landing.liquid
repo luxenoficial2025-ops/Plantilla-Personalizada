@@ -345,7 +345,11 @@
             {% if product.media.size > 0 %}
               {% for media in product.media %}
                 <div class="product-gallery-slide">
-                  <img data-main-product-image src="{{ media.preview_image | img_url: '1000x' }}" alt="{{ media.alt | escape | default: product.title }}" style="max-width: 100%; height: auto; border-radius: 12px; object-fit: contain;">
+                  {% if media.media_type == 'video' or media.media_type == 'external_video' %}
+                      {{ media | video_tag: autoplay: true, loop: true, muted: true, controls: false, style: "max-width: 100%; height: auto; border-radius: 12px; object-fit: contain; pointer-events: none;" }}
+                    {% else %}
+                      <img data-main-product-image src="{{ media.preview_image | img_url: '1000x' }}" alt="{{ media.alt | escape | default: product.title }}" style="max-width: 100%; height: auto; border-radius: 12px; object-fit: contain;">
+                    {% endif %}
                 </div>
               {% endfor %}
             {% else %}
