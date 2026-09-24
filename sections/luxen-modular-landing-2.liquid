@@ -67,18 +67,21 @@
     overflow: hidden; border: 1px solid var(--line);
   }
   .luxen-modular-wrapper .product-gallery-slider {
-      display: block;
-      overflow: hidden;
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      gap: 10px !important;
+      scroll-behavior: smooth;
     }
     .luxen-modular-wrapper .product-gallery-slider::-webkit-scrollbar {
       display: none;
     }
     .luxen-modular-wrapper .product-gallery-slide {
-      display: none;
-      width: 100%;
-    }
-    .luxen-modular-wrapper .product-gallery-slide:first-child {
-      display: flex;
+      display: flex !important;
+      flex: 0 0 100% !important;
+      scroll-snap-align: start !important;
+      min-width: 100% !important;
       justify-content: center;
       align-items: center;
     }
@@ -240,20 +243,6 @@
     font-size: 20px; cursor: pointer; user-select: none; color: #555; padding: 0 10px;
   }
   @media (max-width: 860px) {
-      .luxen-modular-wrapper .product-gallery-slider {
-        display: flex !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory !important;
-        -webkit-overflow-scrolling: touch !important;
-        gap: 10px !important;
-        scroll-behavior: smooth;
-      }
-      .luxen-modular-wrapper .product-gallery-slide {
-        display: flex !important;
-        flex: 0 0 100% !important;
-        scroll-snap-align: start !important;
-        min-width: 100% !important;
-      }
     .luxen-modular-wrapper .product .grid { grid-template-columns: 1fr; gap: 28px; }
     .luxen-modular-wrapper .gallery-col { position: static; }
     .luxen-modular-wrapper .reviews-grid { grid-template-columns: 1fr; }
@@ -548,14 +537,16 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Thumbnail Click Logic
       document.querySelectorAll('.luxen-thumbnail, [data-media-thumbnail]').forEach(thumb => {
-        thumb.addEventListener('click', function() {
-          const newSrc = this.getAttribute('data-target-src') || this.querySelector('img').src;
-          const mainImg = document.querySelector('.luxen-main-image img, [data-main-product-image]');
-          if (mainImg && newSrc) {
-            mainImg.src = newSrc;
-          }
+        thumb.addEventListener('click', function(e) {
           document.querySelectorAll('.luxen-thumbnail').forEach(t => t.classList.remove('active'));
           this.classList.add('active');
+          const thumbs = Array.from(document.querySelectorAll('.luxen-thumbnail'));
+          const index = thumbs.indexOf(this);
+          const slider = document.getElementById('product-gallery-slider');
+          if (slider && index >= 0) {
+            const slideWidth = slider.clientWidth;
+            slider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+          }
         });
       });
 
