@@ -447,7 +447,11 @@
           {% for block in section.blocks %}
             {% if block.type == 'feature' %}
               <div class="desc-section" {{ block.shopify_attributes }}>
-                {% if block.settings.image != blank %}
+                {% if block.settings.video != blank %}
+                    <div class="art-box">
+                      {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '800x', style: 'width:100%; height:auto; border-radius: var(--radius-md); outline: none;' }}
+                    </div>
+                  {% elsif block.settings.image != blank %}
                   <div class="art-box">
                     <img src="{{ block.settings.image | img_url: '800x' }}" style="width:100%; height:auto; object-fit:contain; border-radius: var(--radius-md);" alt="{{ block.settings.title | escape }}">
                   </div>
@@ -705,8 +709,13 @@
           "label": "Texto descriptivo"
         },
         {
-          "type": "image_picker",
-          "id": "image",
+          "type": "video",
+            "id": "video",
+            "label": "Video (Opcional, anula la imagen y SVG)"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
           "label": "Imagen (Opcional, anula el SVG)"
         },
         {
