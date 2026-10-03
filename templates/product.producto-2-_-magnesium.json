@@ -109,12 +109,39 @@
             "rating": 5
           }
         },
+        "review_mVFwCJ": {
+          "type": "review",
+          "settings": {
+            "author": "Leonela M.",
+            "verified": true,
+            "text": "Soy bastante escéptica con los suplementos, pero después de probarlo quedé muy satisfecha. Ya voy por mi segundo frasco y estoy contenta con los resultados.",
+            "rating": 5
+          }
+        },
         "review_2": {
           "type": "review",
           "settings": {
             "author": "Selena V.",
             "verified": true,
             "text": "Me ha ayudado con mi regularidad digestiva y, a diferencia de otros magnesios que había probado, no me causa molestias en el estómago.",
+            "rating": 5
+          }
+        },
+        "review_gH7neJ": {
+          "type": "review",
+          "settings": {
+            "author": "Monica Y.",
+            "verified": true,
+            "text": "Antes me levantaba con el cuerpo muy rígido y me costaba incluso caminar al baño. Desde que lo tomo, eso ha desaparecido",
+            "rating": 5
+          }
+        },
+        "review_darWLK": {
+          "type": "review",
+          "settings": {
+            "author": "Maria V.",
+            "verified": true,
+            "text": "No sabía cuánto necesitaba magnesio hasta que empecé a tomarlo. He notado una gran diferencia, especialmente en mi digestión y bienestar general.",
             "rating": 5
           }
         },
@@ -141,7 +168,10 @@
         "faq_krEBpk",
         "faq_DzUt8f",
         "review_1",
+        "review_mVFwCJ",
         "review_2",
+        "review_gH7neJ",
+        "review_darWLK",
         "review_3"
       ],
       "settings": {
