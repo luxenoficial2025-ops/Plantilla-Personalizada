@@ -23,6 +23,7 @@
           "settings": {
             "title": "😮‍💨  Días largos. Noches que no descansan.",
             "text": "<h3><br/>Entre el trabajo, las responsabilidades y el estrés diario, muchas<br/>personas llegan a la noche sin lograr un descanso reparador. Y sin<br/>buen descanso, el cuerpo lo nota al día siguiente.<br/><br/>No es solo cansancio. Es esa sensación de tensión que no se va,<br/>de días que empiezan agotados antes de empezar.<br/><br/><br/></h3>",
+            "enable_sound": true,
             "image": "shopify://shop_images/Create_a_creative._2K_20261003070313.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
@@ -32,6 +33,7 @@
           "settings": {
             "title": "❌  Más productos no siempre significan un mejor descanso ❌",
             "text": "<h3>Se prueba de todo: rutinas, horarios, cambios pequeños. Y aun así,<br/>algo tan básico como dormir bien parece requerir más esfuerzo del<br/>que debería.<br/><br/>A veces lo que falta no es hacer más. Es dar al cuerpo lo que<br/>necesita para funcionar bien.<br/></h3>",
+            "enable_sound": true,
             "image": "shopify://shop_images/Create_a_creative._2K_20261003070629.jpg",
             "svg_code": "<svg width=\"34%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"55\" y=\"20\" width=\"50\" height=\"80\" rx=\"10\" fill=\"#FBF8F3\" stroke=\"#2E2A24\" stroke-width=\"1.2\"></rect><path d=\"M55 30 h50\" stroke=\"#C17A54\" stroke-width=\"6\"></path><path d=\"M20 60 q20 -6 35 0\" stroke=\"#9DAE8C\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"60\" r=\"3\" fill=\"#9DAE8C\"></circle></svg>"
           }
@@ -42,6 +44,7 @@
             "title": "Magnesio, en su forma más simple.",
             "text": "<h3>Toplux Magnesium Complex aporta magnesio elemental en una fórmula<br/>pensada para su máxima absorción, en una sola cápsula diaria.<br/><br/>✔ Contribuye a la función muscular y ósea<br/>✔ Aporta soporte al sistema inmune<br/>✔ Ayuda a un descanso más reparador<br/><br/>Cómo usarlo: toma 1 cápsula al día, preferiblemente con alimentos,<br/>o según indique tu profesional de salud.<br/><br/></h3>",
             "video": "shopify://files/videos/Create_attractive_product_video_…_20261003071325.mp4",
+            "enable_sound": true,
             "svg_code": ""
           }
         },
@@ -51,6 +54,7 @@
             "title": "🌾 Compra con tranquilidad",
             "text": "<h3>✔️ Pagas solo cuando recibes tu pedido, no hay pagos por adelantado ni<br/>riesgos: primero lo revisas, luego pagas en efectivo.<br/><br/>✔️ Si tu pedido llega dañado o no corresponde a lo que pediste,<br/>escríbenos por WhatsApp dentro de las primeras 48 horas junto con<br/>una foto, y lo gestionamos contigo.<br/><br/></h3>",
             "video": "shopify://files/videos/Crear_video_UGC_Magnesium_Complex_20261003071925.mp4",
+            "enable_sound": true,
             "svg_code": ""
           }
         },
@@ -141,6 +145,8 @@
         "review_3"
       ],
       "settings": {
+        "primary_color": "#347DB4",
+        "secondary_color": "#BBD6EA",
         "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
         "badge_envio": "🚚 Pagas en efectivo al recibir",
         "eyebrow_text": "LUXEN · Cuidado de la piel",
