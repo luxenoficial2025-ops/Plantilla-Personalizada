@@ -21,8 +21,9 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "title": "😮‍💨 Demasiados pasos y poca constancia.",
-            "text": "<h3>Cuando la rutina de cuidado facial se llena de frascos, cuesta mantenerla y sin constancia, no hay rutina que funcione.</h3><h3>Un limpiador, un tónico, un sérum para esto, otro para aquello, cada paso suma tiempo, y el tiempo es justo lo que falta entre salir de casa y empezar el día.</h3><h3>Al final, la rutina se reduce a lo que alcanza a hacerse y lo que se hace a medias, a medias se sostiene.</h3>",
+            "title": "🪞 Te miras al espejo y la piel te delata",
+            "text": "<h3>Dormiste tus horas, pero tu cara dice lo contrario.<br/>La piel apagada, como cansada.</h3><h3><br/>La base de maquillaje ya no asienta igual: se cuartea, marca más.<br/>Y esas líneas en la frente y alrededor de los ojos que antes<br/>desaparecían... ahora se quedan.<br/><br/>No es que te estés cuidando mal.<br/><br/>Es que a partir de los 30, tu piel pierde colágeno año tras año.<br/>Y las cremas de siempre solo hidratan la superficie: no le dan a tu<br/>piel el material que necesita para repararse desde dentro.</h3>",
+            "enable_sound": true,
             "image": "shopify://shop_images/Gemini_Generated_Image_98515w98515w9851_26718c34-4d64-4662-8918-9586078b330d.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
@@ -30,8 +31,9 @@
         "feature_2": {
           "type": "feature",
           "settings": {
-            "title": "❌ Más productos no siempre significan una mejor rutina ❌",
-            "text": "<h3>Y así, la rutina completa termina abandonada. No porque falte voluntad, sino porque exige más de lo que un día normal permite.</h3><h3>Mientras tanto, los frascos siguen ahí, a medio usar, recordando un intento que no se sostuvo.</h3>",
+            "title": "❌ Y seguro ya lo has intentado todo  ❌",
+            "text": "<h3>Cremas antiedad de 40 euros que huelen de maravilla y se quedan en nada.</h3><h3><br/>Rutinas de 7 pasos que no hay quien mantenga.<br/>Sérums con nombres imposibles que prometen milagros en el bote.<br/><br/>Mientras tanto, en Corea llevan años haciendo otra cosa.<br/><br/>En las clínicas de estética usan PDRN, un ADN extraído del salmón<br/>que ayuda a la piel a regenerarse. Es el famoso tratamiento que se<br/>ponen las celebridades: cientos de euros por sesión... y con agujas.<br/><br/>El resultado es esa piel firme y de cristal que ves en las coreanas.<br/><br/>La pregunta era cómo conseguir lo mismo sin clínica, sin agujas<br/>y sin arruinarse. Y una marca coreana dio con la respuesta.</h3>",
+            "enable_sound": true,
             "image": "shopify://shop_images/Gemini_Generated_Image_g8ydsyg8ydsyg8yd.jpg",
             "svg_code": "<svg width=\"34%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"55\" y=\"20\" width=\"50\" height=\"80\" rx=\"10\" fill=\"#FBF8F3\" stroke=\"#2E2A24\" stroke-width=\"1.2\"></rect><path d=\"M55 30 h50\" stroke=\"#C17A54\" stroke-width=\"6\"></path><path d=\"M20 60 q20 -6 35 0\" stroke=\"#9DAE8C\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"60\" r=\"3\" fill=\"#9DAE8C\"></circle></svg>"
           }
@@ -39,9 +41,10 @@
         "feature_3": {
           "type": "feature",
           "settings": {
-            "title": "Un solo gotero. Un paso simple.",
-            "text": "<h3>Medicube PDRN Pink Peptide Serum combina PDRN (Sodium DNA) y un<br/>complejo de péptidos en una textura ligera que se aplica en<br/>segundos.<br/><br/>Sin varios pasos que recordar ni frascos que administrar: solo el<br/>gotero, un par de gotas y sigues con tu día.<br/><br/>✔ Textura ligera que se extiende fácil<br/>✔ Se combina con tu crema de siempre<br/>✔ Ideal para tu rutina de mañana y noche<br/><br/><strong>Cómo usarlo: </strong>aplica de 2 a 3 gotas con las yemas de los dedos sobre el rostro limpio y tonificado, por la mañana y por la noche.<br/><br/><strong>Nota: </strong>haz una prueba en una zona pequeña antes del primer uso.</h3>",
+            "title": "🧬 El ADN de salmón de las clínicas, en un sérum de uso diario.",
+            "text": "<h3>Medicube, una de las marcas de cuidado facial más vendidas de Corea,<br/>concentró PDRN (ADN de salmón) al 1% junto con 5 tipos de péptidos<br/>en un solo sérum: el PDRN Pink Peptide Serum.<br/><br/>Cada gota le da a tu piel el material que dejó de producir:<br/><br/>✨ Luminosidad desde los primeros días: efecto piel de cristal<br/>💗 Más firmeza y elasticidad: la piel se ve rellena, con vida<br/>🪞 Difumina líneas finas en frente, ojos y contorno de labios<br/>🛡 Calma y refuerza la barrera: ideal incluso para piel sensible<br/><br/>Cómo se usa (30 segundos al día):<br/>1. Limpia tu rostro como siempre<br/>2. Aplica 2-3 gotas en cara y cuello, mañana y noche<br/>3. Sella con tu crema habitual<br/><br/>Frasco de 30 ml: te dura entre [1 y 2] meses de uso diario.<br/>Producto original Medicube, fabricado en Corea del Sur.</h3>",
             "video": "shopify://files/videos/ssstik.io_@hannie_ugc_1790220724847.mp4",
+            "enable_sound": true,
             "svg_code": ""
           }
         },
@@ -50,6 +53,17 @@
           "settings": {
             "title": "🌾 Compra con tranquilidad",
             "text": "<h3>✔️ Pagas solo cuando recibes tu pedido, no hay pagos por adelantado ni<br/>riesgos: primero lo revisas, luego pagas en efectivo.<br/><br/>✔️ Si tu pedido llega dañado o no corresponde a lo que pediste,<br/>escríbenos por WhatsApp dentro de las primeras 48 horas junto con<br/>una foto, y lo gestionamos contigo.<br/><br/></h3>",
+            "enable_sound": true,
+            "image": "shopify://shop_images/Gemini_Generated_Image_tnz1cotnz1cotnz1.jpg",
+            "svg_code": ""
+          }
+        },
+        "feature_PBfzgN": {
+          "type": "feature",
+          "settings": {
+            "title": "💗 Hoy tienes dos caminos.",
+            "text": "<h3>❌ Uno: seguir con las cremas de siempre y ver cómo el espejo<br/>cuenta otra historia cada año.<br/><br/>✔️ Dos: darle a tu piel, por fin, el material que dejó de producir.<br/><br/>Tu piel se repara cada noche. La diferencia está en con qué lo hace.</h3>",
+            "enable_sound": true,
             "image": "shopify://shop_images/Gemini_Generated_Image_tnz1cotnz1cotnz1.jpg",
             "svg_code": ""
           }
@@ -130,6 +144,7 @@
         "feature_2",
         "feature_3",
         "feature_hzhxyx",
+        "feature_PBfzgN",
         "faq_1",
         "faq_2",
         "faq_3",
@@ -141,6 +156,8 @@
         "review_3"
       ],
       "settings": {
+        "primary_color": "#e03a62",
+        "secondary_color": "#fce8ec",
         "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
         "badge_envio": "🚚 Pagas en efectivo al recibir",
         "eyebrow_text": "LUXEN · Cuidado de la piel",
