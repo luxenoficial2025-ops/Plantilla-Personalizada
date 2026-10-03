@@ -75,15 +75,15 @@
         "faq_3": {
           "type": "faq",
           "settings": {
-            "title": "¿Cómo se usa el sérum?",
-            "content": "<h5>Aplica de 2 a 3 gotas con las yemas de los dedos sobre el rostro limpio y tonificado, por la mañana y por la noche.<br/><br/></h5>"
+            "title": "¿Por qué elegir Magnesium Complex?",
+            "content": "<p>Su fórmula reúne <strong>8 formas de magnesio en un solo producto</strong>, ofreciendo una alternativa práctica para quienes buscan incorporar magnesio a su rutina diaria.</p>"
           }
         },
         "faq_9WmPp8": {
           "type": "faq",
           "settings": {
-            "title": "¿Puedo usarlo si tengo la piel sensible?",
-            "content": "<h5>Haz primero una prueba en una zona pequeña. Si sientes molestia,<br/>suspéndelo y consulta a un profesional de la salud.</h5>"
+            "title": "¿Es fácil de incorporar a mi rutina?",
+            "content": "<p>Sí. Solo necesitas incluir la porción recomendada dentro de tu rutina diaria y acompañarla con agua.</p>"
           }
         },
         "faq_krEBpk": {
@@ -103,27 +103,27 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "author": "Raquel Y.",
+            "author": "Fabricio C.",
             "verified": true,
-            "text": "\"Me gustó la textura, no es pegajosa. Lo uso en las noches.\"",
+            "text": "Desde que cambié a este magnesio, ya no tengo los calambres en las piernas que tenía antes.",
             "rating": 5
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "author": "Jorge V.",
+            "author": "Selena V.",
             "verified": true,
-            "text": "Excelente producto, da resultados a corto plazo. Super recomendable, llegó rápido a mi domicilio.",
+            "text": "Me ha ayudado con mi regularidad digestiva y, a diferencia de otros magnesios que había probado, no me causa molestias en el estómago.",
             "rating": 5
           }
         },
         "review_3": {
           "type": "review",
           "settings": {
-            "author": "Anita A.",
+            "author": "Luis A.",
             "verified": true,
-            "text": "El pedido llegó súper rápido por courier y se describe exactamente igual al gotero que muestran.",
+            "text": "Tomo una cápsula al día y he notado que me ayuda a mantener controlados los calambres en mis piernas",
             "rating": 5
           }
         }
@@ -158,7 +158,7 @@
         "review_highlight_author": "Raquel Y.",
         "review_highlight_text": "Es el paraíso en una botella... Me encanta. Desprende las células muertas sin tallar la piel.",
         "global_rating_score": "5.0",
-        "global_rating_subtitle": "Basado en 23 reseñas de clientas en Ecuador"
+        "global_rating_subtitle": "Basado en 21 reseñas de clientas en Ecuador"
       }
     }
   },
