@@ -1,0 +1,209 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "luxen-modular-landing-2",
+      "blocks": {
+        "releasit_cod_form": {
+          "type": "shopify://apps/releasit-cod-form/blocks/form-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {
+            "product": ""
+          }
+        },
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "title": "😮‍💨   ¿Otra vez despierto a las 3 de la mañana?",
+            "text": "<h3>Te acuestas agotado y la mente no se apaga.<br/>Das vueltas. Miras el celular. Calculas cuántas horas te quedan.<br/>Y cuando suena la alarma, amaneces más cansado que cuando te acostaste.<br/><br/>De día te tomas café para sobrevivir, mal genio, cero concentración.<br/>En cambio de noche: cuerpo tenso, piernas inquietas, calambres que te despiertan.<br/><br/>La mayoría le echa la culpa al estrés. Pero muchas veces&nbsp;hay algo más simple detrás: a tu cuerpo le falta magnesio, el mineral que participa en más de 300 procesos de tu cuerpo, entre ellos relajar tus músculos y preparar tu cerebro para dormir.</h3>",
+            "video": "shopify://files/videos/Woman_waking_up_in_bed_20261003151024.mp4",
+            "enable_sound": true,
+            "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "title": "❌   Y seguro ya intentaste de todo  ❌",
+            "text": "<h3>Melatonina que te deja atontado al día siguiente.<br/>Tés de toda clase que apenas relajan un rato.<br/>Meditar, contar ovejas, dejar el café después del mediodía.<br/><br/>Quizás hasta compraste magnesio antes... y no sentiste nada.<br/><br/>Aquí está el detalle que casi nadie cuenta: la mayoría de los<br/>suplementos usan UNA sola forma de magnesio (óxido), una de las más<br/>baratas y de las que menos absorbe el cuerpo.<br/><br/>O sea: te tomabas la pastilla, y gran parte se iba sin aprovecharse.<br/><br/>No era que el magnesio no funcionara. Era la forma equivocada.<br/><br/>Y mientras tanto, cada noche de mal sueño se va acumulando:<br/>en tu energía, en tu humor y en tu salud.</h3>",
+            "enable_sound": true,
+            "image": "shopify://shop_images/Create_a_creative._2K_20261003070629.jpg",
+            "svg_code": "<svg width=\"34%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"55\" y=\"20\" width=\"50\" height=\"80\" rx=\"10\" fill=\"#FBF8F3\" stroke=\"#2E2A24\" stroke-width=\"1.2\"></rect><path d=\"M55 30 h50\" stroke=\"#C17A54\" stroke-width=\"6\"></path><path d=\"M20 60 q20 -6 35 0\" stroke=\"#9DAE8C\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"60\" r=\"3\" fill=\"#9DAE8C\"></circle></svg>"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "title": "8 Formas de magnesio en una sola cápsula",
+            "text": "<h3>Toplux Nutrition combinó las 8 formas elementales de magnesio en un<br/>solo complejo diseñado para máxima absorción. En vez de una sola forma<br/>difícil de aprovechar, tu cuerpo recibe el espectro completo: cada<br/>forma se absorbe distinto y trabaja en algo diferente.<br/><br/><strong>Con el uso constante:</strong></h3><h3><br/>🌙 Sueño más profundo y reparador: despiertas renovado<br/>💪 Apoya huesos y músculos: adiós a la tensión acumulada<br/>🛡 Refuerza tu sistema inmunitario<br/>⚡ Optimiza las funciones de tu cuerpo: energía más estable de día<br/><br/>Cómo se toma: 2 cápsulas uno en el dia y otra en la noches, todos los días. Así de simple.<br/>Cada frasco trae 90 cápsulas: 45 días de uso.</h3>",
+            "video": "shopify://files/videos/Create_attractive_product_video_…_20261003071325.mp4",
+            "enable_sound": true,
+            "svg_code": ""
+          }
+        },
+        "feature_hzhxyx": {
+          "type": "feature",
+          "settings": {
+            "title": "🌾  Pruébalo 30 dias sin riesgo",
+            "text": "<h3>✔️ Pagas solo cuando recibes tu pedido, no hay pagos por adelantado ni<br/>riesgos: primero lo revisas, luego pagas en efectivo.<br/><br/>✔️ Si tu pedido llega dañado o no corresponde a lo que pediste,<br/>escríbenos por WhatsApp dentro de las primeras 48 horas junto con<br/>una foto, y lo gestionamos contigo.</h3>",
+            "enable_sound": true,
+            "image": "shopify://shop_images/image.png_2K_20261003151445.jpg",
+            "svg_code": ""
+          }
+        },
+        "feature_edbxDk": {
+          "type": "feature",
+          "settings": {
+            "title": "🌾   Esta noche tienes dos caminos.",
+            "text": "<h3>❌ Uno: acostarte a dar vueltas otra vez, y mañana otro día a punta de café.<br/>✔️ Dos: darle a tu cuerpo el mineral que le falta y dejar que él haga el resto.<br/><br/>Las noches perdidas no se recuperan. Las que vienen, sí se pueden cambiar.</h3>",
+            "video": "shopify://files/videos/Crear_video_UGC_Magnesium_Complex_20261003071925.mp4",
+            "enable_sound": true,
+            "svg_code": ""
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cómo confirmo mi pedido?",
+            "content": "<h5>Te escribiremos por WhatsApp para confirmar tu dirección y los<br/>datos de tu pedido antes de despacharlo.</h5>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Cómo pago?",
+            "content": "<h5>Pagas en efectivo cuando el pedido llega a tu dirección. No pagas<br/>nada por adelantado, la entrega estándar tarda de 2 a 3 días hábiles, según tu ciudad.<br/><br/></h5>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Por qué elegir Magnesium Complex?",
+            "content": "<h5>Su fórmula reúne 8 formas de magnesio en un solo producto, ofreciendo una alternativa práctica para quienes buscan incorporar magnesio a su rutina diaria.</h5>"
+          }
+        },
+        "faq_9WmPp8": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Es fácil de incorporar a mi rutina?",
+            "content": "<h5>Sí. Solo necesitas incluir la porción recomendada dentro de tu rutina diaria y acompañarla con agua.</h5>"
+          }
+        },
+        "faq_krEBpk": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Qué pasa si mi pedido llega dañado?",
+            "content": "<h5>Escríbenos por WhatsApp con una foto dentro de las primeras 48<br/>horas y lo gestionamos contigo.</h5>"
+          }
+        },
+        "faq_DzUt8f": {
+          "type": "faq",
+          "settings": {
+            "title": "¿Tengo garantía?",
+            "content": "<h5>Sí. Puedes hacer tu reclamo dentro de los primeros 10 días<br/>después de recibir tu pedido.</h5>"
+          }
+        },
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Fabricio C.",
+            "verified": true,
+            "text": "Desde que cambié a este magnesio, ya no tengo los calambres en las piernas que tenía antes.",
+            "rating": 5
+          }
+        },
+        "review_mVFwCJ": {
+          "type": "review",
+          "settings": {
+            "author": "Leonela M.",
+            "verified": true,
+            "text": "Soy bastante escéptica con los suplementos, pero después de probarlo quedé muy satisfecha. Ya voy por mi segundo frasco y estoy contenta con los resultados.",
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "Selena V.",
+            "verified": true,
+            "text": "Me ha ayudado con mi regularidad digestiva y, a diferencia de otros magnesios que había probado, no me causa molestias en el estómago.",
+            "rating": 5
+          }
+        },
+        "review_gH7neJ": {
+          "type": "review",
+          "settings": {
+            "author": "Monica Y.",
+            "verified": true,
+            "text": "Antes me levantaba con el cuerpo muy rígido y me costaba incluso caminar al baño. Desde que lo tomo, eso ha desaparecido",
+            "rating": 5
+          }
+        },
+        "review_darWLK": {
+          "type": "review",
+          "settings": {
+            "author": "Maria V.",
+            "verified": true,
+            "text": "No sabía cuánto necesitaba magnesio hasta que empecé a tomarlo. He notado una gran diferencia, especialmente en mi digestión y bienestar general.",
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "Luis A.",
+            "verified": true,
+            "text": "Tomo una cápsula al día y he notado que me ayuda a mantener controlados los calambres en mis piernas",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "releasit_cod_form",
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_hzhxyx",
+        "feature_edbxDk",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_9WmPp8",
+        "faq_krEBpk",
+        "faq_DzUt8f",
+        "review_1",
+        "review_mVFwCJ",
+        "review_2",
+        "review_gH7neJ",
+        "review_darWLK",
+        "review_3"
+      ],
+      "settings": {
+        "primary_color": "#347DB4",
+        "secondary_color": "#BBD6EA",
+        "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
+        "badge_envio": "🚚 Pagas en efectivo al recibir",
+        "eyebrow_text": "LUXEN · Cuidado de la piel",
+        "custom_title": "Toplux Magnesium Complex",
+        "rating_text": "5.0 (23 Reseñas en Ecuador)",
+        "social_proof_text": "<p>✔️ Ainara<strong> R.</strong> y 11<strong>7 personas</strong> ya lo pidieron</p>",
+        "btn_primary_text": "Pedir ahora y pagar al recibir",
+        "btn_subtitle_text": "¡Envío Gratis a todo Ecuador!",
+        "review_highlight_author": "Rosa Y.",
+        "review_highlight_text": "Es el paraíso en una botella... Me encanta. Desprende las células muertas sin tallar la piel.",
+        "global_rating_score": "5.0",
+        "global_rating_subtitle": "Basado en 23 reseñas de clientas en Ecuador"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
