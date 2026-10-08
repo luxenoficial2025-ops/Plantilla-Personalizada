@@ -23,8 +23,8 @@
           "settings": {
             "title": "😮‍💨Cada mañana te maquillas para tapar lo mismo.",
             "text": "<h3>Te paras frente al espejo con buena luz y ahí siguen: las manchas oscuras en las mejillas, las marcas viejas que dejó el acné y ese tono disparejo que te hace sentir la cara apagada.</h3><h3></h3><h3>Intentas disimularlo con base o corrector antes de salir a trabajar, pero a mitad del día el maquillaje se cuartea y sientes que todo el mundo nota esas sombras en tu piel.</h3><h3><br/>Te frustra mirarte de cerca y pensar: \"Ya no sé qué más probar para que estas manchas se borren\". La realidad es que no es falta de limpieza ni de cuidado diario; la mayoría de cremas comunes solo humectan la superficie sin penetrar donde la pigmentación rebelde realmente se forma.<br/><br/></h3>",
-            "video": "shopify://files/videos/Woman_waking_up_in_bed_20261003151024.mp4",
             "enable_sound": true,
+            "image": "shopify://shop_images/7bbc639a-6dee-425f-aebf-03ec44a2e581.jpg",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
         },
