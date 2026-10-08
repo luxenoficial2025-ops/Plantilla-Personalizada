@@ -53,8 +53,8 @@
           "settings": {
             "title": "🌾  Pruébalo 30 dias sin riesgo",
             "text": "<h3>✔️ Pagas solo cuando recibes tu pedido, no hay pagos por adelantado ni<br/>riesgos: primero lo revisas, luego pagas en efectivo.<br/><br/>✔️ Si tu pedido llega dañado o no corresponde a lo que pediste,<br/>escríbenos por WhatsApp dentro de las primeras 48 horas junto con<br/>una foto, y lo gestionamos contigo.</h3>",
+            "video": "shopify://files/videos/gemini_generated_video_cadc9402.mp4",
             "enable_sound": true,
-            "image": "shopify://shop_images/imagen_20261007195149.jpg_2K_20261007195924.jpg",
             "svg_code": ""
           }
         },
@@ -176,7 +176,7 @@
         "review_darWLK"
       ],
       "settings": {
-        "primary_color": "#CF63FF",
+        "primary_color": "#cf63ff",
         "secondary_color": "#000000",
         "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
         "badge_envio": "🚚 Pagas en efectivo al recibir",
