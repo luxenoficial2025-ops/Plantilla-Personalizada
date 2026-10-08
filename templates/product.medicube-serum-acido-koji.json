@@ -113,54 +113,45 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "author": "Fabricio C.",
+            "author": "Valerie M",
             "verified": true,
-            "text": "Desde que cambié a este magnesio, ya no tengo los calambres en las piernas que tenía antes.",
+            "text": "Llevo tres semanas usándolo todas las noches y la diferencia en las manchas que me quedaron del acné es real. Tenía marcas moradas que no bajaban con nada y ahora están mucho más claras y la piel luce brillante.",
             "rating": 5
           }
         },
         "review_mVFwCJ": {
           "type": "review",
           "settings": {
-            "author": "Leonela M.",
+            "author": "Jessica R",
             "verified": true,
-            "text": "Soy bastante escéptica con los suplementos, pero después de probarlo quedé muy satisfecha. Ya voy por mi segundo frasco y estoy contenta con los resultados.",
+            "text": "Tenía dudas porque mi piel reacciona a casi todo lo que tiene activos fuertes, pero no me ardió para nada. La textura se absorbe en segundos, no deja la cara pegajosa ni amarilla por la cúrcuma, y el tono se ve parejo.",
             "rating": 5
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "author": "Selena V.",
+            "author": "Andrea P.",
             "verified": true,
-            "text": "Me ha ayudado con mi regularidad digestiva y, a diferencia de otros magnesios que había probado, no me causa molestias en el estómago.",
+            "text": "Es un suero muy bueno y rinde bastante con pocas gotas. En las primeras dos semanas no vi gran cambio en las manchas de sol viejas, pero al completar el mes sí noté que se aclararon bastante y el cutis se ve descansado.",
             "rating": 5
           }
         },
         "review_gH7neJ": {
           "type": "review",
           "settings": {
-            "author": "Monica Y.",
+            "author": "Karla S.",
             "verified": true,
-            "text": "Antes me levantaba con el cuerpo muy rígido y me costaba incluso caminar al baño. Desde que lo tomo, eso ha desaparecido",
+            "text": "Solía aplicarme corrector grueso para salir a la calle por las manchas del sol en los pómulos. Después de mes y medio usándolo a diario con bloqueador, ya solo salgo con protector con color.",
             "rating": 5
           }
         },
         "review_darWLK": {
           "type": "review",
           "settings": {
-            "author": "Maria V.",
+            "author": "Daniela C.",
             "verified": true,
-            "text": "No sabía cuánto necesitaba magnesio hasta que empecé a tomarlo. He notado una gran diferencia, especialmente en mi digestión y bienestar general.",
-            "rating": 5
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "author": "Luis A.",
-            "verified": true,
-            "text": "Tomo una cápsula al día y he notado que me ayuda a mantener controlados los calambres en mis piernas",
+            "text": "Estaba escéptica porque ya había gastado en otros sueros caros sin resultados. Este emparejó el tono de mis mejillas en cuatro semanas y me quitó ese aspecto apagado sin sacarme granitos.",
             "rating": 5
           }
         }
@@ -182,8 +173,7 @@
         "review_mVFwCJ",
         "review_2",
         "review_gH7neJ",
-        "review_darWLK",
-        "review_3"
+        "review_darWLK"
       ],
       "settings": {
         "primary_color": "#e8b642",
