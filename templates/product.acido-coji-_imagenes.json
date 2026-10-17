@@ -28,6 +28,16 @@
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
         },
+        "feature_PDaEem": {
+          "type": "feature",
+          "settings": {
+            "title": "",
+            "text": "",
+            "enable_sound": true,
+            "image": "shopify://shop_images/Anuncio_de_serum_iluminador_con_curcuma.png",
+            "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
+          }
+        },
         "feature_2": {
           "type": "feature",
           "settings": {
@@ -169,6 +179,7 @@
       "block_order": [
         "releasit_cod_form",
         "feature_1",
+        "feature_PDaEem",
         "feature_2",
         "feature_3",
         "feature_hzhxyx",
