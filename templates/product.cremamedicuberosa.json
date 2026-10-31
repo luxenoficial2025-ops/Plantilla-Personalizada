@@ -24,7 +24,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_15_oct_2026_00_41_25-3.png",
+            "image": "shopify://shop_images/problema.png",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
         },
@@ -34,7 +34,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Anuncio_de_serum_iluminador_con_curcuma.png",
+            "image": "shopify://shop_images/Una_rutina_de_cuidado_mas_simple-3.png",
             "svg_code": "<svg width=\"45%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"60\" r=\"38\" fill=\"#EADFCB\"></circle><circle cx=\"80\" cy=\"60\" r=\"38\" stroke=\"#C17A54\" stroke-width=\"1.5\" stroke-dasharray=\"3 5\"></circle><path d=\"M65 58 q15 -14 30 0\" stroke=\"#2E2A24\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\"0.55\"></path></svg>"
           }
         },
@@ -44,7 +44,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_15_oct_2026_00_41_26-4.png",
+            "image": "shopify://shop_images/Anuncio_de_crema_PDRN_en_tonos_rosados-4.png",
             "svg_code": "<svg width=\"34%\" viewbox=\"0 0 160 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"55\" y=\"20\" width=\"50\" height=\"80\" rx=\"10\" fill=\"#FBF8F3\" stroke=\"#2E2A24\" stroke-width=\"1.2\"></rect><path d=\"M55 30 h50\" stroke=\"#C17A54\" stroke-width=\"6\"></path><path d=\"M20 60 q20 -6 35 0\" stroke=\"#9DAE8C\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"60\" r=\"3\" fill=\"#9DAE8C\"></circle></svg>"
           }
         },
@@ -54,7 +54,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_15_oct_2026_00_41_22-2.png",
+            "image": "shopify://shop_images/Tres_beneficios_para_tu_piel-5.png",
             "svg_code": ""
           }
         },
@@ -64,7 +64,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_15_oct_2026_00_41_28-5.png",
+            "image": "shopify://shop_images/Ingredientes_que_marcan_la_diferencia-6.png",
             "svg_code": ""
           }
         },
@@ -74,7 +74,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_15_oct_2026_00_41_09-1.png",
+            "image": "shopify://shop_images/Guia_de_uso__capsulas_de_colageno_rosadas-7.png",
             "svg_code": ""
           }
         },
@@ -84,7 +84,7 @@
             "title": "",
             "text": "",
             "enable_sound": true,
-            "image": "shopify://shop_images/Imagen_de_ChatGPT_17_oct_2026_00_08_05-7.png",
+            "image": "shopify://shop_images/Oferta_Medicube__Elige_Tu_Paquete_Ideal-8.png",
             "svg_code": ""
           }
         },
@@ -198,7 +198,7 @@
         "review_darWLK"
       ],
       "settings": {
-        "primary_color": "#EE87B2",
+        "primary_color": "#ee87b2",
         "secondary_color": "#000000",
         "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
         "badge_envio": "🚚 Pagas en efectivo al recibir",
