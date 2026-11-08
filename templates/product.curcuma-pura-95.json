@@ -127,7 +127,7 @@
           "type": "faq",
           "settings": {
             "title": "¿Para qué sirve la Cúrcuma Pura 95%?",
-            "content": "<p>Es un suplemento formulado para complementar tu rutina de bienestar. Su fórmula está orientada al cuidado articular y además aporta ingredientes con función antioxidante y de apoyo al sistema inmune.</p>"
+            "content": "<h5>Es un suplemento formulado para complementar tu rutina de bienestar. Su fórmula está orientada al cuidado articular y además aporta ingredientes con función antioxidante y de apoyo al sistema inmune.</h5>"
           }
         },
         "review_1": {
@@ -198,7 +198,7 @@
         "review_darWLK"
       ],
       "settings": {
-        "primary_color": "#FF8F07",
+        "primary_color": "#ff8f07",
         "secondary_color": "#000000",
         "marquee_text": "Envío GRATIS a todo Ecuador • ¡Oferta por tiempo limitado! • Paga al recibir en efectivo",
         "badge_envio": "🚚 Pagas en efectivo al recibir",
